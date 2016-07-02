@@ -1,0 +1,38 @@
+\documentclass[a4paper, 12pt, twoside]{article}
+
+\usepackage{tesi}
+
+\author{Marco Zanella}
+\date{2/7/2016}
+\intestazioni{}
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+\include{sections/copertina}
+\cleardoublepage
+\include{sections/sommario}
+
+
+	\newpage
+		\pagestyle{myfront}
+
+		\tableofcontents
+		%\listoftables
+		%\listoffigures
+
+	\label{LastFrontPage}
+	\newpage
+
+	\pagestyle{mymain}
+
+		\subfile{sections/introduzione}
+		\subfile{sections/progettoStage}
+		%\subfile{sections/CasiDUso}
+		%\subfile{sections/Requisiti}
+		%\subfile{sections/TracciamentoTest}
+
+	\label{LastPage}
+
+\end{document}

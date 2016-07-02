@@ -18,7 +18,7 @@ Struttura di base:
 
 4. Progettazione
 	* Scelte effettuate e motivazione
-	* Descrizione dell'architettura
+	* Descrizione dell'architettura ad alto livello
 	* UML dell'architettura
 	* Descrizione package
 	* Descrizione classi

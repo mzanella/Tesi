@@ -1,0 +1,27 @@
+\documentclass[../Tesi.tex]{subfiles}
+
+
+\begin{document}
+\section{Introduzione}
+	
+	\subsection{Scopo dello stage}
+		L'\textbf{Experience API}(xAPI anche conosciuta come Tin Can API) è una specifica software per la creazione di contenuti per l'e-learning. È considerata il successore dello \textbf{SCORM}, ovvero lo standard de facto utilizzato per l'inserimento dei contenuti di e-learning all'interno di \textbf{Learning Management Systems}. Tali piattaforme sono necessarie per la distribuzione dei contenuti in formato SCORM e sono normalmente accessibili utilizzando un browser, per la visualizzazione dei contenuti. Con la nuova specifica, però, non sono più necessarie: i contenuti xAPI sono fruibili anche senza l'utilizzo di browser e di connessioni internet. Le informazioni sulle esperienze degli utenti sono tracciate utilizzando degli statement in formato JavaScript Object Notation(JSON) e sono raccolti da un \textbf{Learning Record Store}(LRS). Gli statement sono trasmessi agli LRS utilizzando connessioni HTTP o HTTPS, che provvedono a salvarli. Nella loro forma più semplice si compongono di tre parti: 
+		\begin{itemize}
+			\item \textit{attore}: specifica chi ha compiuto una determinata azione;
+			\item \textit{verbo}: l'azione compiuta dall'attore;
+			\item \textit{oggetto}: l'oggetto a cui è rivolta l'azione.
+		\end{itemize}
+		Sfruttando tale specifica si vuole creare un'applicazione Android che permetta la fruizione di contenuti per l'e-learning sia quando il dispositivo è online che offline. Quando il dispositivo non ha una connessione internet attiva le esperienze di un utente dovrà essere salvata sul dispositivo in modo tale che quando sarà nuovamente disponibile una connessione sia possibile inviare tali statement ad un LRS. L'applicazione deve inoltre presentare la possibilità di specificare quali contenuti devono essere visualizzati.
+
+	\subsection{Struttura del documento}
+		In questa parte viene riportata la struttura del documento. Ad ogni sezione è associata una breve descrizione del contenuto.
+		\begin{enumerate}
+			\item Introduzione: introduzione allo scopo dello stage e ai contenuti presenti nel documento;
+			\item Progetto dello stage: descrizione degli obiettivi dello stage. Vengono descritti inoltre il piano di lavoro e le caratteristiche che il prodotto finale deve avere;
+			\item Tecnologie utilizzate: descrizione delle tecnologie utilizzate durante lo stage;
+			\item Progettazione: descrizione delle scelte progettuali fatte riguardanti l'applicazione;
+			\item Sviluppo: descrizione della fase di sviluppo dell'applicazione;
+			\item Verifica e validazione: descrizione della fase di testing dell'applicazione 
+		\end{enumerate}
+
+\end{document}
