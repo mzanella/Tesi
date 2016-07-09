@@ -2,9 +2,19 @@
 
 \begin{document}
 \section{Progetto dello stage}
+	\subsection{Motivazione}
+	La specifica xAPI ha aperto una nuova serie di possibilità per la fruizione di contenuti per l'e-learnig. Infatti non essendo più legati alla necessità di avere una connessione internet continua è possibile creare delle applicazioni per dispositivi mobile, che permettano il download di tali contenuti, cosicché un utente possa fruirne in qualsiasi momento. Inoltre le persone si stanno abituando sempre più all'utilizzo delle app, le quali riscontrano successo poichè riducono lo sforzo computazionale ed il tempo di accesso alle informazioni desiderate. Nel caso specifico un'applicazione può evitare ad un utente di dover aprire un browser, cercare su di un motore di ricerca la piattaforma LMS a cui collegarsi oppure scriverne l'URL, entrare nella piattaforma e, eventualmente, effettuare il login. Sfruttare la specifica xAPI inoltre può risultare conveniente anche per chi richiede contenuti per l'e-learning: infatti le piattaforme LMS solitamente sono a pagamento e grazie a xAPI non sono più strettamente necessarie ed è possibile sfruttare un qualsiasi spazio web per la pubblicazione dei contenuti, mentre per recuperare le esperienze degli utenti si utilizza un LRS, che non ha necessità particolari e ne sono disponibili diversi che sono open source (per esempio Learning Locker). Infine è utile anche a chi eroga corsi di e-learning, poichè è possibile fornire ai clienti un'ulteriore strumento per la fruizione dei contenuti.
+
+	\subsection{Descrizione del prodotto finale}
+	\app\ consiste appunto in un'applicazione per la fruizione e il tracciamento di contenuti xAPI sia online che offline. I contenuti che possono essere fruiti dall'applicazione sono specificati in un file Json che risiede in un server raggiungibile online. La locazione di tale file deve essere specificata in un file di configurazione dell'applicazione stessa. L'applicazione inoltre permette l'autenticazione e la registrazione alla stessa: ciò è fondamentale per poter associare ogni azione significativa che dev'essere registrata alla persona che l'ha eseguita. Ad ogni accesso, in caso di connessione internet attiva, l'applicazione controlla:
+	\begin{itemize}
+		\item se sono disponibili aggiornamenti ai contenuti disponibili: in tal caso viene aggiornato il database locale che tiene conto dei contenuti disponibili;
+		\item se sono state registrate nel LRS azioni di un certo utente di cui non è presente traccia in locale: in tal caso vengono aggiornati i dati relativi alle esperienze di un utente, anch'essi registrati nel database presente nel dispositivo.
+	\end{itemize} 
+	\app\ permette ad un utente autenticato di accedere ad un riepilogo delle attività riguardanti i contenuti di e-learning presentati nell'applicazione. 
 
 	\subsection{Obiettivi}
-		Gli obiettivi dello stage sono stati individuati assieme al tutor aziendale Germana Boghetto e al responsabile dell'area inforatica Marco Petrin. Sono stati suddivisi in:
+		Gli obiettivi dello stage sono stati individuati assieme al tutor aziendale Germana Boghetto e al responsabile dell'area informatica Marco Petrin. Sono stati suddivisi in:
 		\begin{itemize}
 			\item obiettivi obbligatori: requisiti minimi che devono essere soddisfatti dall'applicazione alla fine dello stage;
 			\item obiettivi opzionali.
