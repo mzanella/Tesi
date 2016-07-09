@@ -16,7 +16,46 @@
 			\begin{itemize}
 				\item essendoci un vasto numero di produttori di smartphone e tablet che non aggiornano la versione di Android che rilasciano all'interno dei loro dispositivi, Android risulta essere estremamente frammentato.
 			\end{itemize}
-			
+	
+	\subsection{Dagger 2}
+		È una libreria che permette la dependency injection in Android. Nel progetto è largamente utilizzato tale design pattern per diminuire il più possibile le dipendenze e ciò permette all'applicazione di essere facilmente sviluppata dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre di librerie come RoboGuice o Butterknife.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item non rallenta l'applicazione a runtime;
+				\item le risoluzioni delle dipendenze possono essere dichiarate come dei comuni metodi, sfruttando le appropriate annotazioni.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item non è sempre riconosciuto subito dagli IDE, che possono scambiare l'utilizzo di tale libreria per errori;
+				\item i campi che devono essere inizializzati tramite dependency injection non possono avere visibilità privata o protetta.
+			\end{itemize}
+
+	\subsection{Google AutoValue}
+		È una libreria che permetta la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che richiedono, nel loro costruttore, potrebbero richiedere molti parametri, evitando così il fenomeno del telescoping. 
+		\subsubsection{Vantaggi}
+			\begin{itemize}	
+				\item evita al programmatore la creazione di classi semplici ma ripetitive, diminuendo la possibilità di errori;
+				\item mette a disposizione il pattern Builder per la creazione di oggetti;
+				\item le classi vengono generate in fase di compilazione.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item le classi create non sono disponibili tra quelle visibili nel sorgente;
+				\item non è sempre riconosciuto subito dagli IDE, che possono scambiare l'utilizzo di tale libreria per errori.
+			\end{itemize}
+
+	\subsection{Gson}
+		È una libreria per la gestione di oggetti in formato Json in Android. Tale libreria è utilizzata sia per la lettura dei contenuti disponibili pubblicati sul server, sia per la trasformazione degli oggetti scambiati tra Java e JavaScript. È stata scelta tale libreria per la semplicità si utilizzo.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item molto intuitiva;
+				\item permette la trasformazione di oggetti Java in oggetti in formato Json e viceversa.
+			\end{itemize}	
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item più lenta di altre librerie che offrono le stesse funzionalità.
+			\end{itemize}
+
 	\subsection{Java}
 		Java è uno dei più famosi linguaggi di programmazione orientato agli oggetti supportato da una moltitudine di librerie e documentazione. Viene utilizzato per la scrittura e lo sviluppo dell'applicazione.
 		\subsubsection{Vantaggi}
@@ -66,6 +105,21 @@
 				\item qualche problema nel ridimensionamento delle immagini per inserirle nelle ImageView di Android.
 			\end{itemize}
 
+	\subsection{Realm}
+		Realm è una libreria che offre le funzionalità di utilizzo di un database con le operazioni CRUD e la trasformazione di oggetti del database in oggetti Java in modo automatico.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item semplicità di utilizzo;
+				\item accesso veloce ai dati;
+				\item thread-safe;
+				\item trasformazione automatica tra oggetti del database e oggetti Java.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item non è intuitivo il comportamento nel multithreading;
+				\item tutti gli oggetti che devono essere salvati nel database devono estendere una specifica classe.
+			\end{itemize}
+
 	\subsection{TinCanAndroid-Offline}
 		TinCanAndroid-Offline è una libreria utilizzata per la creazione, il salvataggio in locale e l'invio di statement in formato xAPI. È stata adottata poichè è l'unica libreria open-source che fornisce tale funzionalità e non sono state trovate alternative valide nemmeno tra le librerie non disponibili gratuitamente.
 		\subsubsection{Vantaggi}
@@ -83,58 +137,5 @@
 				\item non è disponibile un file JAR da includere in un progetto Android;
 				\item non sempre intuitiva nell'utilizzo.
 			\end{itemize}
-
-	\subsection{Google AutoValue}
-		È una libreria che permetta la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che richiedono, nel loro costruttore, potrebbero richiedere molti parametri, evitando così il fenomeno del telescoping. 
-		\subsubsection{Vantaggi}
-			\begin{itemize}	
-				\item evita al programmatore la creazione di classi semplici ma ripetitive, diminuendo la possibilità di errori;
-				\item mette a disposizione il pattern Builder per la creazione di oggetti;
-				\item le classi vengono generate in fase di compilazione.
-			\end{itemize}
-		\subsubsection{Svantaggi}
-			\begin{itemize}
-				\item le classi create non sono disponibili tra quelle visibili nel sorgente;
-				\item non è sempre riconosciuto subito dagli IDE, che possono scambiare l'utilizzo di tale libreria per errori.
-			\end{itemize}
-
-	\subsection{Gson}
-		È una libreria per la gestione di oggetti in formato Json in Android. Tale libreria è utilizzata sia per la lettura dei contenuti disponibili pubblicati sul server, sia per la trasformazione degli oggetti scambiati tra Java e JavaScript. È stata scelta tale libreria per la semplicità si utilizzo.
-		\subsubsection{Vantaggi}
-			\begin{itemize}
-				\item molto intuitiva;
-				\item permette la trasformazione di oggetti Java in oggetti in formato Json e viceversa.
-			\end{itemize}	
-		\subsubsection{Svantaggi}
-			\begin{itemize}
-				\item più lenta di altre librerie che offrono le stesse funzionalità.
-			\end{itemize}
-
-	\subsection{Dagger 2}
-		È una libreria che permette la dependency injection in Android. Nel progetto è largamente utilizzato tale design pattern per diminuire il più possibile le dipendenze e ciò permette all'applicazione di essere facilmente sviluppata dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre di librerie come RoboGuice o Butterknife.
-		\subsubsection{Vantaggi}
-			\begin{itemize}
-				\item non rallenta l'applicazione a runtime;
-				\item le risoluzioni delle dipendenze possono essere dichiarate come dei comuni metodi, sfruttando le appropriate annotazioni.
-			\end{itemize}
-		\subsubsection{Svantaggi}
-			\begin{itemize}
-				\item non è sempre riconosciuto subito dagli IDE, che possono scambiare l'utilizzo di tale libreria per errori;
-				\item i campi che devono essere inizializzati tramite dependency injection non possono avere visibilità privata o protetta.
-			\end{itemize}
-
-	\subsection{Realm}
-		Realm è una libreria che offre le funzionalità di utilizzo di un database con le operazioni CRUD e la trasformazione di oggetti del database in oggetti Java in modo automatico.
-		\subsubsection{Vantaggi}
-			\begin{itemize}
-				\item semplicità di utilizzo;
-				\item accesso veloce ai dati;
-				\item thread-safe;
-				\item trasformazione automatica tra oggetti del database e oggetti Java.
-			\end{itemize}
-		\subsubsection{Svantaggi}
-			\begin{itemize}
-				\item non è intuitivo il comportamento nel multithreading;
-				\item tutti gli oggetti che devono essere salvati nel database devono estendere una specifica classe.
-			\end{itemize}
+	
 \end{document}
