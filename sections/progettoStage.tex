@@ -3,10 +3,10 @@
 \begin{document}
 \section{Progetto dello stage}
 	\subsection{Motivazione}
-	La specifica xAPI ha aperto una nuova serie di possibilità per la fruizione di contenuti per l'e-learnig. Infatti non essendo più legati alla necessità di avere una connessione internet continua è possibile creare delle applicazioni per dispositivi mobile, che permettano il download di tali contenuti, cosicché un utente possa fruirne in qualsiasi momento. Inoltre le persone si stanno abituando sempre più all'utilizzo delle app, le quali riscontrano successo poichè riducono lo sforzo computazionale ed il tempo di accesso alle informazioni desiderate. Nel caso specifico un'applicazione può evitare ad un utente di dover aprire un browser, cercare su di un motore di ricerca la piattaforma LMS a cui collegarsi oppure scriverne l'URL, entrare nella piattaforma e, eventualmente, effettuare il login. Sfruttare la specifica xAPI inoltre può risultare conveniente anche per chi richiede contenuti per l'e-learning: infatti le piattaforme LMS solitamente sono a pagamento e grazie a xAPI non sono più strettamente necessarie ed è possibile sfruttare un qualsiasi spazio web per la pubblicazione dei contenuti, mentre per recuperare le esperienze degli utenti si utilizza un LRS, che non ha necessità particolari e ne sono disponibili diversi che sono open source (per esempio Learning Locker). Infine è utile anche a chi eroga corsi di e-learning, poichè è possibile fornire ai clienti un'ulteriore strumento per la fruizione dei contenuti.
+	La specifica xAPI ha aperto una nuova serie di possibilità per la fruizione di contenuti per l'e-learnig. Infatti non essendo più legati alla necessità di avere una connessione internet continua è possibile creare delle applicazioni per dispositivi mobile, che permettano il download di tali contenuti, cosicché un utente possa fruirne in qualsiasi momento. Inoltre le persone si stanno abituando sempre più all'utilizzo delle app, le quali riscontrano successo poichè riducono il tempo di accesso alle informazioni desiderate. Nel caso specifico un'applicazione può evitare ad un utente di dover aprire un browser, cercare su di un motore di ricerca la piattaforma LMS a cui collegarsi oppure scriverne l'URL, entrare nella piattaforma e, eventualmente, effettuare il login. Sfruttare la specifica xAPI inoltre può risultare conveniente anche per chi richiede contenuti per l'e-learning: infatti le piattaforme LMS solitamente sono a pagamento e grazie a xAPI non sono più strettamente necessarie ed è possibile sfruttare un qualsiasi spazio web per la pubblicazione dei contenuti, mentre per recuperare le esperienze degli utenti si utilizza un LRS, che non ha necessità particolari e ne sono disponibili diversi che sono open source (per esempio Learning Locker). Infine è utile anche a chi eroga corsi di e-learning, poichè è possibile fornire ai clienti un'ulteriore strumento per la fruizione dei contenuti.
 
 	\subsection{Descrizione del prodotto finale}
-	\app\ consiste appunto in un'applicazione per la fruizione e il tracciamento di contenuti xAPI sia online che offline. I contenuti che possono essere fruiti dall'applicazione sono specificati in un file Json che risiede in un server raggiungibile online. La locazione di tale file deve essere specificata in un file di configurazione dell'applicazione stessa. L'applicazione inoltre permette l'autenticazione e la registrazione alla stessa: ciò è fondamentale per poter associare ogni azione significativa che dev'essere registrata alla persona che l'ha eseguita. Ad ogni accesso, in caso di connessione internet attiva, l'applicazione controlla:
+	\app\ consiste appunto in un'applicazione per la fruizione e il tracciamento di contenuti xAPI sia online che offline. I contenuti che possono essere fruiti dall'applicazione sono specificati in un file JSON che risiede in un server raggiungibile online. La locazione di tale file deve essere specificata in un file di configurazione dell'applicazione stessa. L'applicazione inoltre permette l'autenticazione e la registrazione: ciò è fondamentale per poter associare ogni azione significativa che dev'essere tracciata alla persona che l'ha eseguita. Ad ogni accesso, in caso di connessione internet attiva, l'applicazione controlla:
 	\begin{itemize}
 		\item se sono disponibili aggiornamenti ai contenuti disponibili: in tal caso viene aggiornato il database locale che tiene conto dei contenuti disponibili;
 		\item se sono state registrate nel LRS azioni di un certo utente di cui non è presente traccia in locale: in tal caso vengono aggiornati i dati relativi alle esperienze di un utente, anch'essi registrati nel database presente nel dispositivo.
@@ -27,19 +27,19 @@
 				\midrule
 				\endhead
 				\arrayrulecolor{gray}
-				OB.1 & L’applicazione dovrà permettere la visualizzazione di oggetti didattici in formato SCORM \\
+				OB.1 & L’applicazione deve permettere la visualizzazione di oggetti didattici in formato xAPI \\
 				\midrule
-				OB.1.1 & L’applicazione dovrà permettere la fruizione degli oggetti didattici sia in modalità online che offline del dispositivo \\
+				OB.1.1 & L’applicazione deve permettere la fruizione degli oggetti didattici sia in modalità online che offline del dispositivo \\
 				\midrule
-				OB.2 & L’applicazione dovrà consentire l’interazione tra l’utente e l’oggetto didattico come da funzionalità implementate nell’oggetto didattico stesso \\
+				OB.2 & L’applicazione deve consentire l’interazione tra l’utente e l’oggetto didattico come da funzionalità implementate nell’oggetto didattico stesso \\
 				\midrule
-				OB.3 & L’applicazione dovrà tracciare i dati di fruizione dell’utente all’interno dell’oggetto didattico \\
+				OB.3 & L’applicazione deve tracciare i dati di fruizione dell’utente all’interno dell’oggetto didattico \\
 				\midrule
-				OB.3.1 & L’applicazione dovrà permettere di registrare i dati di più oggetti didattici differenti \\
+				OB.3.1 & L’applicazione deve permettere di registrare i dati di più oggetti didattici differenti \\
 				\midrule
-				OB.3.2 & L’applicazione dovrà permettere di estrarre, inviare e/o visualizzare i report di fruizione degli utenti sui vari oggetti didattici \\
+				OB.3.2 & L’applicazione deve permettere di estrarre, inviare e/o visualizzare i report di fruizione degli utenti sui vari oggetti didattici \\
 				\midrule
-				OB.4 & L’applicazione dovrà funzionare su dispositivi Android \\
+				OB.4 & L’applicazione deve funzionare su dispositivi Android \\
 				\arrayrulecolor{black}
 				\bottomrule
 			\end{longtabu}
@@ -51,15 +51,15 @@
 				\midrule
 				\endhead
 				\arrayrulecolor{gray}
-				OP.1 & L’applicazione potrà essere personalizzabile graficamente a seconda delle esigenze del cliente  \\
+				OP.1 & L’applicazione può essere personalizzabile graficamente a seconda delle esigenze del cliente  \\
 				\midrule
-				OP.1.1 & La personalizzazione grafica potrà comprendere la modifica dei colori, di un eventuale logo e dei font presenti all’interno dell’applicazione  \\
+				OP.1.1 & La personalizzazione grafica può comprendere la modifica dei colori, di un eventuale logo e dei font presenti all’interno dell’applicazione  \\
 				\midrule
-				OP.2 & L’applicazione potrà permettere la profilazione di diversi utenti  \\
+				OP.2 & L’applicazione può permettere la profilazione di diversi utenti  \\
 				\midrule
-				OP.2.1 & La profilazione potrà essere determinata da una piattaforma LMS che sta a monte dell’oggetto didattico  \\
+				OP.2.1 & La profilazione può essere determinata da una piattaforma che sta a monte dell’oggetto didattico  \\
 				\midrule
-				OP.2.2 & La profilazione con utenti diversi comporterà diversi report all’interno dell’applicazione \\
+				OP.2.2 & La profilazione con utenti diversi comporta diversi report all’interno dell’applicazione \\
 				\arrayrulecolor{black}
 				\bottomrule
 			\end{longtabu}

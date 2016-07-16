@@ -4,6 +4,16 @@
 
 \author{Marco Zanella}
 \date{2/7/2016}
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+
 \intestazioni{}
 
 \pagenumbering{gobble}
@@ -11,19 +21,19 @@
 \begin{document}
 
 \include{sections/copertina}
-\cleardoublepage
+\afterpage{\blankpage}
 \include{sections/sommario}
+\afterpage{\blankpage}
 
+	\pagestyle{myfront}
 
-	\newpage
-		\pagestyle{myfront}
-
-		\tableofcontents
-		%\listoftables
-		%\listoffigures
+	\tableofcontents
+	%\listoftables
+	%\listoffigures
 
 	\label{LastFrontPage}
 	\newpage
+
 
 	\pagestyle{mymain}
 

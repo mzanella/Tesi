@@ -18,7 +18,7 @@
 			\end{itemize}
 	
 	\subsection{Dagger 2}
-		È una libreria che permette la dependency injection in Android. Nel progetto è largamente utilizzato tale design pattern per diminuire il più possibile le dipendenze e ciò permette all'applicazione di essere facilmente sviluppata dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre di librerie come RoboGuice o Butterknife.
+		Dagger 2 è una libreria che permette la dependency injection in Android. Nel progetto è largamente utilizzato tale design pattern per diminuire il più possibile le dipendenze e ciò permette all'applicazione di essere facilmente sviluppata dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre di librerie come RoboGuice o Butterknife.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item non rallenta l'applicazione a runtime;
@@ -31,7 +31,7 @@
 			\end{itemize}
 
 	\subsection{Google AutoValue}
-		È una libreria che permetta la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che richiedono, nel loro costruttore, potrebbero richiedere molti parametri, evitando così il fenomeno del telescoping. 
+		Google AutoValue è una libreria che permetta la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}	
 				\item evita al programmatore la creazione di classi semplici ma ripetitive, diminuendo la possibilità di errori;
@@ -45,11 +45,11 @@
 			\end{itemize}
 
 	\subsection{Gson}
-		È una libreria per la gestione di oggetti in formato Json in Android. Tale libreria è utilizzata sia per la lettura dei contenuti disponibili pubblicati sul server, sia per la trasformazione degli oggetti scambiati tra Java e JavaScript. È stata scelta tale libreria per la semplicità si utilizzo.
+		Gson è una libreria per la gestione di oggetti in formato JSON in Android. Tale libreria è utilizzata sia per la lettura dei contenuti disponibili pubblicati sul server, sia per la trasformazione degli oggetti scambiati tra Java e JavaScript. È stata scelta tale libreria per la semplicità si utilizzo.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item molto intuitiva;
-				\item permette la trasformazione di oggetti Java in oggetti in formato Json e viceversa.
+				\item permette la trasformazione di oggetti Java in oggetti in formato JSON e viceversa.
 			\end{itemize}	
 		\subsubsection{Svantaggi}
 			\begin{itemize}
@@ -104,6 +104,7 @@
 			\begin{itemize}
 				\item qualche problema nel ridimensionamento delle immagini per inserirle nelle ImageView di Android.
 			\end{itemize}
+
 
 	\subsection{Realm}
 		Realm è una libreria che offre le funzionalità di utilizzo di un database con le operazioni CRUD e la trasformazione di oggetti del database in oggetti Java in modo automatico.
