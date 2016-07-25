@@ -29,4 +29,24 @@
 		\paragraph*{View}
 		La view si occupa della dell'interfaccia grafica dell'applicazione e di notificare al presenter le interazioni dell'utente, che ha il compito di elaborare. \\ Nell'applicativo è rappresentato dal package omonimo.
 	
+	\subsection{Persistenza dei dati}
+		\subsubsection{Il database locale}
+		L'applicazione si appoggia su di un database creato utilizzando la libreria Realm per il salvataggio dei dati relativi agli utenti, ai contenuti e alla loro fruizione in un database locale. In tale database vengono salvati i dati relativi ai contenuti xAPI che devono essere visualizzati la prima volta che l'applicazione viene avviata, mentre i dati relativi all'utente vengono salvati quando viene effettuato un login alla registrazione. I dati di fruizione, invece, all'interazione di un utente con un contenuto.
+			
+			\paragraph{Diagramma ER}
+
+			\begin{figure} [H]
+				\centering
+				\includegraphics[scale=0.9]{images/er/RealmDB}
+					\caption{Diagramma ER del database locale}
+			\end{figure}
+
+			\paragraph{Descrizione delle relazioni}
+			\subparagraph*{Content}
+			\subparagraph*{ContentVersion}
+			\subparagraph*{LrsData}
+			\subparagraph*{History}
+			\subparagraph*{UserData}
+
+			\paragraph{Descrizione delle associazioni}
 \end{document}
