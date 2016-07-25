@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, twoside]{article}
+\documentclass[a4paper, 12pt, twoside	 ]{article}
 
 \usepackage{tesi}
 \usepackage{afterpage}
@@ -17,8 +17,14 @@
     \null
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
-    \newpage}
+    \null\newpage}
 
+\makeatother
+
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
 
 \intestazioni{}
 
@@ -26,11 +32,13 @@
 
 \begin{document}
 
+       \let\stdsection\section
+    \renewcommand*\section{\cleardoublepage\stdsection}
+
 \include{sections/copertina}
 \afterpage{\blankpage}
 \include{sections/sommario}
 \afterpage{\blankpage}
-
 	\pagestyle{myfront}
 
 	\tableofcontents
@@ -38,11 +46,10 @@
 	\listoffigures
 
 	\label{LastFrontPage}
-	\newpage
+	\null\newpage
 
-
+	\cleardoublepage
 	\pagestyle{mymain}
-
 		\subfile{sections/introduzione}
 		\subfile{sections/progettoStage}
 		\subfile{sections/tecnologieUtilizzate}
@@ -54,3 +61,4 @@
 	\label{LastPage}
 
 \end{document}
+
