@@ -1,0 +1,231 @@
+\paragraph{Esempi di statement}
+    \subparagraph*{Statement di inizio di un contenuto\\\\}
+    \begin{lstlisting}
+{
+    "version": "1.0.0",
+    "actor": {
+        "objectType": "Agent",
+        "name": "Marco Zanella",
+        "mbox": "mailto:marco@email.com"
+    },
+    "verb": {
+        "id": "http://adlnet.gov/expapi/verbs/initialized",
+        "display": {
+            "en-US": "initialized"
+        }
+    },
+    "object": {
+        "objectType": "Activity",
+        "id": "http://Fondo%20Cassa%20e%20Spese%20Minute",
+        "definition": {
+            "description": {
+                "und": "Fondo Cassa e Spese Minute"
+            },
+            "type": "http://adlnet.gov/expapi/activities/module"
+        }
+    },
+    "context": {
+        "contextActivities": {
+            "parent": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://Fondo%20Cassa%20e%20Spese%20Minute"
+                }
+            ],
+            "grouping": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://Fondo%20Cassa%20e%20Spese%20Minute"
+                }
+            ]
+        }
+    },
+    "id": "cef4834e-6dc5-4c01-8979-e0222dc8a100",
+    "authority": {
+        "objectType": "Agent",
+        "name": "New Client",
+        "mbox": "mailto:hello@learninglocker.net"
+    },
+    "stored": "2016-07-23T18:30:06.791800+02:00",
+    "timestamp": "2016-07-23T18:30:06.791800+02:00"
+}
+    \end{lstlisting}
+
+	\subparagraph*{Statement di visualizzazione di una slide di un contentuto\\\\}
+	\begin{lstlisting}
+{
+    "version": "1.0.0",
+    "actor": {
+        "objectType": "Agent",
+        "name": "Marco Zanella",
+        "mbox": "mailto:marco@email.com"
+    },
+    "verb": {
+        "id": "http://adlnet.gov/expapi/verbs/experienced",
+        "display": {
+            "en-US": "experienced"
+        }
+    },
+    "object": {
+        "objectType": "Activity",
+        "id": "http://Fondo%20Cassa%20e%20Spese%20Minute/6KswNmNiPKX",
+        "definition": {
+            "name": {
+                "en-US": "Miroglio Fashion"
+            },
+            "description": {
+                "en-US": "Fondo Cassa e Spese Minute"
+            },
+            "type": "http://adlnet.gov/expapi/activities/module"
+        }
+    },
+    "context": {
+        "contextActivities": {
+            "parent": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://Fondo%20Cassa%20e%20Spese%20Minute"
+                }
+            ],
+            "grouping": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://Fondo%20Cassa%20e%20Spese%20Minute"
+                }
+            ]
+        }
+    },
+    "id": "5f393687-79ca-4f0b-bcd9-7014fa37a984",
+    "authority": {
+        "objectType": "Agent",
+        "name": "New Client",
+        "mbox": "mailto:hello@learninglocker.net"
+    },
+    "stored": "2016-07-23T18:30:07.820700+02:00",
+    "timestamp": "2016-07-23T18:30:07.820700+02:00"
+}
+	\end{lstlisting}
+    
+    \subparagraph*{Statement di risposta ad una domanda di un test\\\\}
+    \begin{lstlisting}
+{
+    "version": "1.0.0",
+    "actor": {
+        "objectType": "Agent",
+        "name": "Marco Zanella",
+        "mbox": "mailto:marco@email.com"
+    },
+    "verb": {
+        "id": "http://adlnet.gov/expapi/verbs/answered",
+        "display": {
+            "en-US": "answered"
+        }
+    },
+    "object": {
+        "objectType": "Activity",
+        "id": "http://6PdqP7rkRtE_course_id/618Dl3BgPcO",
+        "definition": {
+            "name": {
+                "en-US": "Questo \u00e8 un vero o falso %Variable1%"
+            },
+            "description": {
+                "en-US": "DEMO_TEST"
+            },
+            "type": "http://adlnet.gov/expapi/activities/module"
+        }
+    },
+    "result": {
+        "score": {
+            "scaled": 0.3333,
+            "raw": 10,
+            "max": 10
+        },
+        "success": true,
+        "response": "true"
+    },
+    "context": {
+        "contextActivities": {
+            "parent": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://6PdqP7rkRtE_course_id"
+                }
+            ],
+            "grouping": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://6PdqP7rkRtE_course_id"
+                }
+            ]
+        }
+    },
+    "id": "c7f63cf1-54a4-45d3-b5e2-06e5d2561860",
+    "authority": {
+        "objectType": "Agent",
+        "name": "New Client",
+        "mbox": "mailto:hello@learninglocker.net"
+    },
+    "stored": "2016-07-23T11:26:29.352200+02:00",
+    "timestamp": "2016-07-23T11:26:29.352200+02:00"
+}
+    \end{lstlisting}
+
+    \subparagraph*{Statement finale di un contenuto che comprende dei test\\\\}
+    \begin{lstlisting}
+{
+    "version": "1.0.0",
+    "actor": {
+        "objectType": "Agent",
+        "name": "Marco Zanella",
+        "mbox": "mailto:marco@email.com"
+    },
+    "verb": {
+        "id": "http://adlnet.gov/expapi/verbs/terminated",
+        "display": {
+            "en-US": "terminated"
+        }
+    },
+    "object": {
+        "objectType": "Activity",
+        "id": "http://6PdqP7rkRtE_course_id",
+        "definition": {
+            "description": {
+                "und": "DEMO TEST"
+            },
+            "type": "http://adlnet.gov/expapi/activities/module"
+        }
+    },
+    "result": {
+        "score": {
+            "scaled": 0.6666,
+            "raw": 20,
+            "max": 30
+        },
+        "success": false
+    },
+    "context": {
+        "contextActivities": {
+            "parent": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://6PdqP7rkRtE_course_id"
+                }
+            ],
+            "grouping": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://6PdqP7rkRtE_course_id"
+                }
+            ]
+        }
+    },
+    "id": "f687a812-587d-4159-bbd8-b53f44ed34ca",
+    "authority": {
+        "objectType": "Agent",
+        "name": "New Client",
+        "mbox": "mailto:hello@learninglocker.net"
+    },
+    "stored": "2016-07-23T11:26:38.193700+02:00",
+    "timestamp": "2016-07-23T11:26:38.193700+02:00"
+}
+    \end{lstlisting}

@@ -1,0 +1,356 @@
+\paragraph{Esempi di richieste al LRS}
+    \subparagraph*{Richiesta per ottenere l'ultimo timestamp di inizio per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/initialized"
+      }
+   },
+   {
+      "$sort":{
+         "statement.timestamp":-1
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "_timestamp":{
+            "$max":"$statement.timestamp"
+         }
+      }
+   },
+   {
+      "$project":{
+         "_id":"$_id",
+         "_timestamp":1
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere l'ultimo timestamp di inizio per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "_timestamp": "2016-07-19T22:05:53.049400+02:00"
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "_timestamp": "2016-07-21T14:11:25.970000+02:00"
+    },
+    {
+      "_id": "http://5nJwugn0dFZ_course_id",
+      "_timestamp": "2016-07-21T16:20:21.906800+02:00"
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere l'ultimo timestamp di fine per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/terminated"
+      }
+   },
+   {
+      "$sort":{
+         "statement.timestamp":-1
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "_timestamp":{
+            "$max":"$statement.timestamp"
+         },
+         "_result":{
+            "$first":"$statement.result"
+         }
+      }
+   },
+   {
+      "$project":{
+         "_id":"$_id",
+         "_timestamp":1,
+         "_result":1
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere l'ultimo timestamp di fine per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "_timestamp": "2016-07-19T22:07:30.904800+02:00",
+      "_result": {
+        "score": {
+          "scaled": 1,
+          "raw": 4,
+          "max": 4
+        },
+        "success": true
+      }
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "_timestamp": "2016-07-20T07:50:31.215900+02:00",
+      "_result": {
+        "score": {
+          "scaled": 0.6014,
+          "raw": 421,
+          "max": 700
+        },
+        "success": false
+      }
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere il numero di tentativi iniziati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/initialized"
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "count":{
+            "$sum":1
+         }
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi iniziati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://5nJwugn0dFZ_course_id",
+      "count": 18
+    },
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "count": 3
+    },
+    {
+      "_id": "http://6PdqP7rkRtE_course_id",
+      "count": 19
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere il numero di tentativi terminati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/terminated"
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "count":{
+            "$sum":1
+         }
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi fatti per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "count": 2
+    },
+    {
+      "_id": "http://6PdqP7rkRtE_course_id",
+      "count": 11
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "count": 7
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere il numero di tentativi superati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/terminated",
+         "statement.result.success":true
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "count":{
+            "$sum":1
+         }
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi superati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "count": 2
+    },
+    {
+      "_id": "http://6PdqP7rkRtE_course_id",
+      "count": 4
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "count": 2
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere il numero di tentativi non superati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/terminated",
+         "statement.result.success":false
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "count":{
+            "$sum":1
+         }
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi non superati per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6PdqP7rkRtE_course_id",
+      "count": 7
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "count": 5
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere il  miglior punteggio per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/terminated"
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "_bestScore":{
+            "$max":"$statement.result.score.scaled"
+         }
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere il  miglior punteggio per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "_bestScore": 1
+    },
+    {
+      "_id": "http://6PdqP7rkRtE_course_id",
+      "_bestScore": 1
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "_bestScore": 0.8585
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}
+
+    \subparagraph*{Richiesta per ottenere il peggior punteggio per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
+   {
+      "$match":{
+         "statement.actor.mbox":"mailto:marco@email.com",
+         "statement.verb.id":"http://adlnet.gov/expapi/verbs/terminated"
+      }
+   },
+   {
+      "$group":{
+         "_id":"$statement.object.id",
+         "_worstScore":{
+            "$min":"$statement.result.score.scaled"
+         }
+      }
+   }
+]
+    \end{lstlisting}
+    \subparagraph*{Risposta alla richiesta per ottenere il  peggior punteggio per ciascun contenuto per un utente\\\\}
+    \begin{lstlisting}
+{
+  "result": [
+    {
+      "_id": "http://6mBlxaNrSNf_course_id",
+      "_worstScore": 1
+    },
+    {
+      "_id": "http://6PdqP7rkRtE_course_id",
+      "_worstScore": 0.3333
+    },
+    {
+      "_id": "http://6bhYi83IsPS_course_id",
+      "_worstScore": 0.19
+    }
+  ],
+  "ok": 1
+}
+    \end{lstlisting}

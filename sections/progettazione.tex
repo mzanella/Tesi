@@ -117,10 +117,58 @@
 				Associazione che unisce ogni utente ai dati di fruizione di un certo contenuto.\\
 				\textbf{Molteplicità}:(1,N) ogni utente può essere associato a più History, ogni History può appartenere ad un unico utente.
 
+			\subsubsection{Specifica dei contenuti}
+			I contenuti che l'applicazione deve gestire e di cui deve permettere l'accesso agli utenti vengono, come già accennato, vengono specificati in un file JSON che l'applicazione scarica. Tale scelta, anche se non ottimale, è stata fatta in previsione della creazione di un database che comprenda tutti i contenuti xAPI fruibili dall'applicazione. Infatti è possibile sostituire, nel file di configurazione dell'applicazione, l'indirizzo di tale file con una richiesta ad un server, il quale si occuparà di fornire all'applicazione i contenuti da mostrare agli utenti in un formato similare a quello del file attuale. Una volta effettuato il download di tale file, i contenuti al suo interno vengono utilizzati per riempire il database locale, in modo tale da potervi associare i dati di fruizione degli utenti.
+
 			\subsubsection{Persistenza degli statement}
 			Gli statement creati dall'applicazione per registrare i dati di fruizione dei contenuti xAPI sono salvati temporaneamente all'interno di un database SQLite, completamente gestito dalla libreria TinCanAndroid-Offline. Quando l'applicazione registra che è disponibile una connessione internet si occupa di inviare tali statement ad un LRS. Anche l'invio è gestito dalla libreria TinCanAndroid-Offline, che provvede, nel caso in cui non vi siano errori, ad eliminare dal database locale tutti gli statement inviati. Ad ogni avvio l'applicativo ha il compito di interrogare LRS a cui sono stati inviati i dati di fruizione al fine di verificare se vi siano dati che non sono presenti in locale: se presenti il database locale viene aggiornato. Poichè LRS utilizzato è Learning Locker, il quale utilizza come DBMS MongoDB, le richieste per recuperare dati dal LRS saranno delle query MongoDB e i risultati di tali richieste saranno in formato JSON.
+				\paragraph{Struttura degli statement}
+				Gli statement accettati da un LRS sono oggetti JSON che devono seguire la sintassi definita dalla specifica xAPI. Tali oggetti hanno alcuni campi obbligatori, altri opzionali che specificano le proprietà dello statement. In particolare, in questo progetto, i campi definiscono le azioni di uno specifico utente rispetto ad un determinato contenuto. Alcuni campi degli statement possono essere sia specificati da chi invia i dati, sia dal LRS che li riceve, altri invece devono essere inseriti o da un componente o dall'altro. Di seguito sono spiegati i campi utilizzati dagli statement inviati dall'appliazione.
+					\subparagraph{ID}
+					Il campo \textit{ID} identifica uno statement in modo univoco all'interno di un LRS. Tale campo può essere specificato dal LRS, qualora non sia stato inserito da chi invia lo statement. Deve essere un UUID.
+
+					\subparagraph{actor}
+					Il campo \textit{actor} identifica la persona o l'oggetto a cui è associato un determinato statement. Negli statement utilizzati dall'applicativo è un oggetto composto a sua volta dai campi:
+					\begin{itemize}
+						\item \textbf{name}: stringa che rappresenta un nome associato alla persona o oggetto a cui è riferito lo statement;
+						\item \textbf{mbox}: stringa che rappresenta una email nella forma ``mailto:email address'' che serve per l'identificazione di un singolo utente; 
+						\item \textbf{objectType}: attributo che serve per specificare che gli statement sono riferiti a singole persone o sistemi. Per questo, in tutti gli statement inviati dall'applicazione, tale campo sarà fissato uguale a ``Agent''.
+					\end{itemize}
+					Per l'identificazione degli utenti si è scelto di utilizzare il campo \textit{mbox} per semplicità di gestione. Infatti la specifica xAPI permette, per identificare un utente, di associargli un generico URI oppure di specificare un oggetto \textit{account}.
+
+					\subparagraph{verb}
+					Il campo \textit{verb} identifica l'azione compiuta dal soggetto specificato nel campo \textit{actor}. Tale campo è un oggetto composto a sua volta dai campi:
+					\begin{itemize}
+						\item \textbf{id}: stringa che rappresenta un IRI che contiene il significato del verbo;
+						\item \textbf{display}: oggetto che permette di rappresentare il verbo in varie lingue.
+					\end{itemize}
+					I varbi utilizzati nell'applicazione e il loro \textit{id} fanno riferimento alla pagina \url{http://xapi.vocab.pub/datasets/adl/}, nella quale è presente una lista di verbi utilizzabili con gli statement xAPI.
+
+					\subparagraph{object}
+					Il campo \textit{object} specifica l'oggetto a cui è rivolto il verbo dichiarato nel campo \textit{verb}. Negli statement generati dall'applicazione questo campo è utilizzato per specificare o un contenuto o una slide specifica appartenente ad un contenuto. Tale campo è un oggetto composto a sua volta dai campi:
+					\begin{itemize}
+						\item \textbf{objectType}: stringa che rappresenta il tipo di oggetto. Deve essere sempre uguale a ``Activity se presente'';
+						\item \textbf{id}: stringa che rappresenta un identificativo del contenuto o della slide, formattata come IRI;
+						\item \textbf{definition}: serve per specificare nome e descrizione dell'oggetto in varie lingue, oltre a specifiacare di che tipo di oggetto si tratta.
+					\end{itemize}
+
+					\subparagraph{context}
+					Il campo \textit{context} è un campo non obbligatorio che serve per specificare delle informazioni contestuali allo statement a cui appartiene. Questo campo, negli statement generati dall'applicazione, è sempre presente e specifica sempre il contenuto a cui si riferisce uno statement.
+
+					\subparagraph{stored}
+					Il campo \textit{stored} è un campo che indica il timestamp di quando è stato salvato lo statement da parte del LRS.
+
+					\subparagraph{timestamp}
+					Il campo \textit{timestamp} è un campo che indica il timestamp di quando è stata ettettuata l'azione specificata dal campo \textit{verb} da parte di un utente.
+
+				\include{sections/esempiStatement}
+				\include{sections/esempiRichiesteLRS}
 
 			\subsubsection{Autenticazione e registrazione}
-			L'autenticazione e la registrazione all'applicazione avvengono mediante delle richieste HTTP a due URL specificati nel file di configurazione dell'applicativo. Tale scelta è stata fatta per permettere di cambiare agevolmente tali indirizzi senza dover modificare il codice. \\In fase di sviluppo sono stati creati anche due script PHP ed un database per gli utenti dell'applicazione. Tali script si occupano rispettivamente del login e della registrazione, interrogando il database degli utenti e restituendo il risultato della richiesta.
+			L'autenticazione e la registrazione all'applicazione avvengono mediante delle richieste HTTP a due URL specificati nel file di configurazione dell'applicativo. Tale scelta è stata fatta per permettere di cambiare agevolmente tali indirizzi, senza dover modificare il codice. \\In fase di sviluppo sono stati creati anche due script PHP ed un database per gli utenti dell'applicazione. Tali script, raggiungibili agli indirizzi specificati nel file di configurazione, si occupano rispettivamente del login e della registrazione, interrogando il database degli utenti e restituendo il risultato della richiesta.
+
+	\subsection{Comunicazione tra Javascript e Android}
+	Al fine di tracciare le attività degli utenti sui contenuti xAPI è stato necessario creare sia in JavaScript che in Android delle componenti che si occupassero direttamente della comunicazione tra questi linguaggi. La parte JavaScript ha il compito di recuperare le informazioni di interazione degli utenti con i contenuti e loro invio all'applicazione Android. Quest'ultima si occupa di creare gli statement dai dati che riceve e del loro invio al LRS. Le informazioni vengono recuperate da un'altra componente JavaScript, chiamata \textit{player}, che si occupa della riproduzione dei contenuti xAPI, nei dispositivi mobili. Tale componente contiene delle variabili relative allo stato del contenuto in riproduzione, come il numero della slide, un eventuale punteggio dell'utente o quando è stato iniziato il contenuto, e si occupa di reagire all'interazione dell'utente o di mostrare la sequenza delle slide in un determinato ordine. 
+	È stato creato quindi uno script che ascolta il cambiamenti della variabile del \textit{playe r} che si occupa delle slide visitate da un utente e, ad ogni variazione, raccoglie un insieme di dati e li invia all'applicazione Android. Quest'ultima si occupa di trasformare quanto ricvuto in statement. Tutto ciò è possibile riproducendo i contenuti xAPI in una \textit{WebView} a cui è aggiunta una \textit{JavavaScriptInterface}, la quale espone dei metodi che possono essere invocati dalla componente JavaScript che si occupa del recupero delle informazioni. I dati passati tra Android e JavaScript sono degli oggetti in formato JSON.
 
 \end{document}

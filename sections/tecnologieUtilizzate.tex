@@ -71,7 +71,7 @@
 			\end{itemize}
 
 	\subsection{JavaScript}
-		JavaScript è un un linguaggio di scripting orientato agli oggetti e agli eventi, comunemente utilizzato nella programmazione Web lato client per la creazione, in siti web e applicazioni web, di effetti dinamici interattivi tramite funzioni di script invocate da eventi innescati a loro volta in vari modi dall'utente sulla pagina web in uso. L'utilizzo di tale tecnologia si è rilevata necessaria per recuperare le informazioni di fruizione dei contenuti di un utente e mandarle all'applicazione Android. 
+		JavaScript è un un linguaggio di scripting orientato agli oggetti e agli eventi, comunemente utilizzato nella programmazione Web lato client per la creazione, in siti web e applicazioni web, di effetti dinamici interattivi tramite funzioni di script invocate da eventi innescati a loro volta in vari modi dall'utente sulla pagina web in uso. L'utilizzo di tale tecnologia si è rilevata necessaria per recuperare le informazioni di fruizione dei contenuti di un utente ed inviarle all'applicazione Android. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item permette l'interazione con pagine web e con i contenuti xAPI;
@@ -82,8 +82,23 @@
 				\item problemi di sicurezza, soprattutto in ambiente Android.
 			\end{itemize}
 
+	\subsection{MongoDB}
+	MongoDB è un DBMS non relazionale, orientato ai documenti. Viene classificato come un database
+	di tipo NoSQL, in quanto si allontana dalla struttura basata su tabelle dei database relazionali, in favore di documenti in stile JSON con schema dinamico. Ciò rende l’integrazione di dati di alcuni tipi di applicazioni più facile e veloce. Tale tecnologia è stata affrontata poichè l'applicazione comunica con un LRS che sfrutta come DBMS MongoDB, ovvero Learning Locker. Per questo è stato necessario lo studio di tale tecnologia per effettuare delle query utilizzando l'\textit{Aggregation framework}. 
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item tipi di dato flessibili;
+				\item migliori performance in lettura/scrittura rispetto ad un database relazionale;
+				\item scalabilità.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item non ci sono controlli sull'integrità dei dati;
+				\item non supporta le transazioni.
+			\end{itemize}
+
 	\subsection{MPandroidChart}
-		MPAndroidChart è una libreria per la creazione di grafici in Android. Essa viene usata per la creazione di grafici a torta nell'applicazione, ma ne supporta molti altri. Tale libreria fornisce anche delle funzioni di ridimensionamento, trascinamento, selezione e di animazione. Tale scelta è stata fatta principalmente per le poche alternative disponibili.
+		MPAndroidChart è una libreria per la creazione di grafici in Android. Essa viene usata per la creazione di grafici riassuntivi delle attività di un utente. Tale libreria fornisce anche delle funzioni di ridimensionamento, trascinamento, selezione e di animazione. È stata scelta questa libreria principalmente per le poche alternative disponibili.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item creazione semplice di grafici;
@@ -107,7 +122,7 @@
 
 
 	\subsection{Realm}
-		Realm è una libreria che offre le funzionalità di utilizzo di un database con le operazioni CRUD e la trasformazione di oggetti del database in oggetti Java in modo automatico.
+		Realm è una libreria che offre le funzionalità di utilizzo di un database con le operazioni CRUD e la trasformazione di oggetti del database in oggetti Java in modo automatico. Nell'applicazione è utilizzata per la creazione e la gestione del database locale.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item semplicità di utilizzo;
