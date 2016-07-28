@@ -3,6 +3,8 @@
 \usepackage{tesi}
 \usepackage{afterpage}
 \usepackage{listings}
+\usepackage[toc,section=section]{glossaries}
+
 \include{listingsSetting}
 
 \author{Marco Zanella}
@@ -32,7 +34,11 @@
 
 \pagenumbering{gobble}
 
+\include{glos}
+\makeglossaries
+
 \begin{document}
+
 
        \let\stdsection\section
     \renewcommand*\section{\cleardoublepage\stdsection}
@@ -59,7 +65,12 @@
 		\subfile{sections/package}
 		\subfile{sections/class}
 		%\subfile{sections/sviluppo}
-		%\subfile{sections/verifica}
+		\subfile{sections/verifica}
+		\subfile{sections/conclusioni}
+
+		\newpage
+		\printglossary[nonumberlist]
+		\glsaddall	
 
 	\label{LastPage}
 

@@ -8,7 +8,6 @@
 			\centering
 			\includegraphics[scale=0.6]{images/mvp}
 				\caption{Rappresentazione pattern MVP}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 
 		L'architettura dell'applicazione segue il pattern architetturale Model-View-Presenter, utilizzato insieme alla dependency injection. Tale scelte, unite ad un uso diffuso di interfacce permettono di ridurre il grado di accoppiamento tra le parti che l'applicazione in modo tale da aumentarne il più possibile l'estensibilità.
@@ -34,12 +33,12 @@
 		L'applicazione si appoggia su di un database creato utilizzando la libreria Realm per il salvataggio dei dati relativi agli utenti, ai contenuti e alla loro fruizione in un database locale. In tale database vengono salvati i dati relativi ai contenuti xAPI che devono essere visualizzati la prima volta che l'applicazione viene avviata, mentre i dati relativi all'utente vengono salvati quando viene effettuato un login alla registrazione. I dati di fruizione, invece, all'interazione di un utente con un contenuto.
 			
 			\paragraph{Diagramma ER}
-
-			\begin{figure} [H]
-				\centering
-				\includegraphics[scale=0.9]{images/er/RealmDB}
-					\caption{Diagramma ER del database locale}
-			\end{figure}
+			\hfill \break
+				\begin{figure} [H]
+					\centering
+					\includegraphics[scale=0.9]{images/er/RealmDB}
+						\caption{Diagramma ER del database locale}
+				\end{figure}
 
 			\paragraph{Descrizione delle relazioni}
 			\subparagraph*{Content}
@@ -169,6 +168,6 @@
 
 	\subsection{Comunicazione tra Javascript e Android}
 	Al fine di tracciare le attività degli utenti sui contenuti xAPI è stato necessario creare sia in JavaScript che in Android delle componenti che si occupassero direttamente della comunicazione tra questi linguaggi. La parte JavaScript ha il compito di recuperare le informazioni di interazione degli utenti con i contenuti e loro invio all'applicazione Android. Quest'ultima si occupa di creare gli statement dai dati che riceve e del loro invio al LRS. Le informazioni vengono recuperate da un'altra componente JavaScript, chiamata \textit{player}, che si occupa della riproduzione dei contenuti xAPI, nei dispositivi mobili. Tale componente contiene delle variabili relative allo stato del contenuto in riproduzione, come il numero della slide, un eventuale punteggio dell'utente o quando è stato iniziato il contenuto, e si occupa di reagire all'interazione dell'utente o di mostrare la sequenza delle slide in un determinato ordine. 
-	È stato creato quindi uno script che ascolta il cambiamenti della variabile del \textit{playe r} che si occupa delle slide visitate da un utente e, ad ogni variazione, raccoglie un insieme di dati e li invia all'applicazione Android. Quest'ultima si occupa di trasformare quanto ricvuto in statement. Tutto ciò è possibile riproducendo i contenuti xAPI in una \textit{WebView} a cui è aggiunta una \textit{JavavaScriptInterface}, la quale espone dei metodi che possono essere invocati dalla componente JavaScript che si occupa del recupero delle informazioni. I dati passati tra Android e JavaScript sono degli oggetti in formato JSON.
+	È stato creato quindi uno script che ascolta il cambiamenti della variabile del \textit{player} che si occupa delle slide visitate da un utente e, ad ogni variazione, raccoglie un insieme di dati e li invia all'applicazione Android. Quest'ultima si occupa di trasformare quanto ricvuto in statement. Tutto ciò è possibile riproducendo i contenuti xAPI in una \textit{WebView} a cui è aggiunta una \textit{JavaScriptInterface}, la quale espone dei metodi che possono essere invocati dalla componente JavaScript che si occupa del recupero delle informazioni. I dati passati tra Android e JavaScript sono degli oggetti in formato JSON.
 
 \end{document}

@@ -1,0 +1,29 @@
+\documentclass[../Tesi.tex]{subfiles}
+
+
+\begin{document}
+\section{Conclusioni}
+	\subsection{Obiettivi raggiunti}
+	In base agli obiettivi prefissati dello stage, definiti nella sezione Obiettivi, si possono trarre le seguenti conclusioni:
+	\begin{itemize}
+		\item gli obiettivi obbligatori, previsti dal piano di lavoro, sono stati tutti soddisfatti;
+		\item gli obiettivi opzionali sono stati parzialmente soddisfatti.
+	\end{itemize}
+	In particolare è parzialmente soddisfatto il requisito OP1.1: l'applicazione non prevede infatti la possibilità di cambiare i font utilizzati. Tale funzionalità non è stata implementata per mancanza di tempo e perchè è stata data priorità ad altri requisiti che potessero dare un maggior valore aggiunto.
+
+	\subsection{Considerazioni sul prodotto finale}
+	Il prodotto finale, pur rispondendo alla maggior parte degli obbiettivi, presenta alcune problematiche. Dovuto alla mia scarsa esperienza come progettista, troviamo due possibili problematiche nell'architettura dell'applicazione: la prima è la non perfetta adesione al design pattern architetturale MVP. Infatti è possibile che alcune parti della view facciano parte del laavoro del presenter. L'altra problematica riguarda il non aver fissato delle metriche di qualità del software: ciò ha permesso alla classe DatabaseAccess di avere un numero piuttosto cospicuo di metodi e quindi di statement, anche se si tratta di un caso isolato. Altre problematiche potrebbero riguardare l'usabilità dell'applicazione, che potrebbe essere non ottimale. Infine l'applicazione andrebbe testata ulteriormete.
+
+	\subsection{Sviluppi futuri}
+	Alla fine dello stage rimangono delle prospettive di miglioramento del prodotto realizzato:
+	\begin{itemize}
+		\item \textbf{Sviluppo di un applicazione iOS e/o Windows Phone per ampliare il bacino di utenza}: al momento il servizio è disponibile solamente per dispositivi mobile con sistema operativo Android. Sarebbe meglio sviluppare apoplicazioni anche per gli altri sistemi operativi per dispositivi mobili per poter ricoprire una fascia di mercato più ampia;
+		\item \textbf{Miglioramento del tracciamento delle attività di un utente}: in questo momento l'applicazione traccia solamente le azioni di inizio e fine di un corso e i dati di fruizione delle singole slide. Potrebbe essere interessante ampliare tale funzionalità, permettendo di inviare al LRS statement che comprendono quando un utente si è loggato, quando un utente si è registrato oppure altre azioni eseguite sull'applicazione;
+		\item \textbf{Aggiungere la possibilità di registrarsi utilizzando i social}: questa funzionalità, anche se non vitale, potrebbe velocizzare la fase di registrazione/autenticazione, dando la possibilità agli utenti, in versioni successive, di condividere i risultati ottenuti nei vari corsi;
+		\item \textbf{Miglioramento del backend}: l'applicazione si appoggia su di un LRS per l'invio degli statement, ma le componenti che si occupano dell'autenticazione, registrazione e il recupero dei dati dei contenuti da visualizzare non sono state sufficientemente sviluppate. Sarebbe utile inoltre creare un'applicativo che, appogiandosi al LRS, permetta di accedere ai dati di tutti gli utenti, per avere informazioni globali sulla fruizione dei corsi.
+	\end{itemize}
+
+	\subsection{Considerazioni finali e conoscenze acquisite}
+	Dal punto di vista formativo l'attività di stage è stata piuttosto positiva. Ho pututo infatti approfondire la conoscenza di varie tecnologie, in particolare riguardanti il framework Android. Oltre a ciò lo stage è stato utile poichè mi ha dato l'opportunità di accrescere la mia autonomia e la capacità di farmi carico di responsabilità. Infatti il progetto è stato portato avanti solamente da me, e, in più di un occasione, ho avuto delle problematiche, soprattutto in fase di progettazione e sviluppo, per le quali ho dovuto spendere diversi giorni per superarle. Inoltre, essendo tra le mie prime esperienze lavorative, è stato importante confrontarmi con il mondo del lavoro e mi ha permesso di capire cosa vuol dire lavorare all'interno di un azienda. D'altro canto, questo progetto non mi ha permesso di accrescere le mie capacità di lavorare in un team, come non mi ha dato l'opportunità di lavorare assieme a persone con una maggiore esperienza, che avrebbero potuto darmi degli insegnamenti importanti.\\
+	In ogni caso, le conoscenze apprese in questi tre anni di università mi hanno permesso sia di assimilare nuove tecnologie con facilità, sia di affrontare nuovi problemi con rigore metodologico e con la flessibilità necessaria per la ricerca di una loro soluzione. 
+\end{document}

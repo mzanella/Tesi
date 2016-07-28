@@ -10,7 +10,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/model}
 				\caption{Package model}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{model} racchiude tutte le componenti che si occupano della rappresentazione dei dati trattati dall'applicazione, della loro memorizzazione e recupero. \\
 		I package contenuti al suo interno sono:
@@ -27,7 +26,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.5]{images/package_diagrams/dao}
 				\caption{Package dao}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{dao} contiene al suo interno tutte le componenti che si occupano della rappresentazione dei dati che vengono salvati nel database interno al dispositivo. Tutte le classi al suo interno corrispondono alle tabelle del database, ad eccezione delle classi \mclass{SingleContentRawData} e \mclass{ContentsData} che sono classi utili al recupero delle informazioni necessarie per la creazione di oggetti di tipo \mclass{Content} e della classe \mclass{RealmAppModule}. Tali classi estendono tutte \mclass{RealmObject} poiché, in questo modo, possono essere salvate direttamente all'interno del database locale utilizzando la libreria Realm. \\
 		Le classi che appartengono a tale package sono:
@@ -47,7 +45,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.5]{images/package_diagrams/data_access}
 				\caption{Package data\_access}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{data\_access} contiene al suo interno tutte le componenti che si occupano dell'accesso e alla modifica dei dati salvati nel database interno al dispositivo. \\
 		Le interfacce che appartengono a tale package sono:
@@ -68,7 +65,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/listener}
 				\caption{Package listener}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{listener} contiene al suo interno tutte le interfacce che devono essere implementate dalle classi che vogliono essere registrate come listener. \\
 		Le interfacce che appartengono a tale package sono:
@@ -83,7 +79,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/result}
 				\caption{Package result}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{result} contiene al suo interno tutte le classi che si occupano della trasformazione di oggetti in formato JSON, i quali rappresentano i dati delle interazioni di un utente con un certo contenuto xAPI che devono essere registrati, in un oggetto Java. \\
 		Le classi che appartengono a tale package sono:
@@ -102,7 +97,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/lrs_access}
 				\caption{Package lrs\_access}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{lrs\_access} contiene al suo interno tutte le componenti che si occupano di effettuare delle richieste ad un LRS al fine di recuperare informazioni riguardanti un determinato utente. \\
 		Le interfacce che appartengono a tale package sono:
@@ -121,7 +115,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/statement_object}
 				\caption{Package statement\_object}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{statement\_object} contiene al suo interno tutte le componenti che servono per la rappresentazione di statement xAPI che devono essere inviati ad un LRS.\\
 		Le interfacce che appartengono a tale package sono:
@@ -141,7 +134,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.4]{images/package_diagrams/presenter}
 				\caption{Package presenter}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{presenter} della comunicazione tra i package \mpackage{model} e \mpackage{view}. \\
 		I package contenuti al suo interno sono:
@@ -171,7 +163,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/javascript_communication}
 				\caption{Package javascript\_communication}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{javascript\_communication} ha il compito di dialogare con gli script JavaScript che si occupano della gestione dei contenuti xAPI. \\
 		Le interfacce che appartengono a tale package sono:
@@ -190,7 +181,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/manager}
 				\caption{Package manager}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{manager} si occupa di effettuare delle connessioni a server per il download o per l'autenticazione e la registrazione in background e di aggiornare view e model al termine. \\
 		Le interfacce che appartengono a tale package sono:
@@ -212,7 +202,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/receiver}
 				\caption{Package receiver}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{receiver} si occupa di monitorare lo stato del database offerto dalla libreria TinCanAndroid-Offline e lo stato della connessione internet del dispositivo. \\
 		Le interfacce che appartengono a tale package sono:
@@ -231,7 +220,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.3]{images/package_diagrams/view}
 				\caption{Package view}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{view} dell'interfaccia grafica dell'applicazione. \\
 		Le classi che appartengono a tale package sono:
@@ -256,7 +244,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/dependency_injection}
 				\caption{Package dependency\_injection}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{dependency\_injection} è il package nel quale vengono dichiarate quali classi necessitano dell'``iniezione'' di qualche campo e il modo di risolvere tali dipendenze. \\
 		I package contenuti al suo interno sono:
@@ -270,7 +257,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/component}
 				\caption{Package component}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{component} è il package nel quale vengono dichiarate quali classi necessitano dell'``iniezione'' di qualche campo. \\
 		Le interfacce che appartengono a tale package sono:
@@ -283,7 +269,6 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\centering
 			\includegraphics[scale=0.6]{images/package_diagrams/module}
 				\caption{Package module}
-			\label{fig:StrutturaMVP}
 		\end{figure}
 		Il package \mpackage{module} è il package nel quale viene dichiarato come risolvere le dipendenze delle classi dichiarate nel package \mpackage{component}. \\
 		Le classi che appartengono a tale package sono:
