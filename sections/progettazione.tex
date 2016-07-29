@@ -160,9 +160,6 @@
 					\subparagraph{timestamp}
 					Il campo \textit{timestamp} è un campo che indica il timestamp di quando è stata effettuata l'azione specificata dal campo \textit{verb} da parte di un utente.
 
-				\include{sections/esempiStatement}
-				\include{sections/esempiRichiesteLRS}
-
 			\subsubsection{Autenticazione e registrazione}
 			L'autenticazione e la registrazione all'applicazione avvengono mediante delle richieste HTTP a due URL specificati nel file di configurazione dell'applicativo. Tale scelta è stata fatta per permettere di cambiare agevolmente tali indirizzi, senza dover modificare il codice. \\In fase di sviluppo sono stati creati anche due script PHP ed un database per gli utenti dell'applicazione. Tali script, raggiungibili agli indirizzi specificati nel file di configurazione, si occupano rispettivamente del login e della registrazione, interrogando il database degli utenti e restituendo il risultato della richiesta.
 

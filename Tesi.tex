@@ -4,6 +4,7 @@
 \usepackage{afterpage}
 \usepackage{listings}
 \usepackage[toc,section=section]{glossaries}
+\usepackage[titletoc, title]{appendix}
 
 \include{listingsSetting}
 
@@ -68,6 +69,12 @@
 		\subfile{sections/verifica}
 		\subfile{sections/conclusioni}
 
+		\newpage
+		\begin{appendices}
+			\include{sections/esempiStatement}
+			\include{sections/esempiRichiesteLRS}
+		\end{appendices}
+		
 		\newpage
 		\printglossary[nonumberlist]
 		\glsaddall	

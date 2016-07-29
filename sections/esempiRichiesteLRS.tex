@@ -1,7 +1,7 @@
-\paragraph{Esempi di richieste al LRS}
-    \subparagraph*{Richiesta per ottenere l'ultimo timestamp di inizio per ciascun contenuto per un utente}
-    \hfill \break
-    \begin{lstlisting}
+\section{Esempi di richieste all'LRS} \label{App:AppendixB}
+    \subsection{Richiesta per ottenere l'ultimo timestamp di inizio per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere l'ultimo timestamp di inizio per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica l'ultimo contenuto iniziato nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -29,9 +29,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere l'ultimo timestamp di inizio per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -49,10 +50,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere l'ultimo timestamp di fine per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere l'ultimo timestamp di fine per ciascun contenuto per un utente}\hfill \break
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere l'ultimo timestamp di fine per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica l'ultimo contenuto terminato nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -84,9 +86,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere l'ultimo timestamp di fine per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -116,10 +119,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere il numero di tentativi iniziati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere il numero di tentativi iniziati per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere il numero di tentativi iniziati per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica il numero di tentativi iniziati per ciascun contenuto nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -136,9 +140,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi iniziati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -156,10 +161,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere il numero di tentativi terminati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere il numero di tentativi terminati per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere il numero di tentativi terminati per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica il numero di tentativi terminati per ciascun contenuto nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -176,9 +182,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi fatti per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -196,10 +203,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere il numero di tentativi superati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere il numero di tentativi superati per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere il numero di tentativi superati per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica il numero di tentativi superati per ciascun contenuto nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -217,9 +225,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi superati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -237,10 +246,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere il numero di tentativi non superati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere il numero di tentativi non superati per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere il numero di tentativi non superati per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica il numero di tentativi non superati per ciascun contenuto nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -258,9 +268,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere il numero di tentativi non superati per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -274,10 +285,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere il  miglior punteggio per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere il  miglior punteggio per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere il miglior punteggio per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica il miglior punteggio ottenuto nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -294,9 +306,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere il  miglior punteggio per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -314,10 +327,11 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
 
-    \subparagraph*{Richiesta per ottenere il peggior punteggio per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+    \subsection{Richiesta per ottenere il peggior punteggio per ciascun contenuto per un utente}
+    Di seguito troviamo l'esempio di una richiesta all'LRS per ottenere il peggior punteggio per ciascun contenuto, per un utente specifico. Tale richiesta è utilizzata dall'applicazione per tenere aggiornato il campo che indica il peggior punteggio ottenuto nella sezione che mostra il report dei dati di fruizione di un utente.
+\begin{lstlisting}
 http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
    {
       "$match":{
@@ -334,9 +348,10 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
       }
    }
 ]
-    \end{lstlisting}
-    \subparagraph*{Risposta alla richiesta per ottenere il  peggior punteggio per ciascun contenuto per un utente}\hfill \break
-    \begin{lstlisting}
+\end{lstlisting}
+    
+    Di seguito troviamo l'esempio di una risposta la risposta dell'LRS.
+\begin{lstlisting}
 {
   "result": [
     {
@@ -354,4 +369,4 @@ http://lrs.modonetwork.com/public/api/v1/statements/aggregate?pipeline=[
   ],
   "ok": 1
 }
-    \end{lstlisting}
+\end{lstlisting}
