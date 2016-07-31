@@ -43,7 +43,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 	\subsection{Package model::data\_access}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.5]{images/package_diagrams/data_access}
+			\includegraphics[scale=0.4]{images/package_diagrams/data_access}
 				\caption{Package data\_access}
 		\end{figure}
 		Il package \mpackage{data\_access} contiene al suo interno tutte le componenti che si occupano dell'accesso e alla modifica dei dati salvati nel database interno al dispositivo. \\
@@ -55,7 +55,9 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		\end{itemize}
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
+			\item \mclass{ContentStatus};
 			\item \mclass{DatabaseAccess};
+			\item \mclass{DatabaseAccess.RetrieveCourseId};
 			\item \mclass{StatementSenderImp};
 			\item \mclass{UserDataAccessImp}.
 		\end{itemize}
@@ -161,7 +163,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 	\subsection{Package presenter::javascript\_communication}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.6]{images/package_diagrams/javascript_communication}
+			\includegraphics[scale=0.5]{images/package_diagrams/javascript_communication}
 				\caption{Package javascript\_communication}
 		\end{figure}
 		Il package \mpackage{javascript\_communication} ha il compito di dialogare con gli script JavaScript che si occupano della gestione dei contenuti xAPI. \\
@@ -179,7 +181,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 	\subsection{Package presenter::manager}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.6]{images/package_diagrams/manager}
+			\includegraphics[scale=0.4]{images/package_diagrams/manager}
 				\caption{Package manager}
 		\end{figure}
 		Il package \mpackage{manager} si occupa di effettuare delle connessioni a server per il download o per l'autenticazione e la registrazione in background e di aggiornare view e model al termine. \\
@@ -191,6 +193,9 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{DownloaderManagerImp};
+			\item \mclass{DownloaderManagerImp.ContentSyncAsyncTask};
+			\item \mclass{DownloaderManagerImp.DownloadContent};
+			\item \mclass{DownloaderManagerImp.VersionCheckerAsyncTask};
 			\item \mclass{LoginManagerImp};
 			\item \mclass{LoginResult};
 			\item \mclass{LrsSyncHandler};
@@ -218,7 +223,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 	\subsection{Package view}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.3]{images/package_diagrams/view}
+			\includegraphics[scale=0.4]{images/package_diagrams/view}
 				\caption{Package view}
 		\end{figure}
 		Il package \mpackage{view} dell'interfaccia grafica dell'applicazione. \\
