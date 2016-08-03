@@ -10,7 +10,7 @@
 				\caption{Rappresentazione pattern MVP}
 		\end{figure}
 
-		L'architettura dell'applicazione segue il pattern architetturale Model-View-Presenter, utilizzato insieme alla dependency injection. Tale scelte, unite ad un uso diffuso di interfacce permettono di ridurre il grado di accoppiamento tra le parti che l'applicazione in modo tale da aumentarne il più possibile l'estensibilità.
+		L'architettura dell'applicazione segue il pattern architetturale Model-View-Presenter, utilizzato insieme alla dependency injection. Tale scelte, unite ad un utilizzo diffuso delle interfacce, permettono la riduzione del grado di accoppiamento tra le parti del prodotto, in modo tale da aumentarne il più possibile l'estensibilità.
 
 		\paragraph*{Model}
 		Il model rappresenta i dati che vengono trattati all'interno dell'applicazione. Le classe appartenenti al model rappresentano:
@@ -30,13 +30,18 @@
 	
 	\subsection{Persistenza dei dati}
 		\subsubsection{Il database locale}
-		L'applicazione si appoggia su di un database creato utilizzando la libreria Realm per il salvataggio dei dati relativi agli utenti, ai contenuti e alla loro fruizione in un database locale. In tale database, vengono salvati i dati relativi ai contenuti xAPI, che devono essere visualizzati, la prima volta che l'applicazione viene avviata, mentre i dati relativi all'utente vengono salvati quando viene effettuato un login o la registrazione. I dati di fruizione, invece, vengono registrati ad ogni interazione di un utente con una slide di un corso.
+		L'applicazione si appoggia su di un database creato utilizzando la libreria Realm per il salvataggio dei dati relativi agli utenti, ai contenuti e alla loro fruizione in un database locale. In tale database vengono salvati:
+		\begin{itemize}
+			\item i dati relativi ai contenuti xAPI che devono essere visualizzati, al primo avvio dell'applicazione;
+			\item i dati relativi all'utente, quando effettua l'autenticazione o la registrazione;
+			\item i dati di fruizione di un utente, ad ogni interazione con la slide di un corso.
+		\end{itemize}
 			
-			\paragraph{Diagramma ER}
+			\paragraph{Diagramma ER}	
 			\hfill \break
 				\begin{figure} [H]
 					\centering
-					\includegraphics[scale=0.9]{images/er/RealmDB}
+					\includegraphics[scale=0.4]{images/er/RealmDB}
 						\caption{Diagramma ER del database locale}
 				\end{figure}
 
@@ -48,7 +53,7 @@
 				\item \textbf{title}: stringa, rappresenta un titolo associato al contenuto;
 				\item \textbf{remotePath}: stringa, rappresenta l'URL a cui è possibile recuperare il contenuto;
 				\item \textbf{localPath}: stringa, rappresenta il percorso locale al dispositivo a cui è possibile recuperare il contenuto, se questo è disponibile offline;
-				\item \textbf{offline}: boolean, indica se il contenuto è disponibile per la riproduzione offine oppure no;
+				\item \textbf{offline}: boolean, indica se il contenuto è disponibile per la riproduzione offline oppure no;
 				\item \textbf{courseId}: stringa, rappresenta l'identificativo utilizzato dal LRS per distinguere un contenuto;
 				\item \textbf{lrsDataId}: intero, chiave esterna verso la relazione LrsData.
 			\end{itemize}
@@ -117,7 +122,7 @@
 				\textbf{Molteplicità}:(1,N) ogni utente può essere associato a più History, ogni History può appartenere ad un unico utente.
 
 			\subsubsection{Specifica dei contenuti}
-			I contenuti che l'applicazione deve gestire e di cui deve permettere l'accesso agli utenti vengono, come già accennato, vengono specificati in un file JSON che l'applicazione scarica. Tale scelta, anche se non ottimale, è stata fatta in previsione della creazione di un database che comprenda tutti i contenuti xAPI fruibili dall'applicazione. Infatti è possibile sostituire, nel file di configurazione dell'applicazione, l'indirizzo di tale file con una richiesta ad un server, il quale si occuperà di fornire all'applicazione i contenuti da mostrare agli utenti in un formato similare a quello del file attuale. Una volta effettuato il download di tale file, i contenuti al suo interno vengono utilizzati per riempire il database locale, in modo tale da potervi associare i dati di fruizione degli utenti.
+			I contenuti che l'applicazione deve gestire e di cui deve permettere l'accesso agli utenti vengono, come già accennato, specificati in un file JSON che l'applicazione scarica. Tale scelta, anche se non ottimale, è stata fatta in previsione della creazione di un database che comprenda tutti i contenuti xAPI fruibili dall'applicazione. Infatti è possibile sostituire, nel file di configurazione dell'applicazione, l'indirizzo di tale file con una richiesta ad un server, il quale si occuperà di fornire all'applicazione i contenuti da mostrare agli utenti in un formato similare a quello del file attuale. Una volta effettuato il download di tale file, i contenuti al suo interno vengono utilizzati per riempire il database locale, in modo tale da potervi associare i dati di fruizione degli utenti.
 
 			\subsubsection{Persistenza degli statement}
 			Gli statement creati dall'applicazione per registrare i dati di fruizione dei contenuti xAPI sono salvati temporaneamente all'interno di un database SQLite, completamente gestito dalla libreria TinCanAndroid-Offline. Quando l'applicazione registra che è disponibile una connessione internet si occupa di inviare tali statement ad un LRS. Anche l'invio è gestito dalla libreria TinCanAndroid-Offline, che provvede, nel caso in cui non vi siano errori, ad eliminare dal database locale tutti gli statement inviati. Ad ogni avvio l'applicativo ha il compito di interrogare l'LRS a cui sono stati inviati i dati di fruizione al fine di verificare se vi siano dati che non sono presenti in locale: se presenti il database locale viene aggiornato. Poichè LRS utilizzato è Learning Locker, il quale utilizza come DBMS MongoDB, le richieste per recuperare dati dal LRS saranno delle query MongoDB e i risultati di tali richieste saranno in formato JSON.

@@ -17,6 +17,18 @@
 				\item essendoci un vasto numero di produttori di smartphone e tablet che non aggiornano la versione di Android che rilasciano all'interno dei loro dispositivi, Android risulta essere estremamente frammentato.
 			\end{itemize}
 	
+	\subsection{Android Studio}
+	Android Studio è un ambiente di sviluppo integrato per lo sviluppo per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O tenuta dal Product Manager Google, Katherine Chou. Android Studio è disponibile gratuitamente sotto licenza Apache 2.0.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item creato per rispondere alle esigenze di uno sviluppatore Android;
+				\item offre un emulatore per simulare dispositivi differenti.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item non è intuitivo il modo di importare le librerie quando non sono disponibili in repository come Maven Central o JCenter.
+			\end{itemize}
+
 	\subsection{Dagger 2}
 		Dagger 2 è una libreria che permette la dependency injection in Android. Nel progetto è largamente utilizzato tale design pattern per diminuire il più possibile le dipendenze e ciò permette all'applicazione di essere facilmente sviluppata dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre di librerie come RoboGuice o Butterknife.
 		\subsubsection{Vantaggi}
@@ -30,8 +42,18 @@
 				\item i campi che devono essere inizializzati tramite dependency injection non possono avere visibilità privata o protetta.
 			\end{itemize}
 
+	\subsection{Espresso}
+		Espresso è un framework per la creazione di test dell'interfaccia grafica di applicazione Android, simulando l'interazione di un utente. Tale tecnologia è stata appunto utilizzata per lo sviluppo di test che simulassero un utente che utilizza l'applicazione.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item fornisce la sincronizzazione automatica delle azioni di test con l'interfaccia utente dell'app che si sta testando.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item non è sempre intuitivo il modo di specificare l'oggetto grafico se deve essere effettuata un'azione.
+			\end{itemize}
 	\subsection{Google AutoValue}
-		Google AutoValue è una libreria che permetta la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
+		Google AutoValue è una libreria che permette la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}	
 				\item evita al programmatore la creazione di classi semplici ma ripetitive, diminuendo la possibilità di errori;
@@ -40,8 +62,34 @@
 			\end{itemize}
 		\subsubsection{Svantaggi}
 			\begin{itemize}
-				\item le classi create non sono disponibili tra quelle visibili nel sorgente;
+				\item le classi create non sono disponibili tra quelle visibili nel codice sorgente;
 				\item non è sempre riconosciuto subito dagli IDE, che possono scambiare l'utilizzo di tale libreria per errori.
+			\end{itemize}
+
+	\subsection{Git}
+		Git è un software di controllo versione distribuito utilizzabile da interfaccia a riga di comando, creato da Linus Torvalds nel 2005.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item molto veloce;
+				\item abbastanza semplice da utilizzare.
+			\end{itemize}	
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item in ambiente Windows dev'essere utilizzato tramite un simulatore del terminale dei sistemi Linux.
+			\end{itemize}
+
+	\subsection{GitHub}
+		GitHub è un sistema web di hosting per progetti che utilizzano Git per il controllo di versione.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item permette la creazione di un account gratuito;
+				\item permette la creazione di un numero illimitato di repository pubbliche gratuitamente;
+				\item permette la creazione di un numero illimitato di repository private gratuitamente, se in possesso di un account studente;
+				\item offre un sistema di gestione issue, wiki, commenti al codice e richieste di pull.
+			\end{itemize}	
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item se non in possesso di un account studente è possibile creare le repository private solamente a pagamento.
 			\end{itemize}
 
 	\subsection{Gson}
@@ -75,16 +123,27 @@
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item permette l'interazione con pagine web e con i contenuti xAPI;
-				\item è eseguito lato client.
+				\item viene eseguito dal browser del client.
 			\end{itemize}
 		\subsubsection{Svantaggi}
 			\begin{itemize}
 				\item problemi di sicurezza, soprattutto in ambiente Android.
 			\end{itemize}
 
+	\subsection{JUnit}
+		JUnit è un framework per la creazione di unit test per il linguaggio di programmazione Java. Tale tecnologia è stata utilizzata per la creazione dei test di unità delle classi che non si occupano dell'interfaccia grafica dell'applicazione.
+		\subsubsection{Vantaggi}
+			\begin{itemize}
+				\item semplice creazione di test di unità, soprattutto ricorrendo alle asserzioni.
+			\end{itemize}
+		\subsubsection{Svantaggi}
+			\begin{itemize}
+				\item non permette di simulare l'interazione di un utente con l'interfaccia grafica, per effettuarne i test.
+			\end{itemize}
+
 	\subsection{MongoDB}
 	MongoDB è un DBMS non relazionale, orientato ai documenti. Viene classificato come un database
-	di tipo NoSQL, in quanto si allontana dalla struttura basata su tabelle dei database relazionali, in favore di documenti in stile JSON con schema dinamico. Ciò rende l’integrazione di dati di alcuni tipi di applicazioni più facile e veloce. Tale tecnologia è stata affrontata poichè l'applicazione comunica con un LRS che sfrutta come DBMS MongoDB, ovvero Learning Locker. Per questo è stato necessario lo studio di tale tecnologia per effettuare delle query utilizzando l'\textit{Aggregation framework}. 
+	di tipo NoSQL, in quanto si allontana dalla struttura dei database relazionali basata su tabelle, in favore di documenti in stile JSON con schema dinamico. Ciò rende l’integrazione di dati di alcuni tipi di applicazioni più facile e veloce. Tale tecnologia è stata affrontata poichè l'applicazione comunica con un LRS che sfrutta come DBMS MongoDB, ovvero Learning Locker. Per questo è stato necessario lo studio di tale tecnologia per effettuare delle query utilizzando l'\textit{Aggregation framework}. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item tipi di dato flessibili;

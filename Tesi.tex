@@ -5,6 +5,7 @@
 \usepackage{listings}
 \usepackage[toc,section=section]{glossaries}
 \usepackage[titletoc, title]{appendix}
+\usepackage{svg}
 
 \include{listingsSetting}
 
@@ -79,7 +80,9 @@
 		\printglossary[nonumberlist]
 		\glsaddall	
 
-	\label{LastPage}
+		\newpage
+		\include{bibliografia}
+
 
 \end{document}
 

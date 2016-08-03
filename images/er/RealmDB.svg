@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="29cm" height="20cm" viewBox="93 226 565 399" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="440.455" y="363.139" width="72.9" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="440.455" y="363.139" width="72.9" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="476.905" y="386.039">
+      <tspan x="476.905" y="386.039">Content</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="443.147" y="521.94" width="67.55" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="443.147" y="521.94" width="67.55" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="476.922" y="544.84">
+      <tspan x="476.922" y="544.84">History</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="287.075" y="280.041" width="74.2" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="287.075" y="280.041" width="74.2" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="324.175" y="302.941">
+      <tspan x="324.175" y="302.941">LrsData</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="117.997" y="523.252" width="81.7" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="117.997" y="523.252" width="81.7" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="158.847" y="546.152">
+      <tspan x="158.847" y="546.152">UserData</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="477.62,434.502 534.657,457.451 477.62,480.4 420.582,457.451 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="477.62,434.502 534.657,457.451 477.62,480.4 420.582,457.451 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="477.62" y="461.351">
+      <tspan x="477.62" y="461.351">Reference</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="477.178" y1="402.146" x2="477.62" y2="434.502"/>
+  <g>
+    <polygon style="fill: #ffffff" points="475.758,278.281 534.167,299.211 475.758,320.142 417.349,299.211 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="475.758,278.281 534.167,299.211 475.758,320.142 417.349,299.211 "/>
+    <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="475.758" y="303.11">
+      <tspan x="475.758" y="303.11">Endpoint</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="476.535" y1="362.144" x2="475.758" y2="320.142"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="416.349" y1="299.144" x2="362.255" y2="299.084"/>
+  <g>
+    <polygon style="fill: #ffffff" points="318.278,517.188 377.932,542.541 318.278,567.895 258.623,542.541 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="318.278,517.188 377.932,542.541 318.278,567.895 258.623,542.541 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="318.278" y="546.441">
+      <tspan x="318.278" y="546.441">Ownership</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="442.18" y1="541.291" x2="378.776" y2="541.931"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="286.07" y1="301.427" x2="256.507" y2="303.278"/>
+    <path style="fill: #000000" d="M 256.507 303.278 C 256.35,300.783 258.689,298.132 261.184,297.975 C 263.679,297.819 266.331,300.158 266.487,302.653 C 266.643,305.148 264.304,307.8 261.809,307.956 C 259.314,308.112 256.663,305.773 256.507,303.278z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 256.507 303.278 C 256.35,300.783 258.689,298.132 261.184,297.975 C 263.679,297.819 266.331,300.158 266.487,302.653 C 266.643,305.148 264.304,307.8 261.809,307.956 C 259.314,308.112 256.663,305.773 256.507,303.278"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="307.987" y1="279.049" x2="291.653" y2="258.877"/>
+    <path style="fill: #ffffff" d="M 285.36 251.105 C 287.303,249.532 290.819,249.901 292.392,251.844 C 293.965,253.787 293.596,257.303 291.653,258.877 C 289.71,260.45 286.194,260.08 284.62,258.137 C 283.047,256.194 283.417,252.678 285.36,251.105z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 285.36 251.105 C 287.303,249.532 290.819,249.901 292.392,251.844 C 293.965,253.787 293.596,257.303 291.653,258.877 C 289.71,260.45 286.194,260.08 284.62,258.137 C 283.047,256.194 283.417,252.678 285.36,251.105"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="324.107" y1="279.04" x2="324.028" y2="255.875"/>
+    <path style="fill: #ffffff" d="M 323.994 245.875 C 326.494,245.867 329.002,248.358 329.011,250.858 C 329.019,253.358 326.528,255.867 324.028,255.875 C 321.528,255.884 319.019,253.392 319.011,250.892 C 319.002,248.392 321.494,245.884 323.994,245.875z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 323.994 245.875 C 326.494,245.867 329.002,248.358 329.011,250.858 C 329.019,253.358 326.528,255.867 324.028,255.875 C 321.528,255.884 319.019,253.392 319.011,250.892 C 319.002,248.392 321.494,245.884 323.994,245.875"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="339.315" y1="279.049" x2="354.425" y2="259.097"/>
+    <path style="fill: #ffffff" d="M 360.463 251.125 C 362.456,252.634 362.939,256.137 361.43,258.13 C 359.921,260.123 356.418,260.606 354.425,259.097 C 352.432,257.588 351.949,254.085 353.458,252.092 C 354.968,250.099 358.47,249.616 360.463,251.125z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 360.463 251.125 C 362.456,252.634 362.939,256.137 361.43,258.13 C 359.921,260.123 356.418,260.606 354.425,259.097 C 352.432,257.588 351.949,254.085 353.458,252.092 C 354.968,250.099 358.47,249.616 360.463,251.125"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="513.355" y1="401.139" x2="521.433" y2="411.825"/>
+    <path style="fill: #ffffff" d="M 527.463 419.803 C 525.469,421.31 521.967,420.823 520.46,418.829 C 518.952,416.835 519.439,413.333 521.433,411.825 C 523.428,410.318 526.93,410.805 528.437,412.799 C 529.945,414.793 529.458,418.295 527.463,419.803z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 527.463 419.803 C 525.469,421.31 521.967,420.823 520.46,418.829 C 518.952,416.835 519.439,413.333 521.433,411.825 C 523.428,410.318 526.93,410.805 528.437,412.799 C 529.945,414.793 529.458,418.295 527.463,419.803"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="462.413" y1="362.155" x2="452.732" y2="348.807"/>
+    <path style="fill: #ffffff" d="M 446.862 340.712 C 448.885,339.244 452.377,339.8 453.845,341.824 C 455.312,343.848 454.756,347.34 452.732,348.807 C 450.709,350.275 447.217,349.719 445.749,347.695 C 444.282,345.671 444.838,342.18 446.862,340.712z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 446.862 340.712 C 448.885,339.244 452.377,339.8 453.845,341.824 C 455.312,343.848 454.756,347.34 452.732,348.807 C 450.709,350.275 447.217,349.719 445.749,347.695 C 444.282,345.671 444.838,342.18 446.862,340.712"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="458.68" y1="401.139" x2="452.894" y2="411.091"/>
+    <path style="fill: #ffffff" d="M 447.867 419.736 C 445.706,418.479 444.801,415.062 446.058,412.9 C 447.315,410.739 450.733,409.835 452.894,411.091 C 455.055,412.348 455.96,415.766 454.703,417.927 C 453.446,420.088 450.028,420.993 447.867,419.736z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 447.867 419.736 C 445.706,418.479 444.801,415.062 446.058,412.9 C 447.315,410.739 450.733,409.835 452.894,411.091 C 455.055,412.348 455.96,415.766 454.703,417.927 C 453.446,420.088 450.028,420.993 447.867,419.736"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="439.456" y1="369.001" x2="422.848" y2="363.174"/>
+    <path style="fill: #ffffff" d="M 413.412 359.864 C 414.24,357.505 417.426,355.973 419.785,356.801 C 422.144,357.628 423.676,360.815 422.848,363.174 C 422.021,365.533 418.834,367.064 416.475,366.237 C 414.116,365.409 412.584,362.223 413.412,359.864z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 413.412 359.864 C 414.24,357.505 417.426,355.973 419.785,356.801 C 422.144,357.628 423.676,360.815 422.848,363.174 C 422.021,365.533 418.834,367.064 416.475,366.237 C 414.116,365.409 412.584,362.223 413.412,359.864"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="439.45" y1="398.562" x2="418.091" y2="407.927"/>
+    <path style="fill: #000000" d="M 418.091 407.927 C 417.087,405.637 418.372,402.343 420.662,401.34 C 422.952,400.336 426.245,401.621 427.249,403.911 C 428.253,406.201 426.967,409.494 424.677,410.498 C 422.388,411.502 419.094,410.216 418.091,407.927z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 418.091 407.927 C 417.087,405.637 418.372,402.343 420.662,401.34 C 422.952,400.336 426.245,401.621 427.249,403.911 C 428.253,406.201 426.967,409.494 424.677,410.498 C 422.388,411.502 419.094,410.216 418.091,407.927"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="495.13" y1="363.139" x2="523.118" y2="343.29"/>
+    <path style="fill: #ffffff" d="M 531.275 337.505 C 532.721,339.544 532.128,343.03 530.089,344.476 C 528.05,345.922 524.564,345.329 523.118,343.29 C 521.672,341.251 522.265,337.765 524.304,336.319 C 526.343,334.873 529.829,335.466 531.275,337.505z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 531.275 337.505 C 532.721,339.544 532.128,343.03 530.089,344.476 C 528.05,345.922 524.564,345.329 523.118,343.29 C 521.672,341.251 522.265,337.765 524.304,336.319 C 526.343,334.873 529.829,335.466 531.275,337.505"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="460.035" y1="521.94" x2="456.909" y2="499.302"/>
+    <path style="fill: #000000" d="M 456.909 499.302 C 459.386,498.96 462.204,501.095 462.546,503.571 C 462.888,506.048 460.754,508.866 458.277,509.208 C 455.801,509.55 452.982,507.415 452.64,504.939 C 452.298,502.462 454.433,499.644 456.909,499.302z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 456.909 499.302 C 459.386,498.96 462.204,501.095 462.546,503.571 C 462.888,506.048 460.754,508.866 458.277,509.208 C 455.801,509.55 452.982,507.415 452.64,504.939 C 452.298,502.462 454.433,499.644 456.909,499.302"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="443.147" y1="521.94" x2="409.347" y2="501.703"/>
+    <path style="fill: #ffffff" d="M 400.767 496.566 C 402.052,494.421 405.481,493.56 407.626,494.844 C 409.771,496.129 410.631,499.558 409.347,501.703 C 408.063,503.848 404.634,504.708 402.489,503.424 C 400.344,502.14 399.483,498.711 400.767,496.566z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 400.767 496.566 C 402.052,494.421 405.481,493.56 407.626,494.844 C 409.771,496.129 410.631,499.558 409.347,501.703 C 408.063,503.848 404.634,504.708 402.489,503.424 C 400.344,502.14 399.483,498.711 400.767,496.566"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="493.81" y1="521.94" x2="520.386" y2="500.256"/>
+    <path style="fill: #ffffff" d="M 528.135 493.934 C 529.715,495.871 529.359,499.389 527.421,500.969 C 525.484,502.55 521.967,502.193 520.386,500.256 C 518.806,498.319 519.163,494.801 521.1,493.221 C 523.037,491.641 526.554,491.997 528.135,493.934z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 528.135 493.934 C 529.715,495.871 529.359,499.389 527.421,500.969 C 525.484,502.55 521.967,502.193 520.386,500.256 C 518.806,498.319 519.163,494.801 521.1,493.221 C 523.037,491.641 526.554,491.997 528.135,493.934"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="510.697" y1="521.94" x2="541.625" y2="510.204"/>
+    <path style="fill: #ffffff" d="M 550.975 506.657 C 551.861,508.994 550.411,512.218 548.074,513.105 C 545.736,513.992 542.512,512.542 541.625,510.204 C 540.738,507.867 542.189,504.643 544.526,503.756 C 546.863,502.869 550.088,504.319 550.975,506.657z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 550.975 506.657 C 551.861,508.994 550.411,512.218 548.074,513.105 C 545.736,513.992 542.512,512.542 541.625,510.204 C 540.738,507.867 542.189,504.643 544.526,503.756 C 546.863,502.869 550.088,504.319 550.975,506.657"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="510.697" y1="531.44" x2="537.931" y2="529.738"/>
+    <path style="fill: #ffffff" d="M 547.911 529.114 C 548.067,531.61 545.728,534.261 543.233,534.416 C 540.738,534.572 538.087,532.233 537.931,529.738 C 537.775,527.243 540.114,524.592 542.609,524.436 C 545.104,524.28 547.756,526.619 547.911,529.114z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 547.911 529.114 C 548.067,531.61 545.728,534.261 543.233,534.416 C 540.738,534.572 538.087,532.233 537.931,529.738 C 537.775,527.243 540.114,524.592 542.609,524.436 C 545.104,524.28 547.756,526.619 547.911,529.114"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="138.422" y1="523.252" x2="126.442" y2="496.556"/>
+    <path style="fill: #000000" d="M 126.442 496.556 C 128.723,495.532 132.027,496.79 133.051,499.071 C 134.075,501.351 132.817,504.656 130.536,505.679 C 128.256,506.703 124.951,505.446 123.928,503.165 C 122.904,500.884 124.161,497.58 126.442,496.556z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 126.442 496.556 C 128.723,495.532 132.027,496.79 133.051,499.071 C 134.075,501.351 132.817,504.656 130.536,505.679 C 128.256,506.703 124.951,505.446 123.928,503.165 C 122.904,500.884 124.161,497.58 126.442,496.556"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="158.959" y1="522.275" x2="159.096" y2="497.74"/>
+    <path style="fill: #ffffff" d="M 159.152 487.74 C 161.651,487.754 164.138,490.268 164.124,492.768 C 164.11,495.268 161.596,497.754 159.096,497.74 C 156.596,497.726 154.11,495.212 154.124,492.712 C 154.138,490.212 156.652,487.726 159.152,487.74z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 159.152 487.74 C 161.651,487.754 164.138,490.268 164.124,492.768 C 164.11,495.268 161.596,497.754 159.096,497.74 C 156.596,497.726 154.11,495.212 154.124,492.712 C 154.138,490.212 156.652,487.726 159.152,487.74"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="179.272" y1="561.252" x2="184.886" y2="572.809"/>
+    <path style="fill: #ffffff" d="M 189.254 581.804 C 187.005,582.897 183.664,581.74 182.572,579.491 C 181.48,577.242 182.637,573.901 184.886,572.809 C 187.134,571.717 190.475,572.874 191.567,575.122 C 192.66,577.371 191.503,580.712 189.254,581.804z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 189.254 581.804 C 187.005,582.897 183.664,581.74 182.572,579.491 C 181.48,577.242 182.637,573.901 184.886,572.809 C 187.134,571.717 190.475,572.874 191.567,575.122 C 192.66,577.371 191.503,580.712 189.254,581.804"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="179.272" y1="523.252" x2="188.922" y2="512.406"/>
+    <path style="fill: #ffffff" d="M 195.569 504.935 C 197.437,506.597 197.643,510.126 195.981,511.994 C 194.32,513.862 190.79,514.068 188.922,512.406 C 187.055,510.744 186.849,507.215 188.51,505.347 C 190.172,503.479 193.702,503.273 195.569,504.935z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 195.569 504.935 C 197.437,506.597 197.643,510.126 195.981,511.994 C 194.32,513.862 190.79,514.068 188.922,512.406 C 187.055,510.744 186.849,507.215 188.51,505.347 C 190.172,503.479 193.702,503.273 195.569,504.935"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="240.373" y="242.487">
+    <tspan x="240.373" y="242.487">endpoint</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="234.507" y="305.278">
+    <tspan x="234.507" y="305.278">id</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="310.717" y="238.333">
+    <tspan x="310.717" y="238.333">auth</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="355.373" y="240.251">
+    <tspan x="355.373" y="240.251">version</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="399.825" y="414.297">
+    <tspan x="399.825" y="414.297">id</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="387.183" y="354.383">
+    <tspan x="387.183" y="354.383">title</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="550.923" y="367.629">
+    <tspan x="550.923" y="367.629">remotePath</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="516.391" y="435.689">
+    <tspan x="516.391" y="435.689">remotePath</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="400.191" y="437.477">
+    <tspan x="400.191" y="437.477">localPath</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="539.056" y="334.744">
+    <tspan x="539.056" y="334.744">localPath</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="451.315" y="494.37">
+    <tspan x="451.315" y="494.37">id</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="402.641" y="620.094">
+    <tspan x="402.641" y="620.094">resumeId</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="531.641" y="486.094">
+    <tspan x="531.641" y="486.094">resumeData</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="367.641" y="570.094">
+    <tspan x="367.641" y="570.094">status</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="465.641" y="612.094">
+    <tspan x="465.641" y="612.094">score</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="102.451" y="488.922">
+    <tspan x="102.451" y="488.922">id</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="195.211" y="594.008">
+    <tspan x="195.211" y="594.008">email</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="136.672" y="478.236">
+    <tspan x="136.672" y="478.236">firsName</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="182.55" y="496.972">
+    <tspan x="182.55" y="496.972">lastName</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="158.847" y1="561.252" x2="159.829" y2="586.98"/>
+    <path style="fill: #ffffff" d="M 160.21 596.973 C 157.711,597.068 155.118,594.665 155.023,592.167 C 154.927,589.669 157.33,587.075 159.829,586.98 C 162.327,586.885 164.92,589.288 165.015,591.786 C 165.111,594.284 162.708,596.877 160.21,596.973z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 160.21 596.973 C 157.711,597.068 155.118,594.665 155.023,592.167 C 154.927,589.669 157.33,587.075 159.829,586.98 C 162.327,586.885 164.92,589.288 165.015,591.786 C 165.111,594.284 162.708,596.877 160.21,596.973"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="139.042" y="611.598">
+    <tspan x="139.042" y="611.598">password</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="100.944" y="362.587" width="119.95" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="100.944" y="362.587" width="119.95" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="160.919" y="385.487">
+      <tspan x="160.919" y="385.487">ContentVersion</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="321.1,355.141 385.438,381.027 321.1,406.913 256.763,381.027 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="321.1,355.141 385.438,381.027 321.1,406.913 256.763,381.027 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="321.1" y="384.927">
+      <tspan x="321.1" y="384.927">Membership</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="477.153" y1="520.942" x2="477.62" y2="480.4"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="258.623" y1="542.541" x2="200.703" y2="542.373"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="220.894" y1="381.587" x2="255.763" y2="381.392"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="439.451" y1="381.684" x2="385.438" y2="381.027"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="160.919" y1="362.587" x2="161.652" y2="335.541"/>
+    <path style="fill: #000000" d="M 161.652 335.541 C 164.151,335.608 166.583,338.175 166.515,340.674 C 166.447,343.173 163.88,345.605 161.381,345.537 C 158.882,345.469 156.451,342.902 156.518,340.403 C 156.586,337.904 159.153,335.473 161.652,335.541z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 161.652 335.541 C 164.151,335.608 166.583,338.175 166.515,340.674 C 166.447,343.173 163.88,345.605 161.381,345.537 C 158.882,345.469 156.451,342.902 156.518,340.403 C 156.586,337.904 159.153,335.473 161.652,335.541"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="139.133" y="328.785">
+    <tspan x="139.133" y="328.785">version</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="513.355" y1="372.639" x2="534.667" y2="369.011"/>
+    <path style="fill: #ffffff" d="M 544.525 367.332 C 544.944,369.797 542.899,372.681 540.435,373.101 C 537.97,373.52 535.086,371.475 534.667,369.011 C 534.247,366.546 536.292,363.662 538.756,363.242 C 541.221,362.823 544.105,364.868 544.525,367.332z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 544.525 367.332 C 544.944,369.797 542.899,372.681 540.435,373.101 C 537.97,373.52 535.086,371.475 534.667,369.011 C 534.247,366.546 536.292,363.662 538.756,363.242 C 541.221,362.823 544.105,364.868 544.525,367.332"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="411.153" y="334.26">
+    <tspan x="411.153" y="334.26">offline</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="513.355" y1="391.639" x2="534.64" y2="394.928"/>
+    <path style="fill: #ffffff" d="M 544.522 396.456 C 544.14,398.926 541.288,401.015 538.817,400.633 C 536.347,400.252 534.258,397.399 534.64,394.928 C 535.021,392.458 537.874,390.369 540.345,390.751 C 542.815,391.133 544.904,393.985 544.522,396.456z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 544.522 396.456 C 544.14,398.926 541.288,401.015 538.817,400.633 C 536.347,400.252 534.258,397.399 534.64,394.928 C 535.021,392.458 537.874,390.369 540.345,390.751 C 542.815,391.133 544.904,393.985 544.522,396.456"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="548.465" y="402.06">
+    <tspan x="548.465" y="402.06">courseId</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="138.422" y1="561.252" x2="128.746" y2="573.954"/>
+    <path style="fill: #ffffff" d="M 122.686 581.909 C 120.697,580.394 120.224,576.89 121.739,574.901 C 123.254,572.913 126.757,572.439 128.746,573.954 C 130.735,575.469 131.208,578.973 129.693,580.961 C 128.178,582.95 124.675,583.424 122.686,581.909z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 122.686 581.909 C 120.697,580.394 120.224,576.89 121.739,574.901 C 123.254,572.913 126.757,572.439 128.746,573.954 C 130.735,575.469 131.208,578.973 129.693,580.961 C 128.178,582.95 124.675,583.424 122.686,581.909"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="93.8067" y="597.348">
+    <tspan x="93.8067" y="597.348">logged</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="493.81" y1="559.94" x2="508.036" y2="597.756"/>
+    <path style="fill: #ffffff" d="M 511.557 607.116 C 509.217,607.996 505.997,606.537 505.117,604.197 C 504.237,601.857 505.696,598.637 508.036,597.756 C 510.376,596.876 513.596,598.336 514.477,600.676 C 515.357,603.016 513.897,606.236 511.557,607.116z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 511.557 607.116 C 509.217,607.996 505.997,606.537 505.117,604.197 C 504.237,601.857 505.696,598.637 508.036,597.756 C 510.376,596.876 513.596,598.336 514.477,600.676 C 515.357,603.016 513.897,606.236 511.557,607.116"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="460.035" y1="559.94" x2="452.269" y2="595.308"/>
+    <path style="fill: #ffffff" d="M 450.124 605.075 C 447.682,604.539 445.777,601.561 446.313,599.119 C 446.849,596.677 449.827,594.772 452.269,595.308 C 454.711,595.844 456.616,598.822 456.08,601.264 C 455.544,603.706 452.566,605.611 450.124,605.075z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 450.124 605.075 C 447.682,604.539 445.777,601.561 446.313,599.119 C 446.849,596.677 449.827,594.772 452.269,595.308 C 454.711,595.844 456.616,598.822 456.08,601.264 C 455.544,603.706 452.566,605.611 450.124,605.075"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="476.922" y1="559.94" x2="479.072" y2="588.084"/>
+    <path style="fill: #ffffff" d="M 479.833 598.055 C 477.341,598.245 474.657,595.943 474.467,593.45 C 474.277,590.957 476.579,588.274 479.072,588.084 C 481.565,587.894 484.248,590.196 484.438,592.689 C 484.628,595.181 482.326,597.865 479.833,598.055z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 479.833 598.055 C 477.341,598.245 474.657,595.943 474.467,593.45 C 474.277,590.957 476.579,588.274 479.072,588.084 C 481.565,587.894 484.248,590.196 484.438,592.689 C 484.628,595.181 482.326,597.865 479.833,598.055"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="510.697" y1="550.44" x2="537.579" y2="567.226"/>
+    <path style="fill: #ffffff" d="M 546.061 572.522 C 544.737,574.643 541.292,575.439 539.172,574.115 C 537.051,572.791 536.255,569.346 537.579,567.226 C 538.903,565.105 542.348,564.309 544.468,565.633 C 546.589,566.957 547.385,570.402 546.061,572.522z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 546.061 572.522 C 544.737,574.643 541.292,575.439 539.172,574.115 C 537.051,572.791 536.255,569.346 537.579,567.226 C 538.903,565.105 542.348,564.309 544.468,565.633 C 546.589,566.957 547.385,570.402 546.061,572.522"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="443.147" y1="559.94" x2="433.454" y2="576.551"/>
+    <path style="fill: #ffffff" d="M 428.414 585.188 C 426.254,583.928 425.355,580.509 426.615,578.35 C 427.875,576.191 431.294,575.291 433.454,576.551 C 435.613,577.811 436.512,581.231 435.252,583.39 C 433.992,585.549 430.573,586.448 428.414,585.188z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 428.414 585.188 C 426.254,583.928 425.355,580.509 426.615,578.35 C 427.875,576.191 431.294,575.291 433.454,576.551 C 435.613,577.811 436.512,581.231 435.252,583.39 C 433.992,585.549 430.573,586.448 428.414,585.188"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="443.147" y1="550.44" x2="422.11" y2="558.934"/>
+    <path style="fill: #ffffff" d="M 412.837 562.678 C 411.901,560.359 413.283,557.105 415.601,556.169 C 417.919,555.233 421.174,556.616 422.11,558.934 C 423.045,561.252 421.663,564.506 419.345,565.442 C 417.027,566.378 413.773,564.996 412.837,562.678z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 412.837 562.678 C 411.901,560.359 413.283,557.105 415.601,556.169 C 417.919,555.233 421.174,556.616 422.11,558.934 C 423.045,561.252 421.663,564.506 419.345,565.442 C 417.027,566.378 413.773,564.996 412.837,562.678"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="510.697" y1="540.94" x2="546.075" y2="547.15"/>
+    <path style="fill: #ffffff" d="M 555.925 548.879 C 555.492,551.341 552.598,553.372 550.135,552.939 C 547.673,552.507 545.643,549.612 546.075,547.15 C 546.507,544.688 549.402,542.658 551.864,543.09 C 554.327,543.522 556.357,546.417 555.925,548.879z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 555.925 548.879 C 555.492,551.341 552.598,553.372 550.135,552.939 C 547.673,552.507 545.643,549.612 546.075,547.15 C 546.507,544.688 549.402,542.658 551.864,543.09 C 554.327,543.522 556.357,546.417 555.925,548.879"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="510.697" y1="559.94" x2="528.848" y2="581.618"/>
+    <path style="fill: #ffffff" d="M 535.268 589.285 C 533.351,590.89 529.829,590.578 528.224,588.661 C 526.619,586.745 526.931,583.223 528.848,581.618 C 530.765,580.013 534.286,580.325 535.891,582.242 C 537.496,584.159 537.184,587.68 535.268,589.285z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 535.268 589.285 C 533.351,590.89 529.829,590.578 528.224,588.661 C 526.619,586.745 526.931,583.223 528.848,581.618 C 530.765,580.013 534.286,580.325 535.891,582.242 C 537.496,584.159 537.184,587.68 535.268,589.285"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="543.909" y="599.052">
+    <tspan x="543.909" y="599.052">lastStart</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="509.909" y="622.052">
+    <tspan x="509.909" y="622.052">lastEnd</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="326.909" y="596.052">
+    <tspan x="326.909" y="596.052">attemptNumber</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="554.909" y="529.052">
+    <tspan x="554.909" y="529.052">attemptFinished</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="338.909" y="492.052">
+    <tspan x="338.909" y="492.052">attemptPassed</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="556.909" y="503.052">
+    <tspan x="556.909" y="503.052">attemptFailed</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="565.909" y="555.052">
+    <tspan x="565.909" y="555.052">bestScore</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="553.909" y="575.052">
+    <tspan x="553.909" y="575.052">worstScore</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="482.091" y="348.927">
+    <tspan x="482.091" y="348.927">(1,1)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="227.091" y="371.927">
+    <tspan x="227.091" y="371.927">(1,N)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="382.362" y="286.922">
+    <tspan x="382.362" y="286.922">(0,N)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="396.991" y="395.727">
+    <tspan x="396.991" y="395.727">(1,1)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="208.809" y="534.102">
+    <tspan x="208.809" y="534.102">(0,N)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="405.809" y="533.102">
+    <tspan x="405.809" y="533.102">(1,1)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="482.809" y="503.102">
+    <tspan x="482.809" y="503.102">(1,1)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="481.991" y="420.727">
+    <tspan x="481.991" y="420.727">(0,N)</tspan>
+  </text>
+</svg>
