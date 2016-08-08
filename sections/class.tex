@@ -6,48 +6,925 @@
 
 		\subsection{dependency\_injection::AppModule}
 		La classe \mclass{AppModule} si occupa della risoluzione delle dipendenze per permettere l'utilizzo della dependency injection. La libreria Dagger 2 utilizza i metodi di \mclass{AppModule} con l'annotazione \textit{@Provides} per l'inizializzazione dei campi dati annotati con \textit{@Inject} delle varie classi dell'applicazione. Questo meccanismo è utilizzato per far corrispondere per ogni campo dati che ha come tipo un interfaccia, l'istanza di una classe che implementa tale interfaccia.
+		\begin{description}
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ providesStatementSenderManager() : StatementSender}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{StatementSender}. L'istanza ritornata sarà sempre la stessa utilizzando sempre lo stesso modulo
+				
+				\item \texttt{+ providesMyJavascriptInterface() : MyJavascriptInterface}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{MyJavascriptInterface}. L'istanza ritornata sarà sempre la stessa utilizzando sempre lo stesso modulo
+
+				\item \texttt{+ providesContentHistoryForUserManager() :\\ ContentHistoryForLoggedUserAccess}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{ContentHistoryForLoggedUserAccess}
+
+				\item \texttt{+ providesContentDataManager() : ContentDataAccess}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{ContentDataAccess}
+
+				\item \texttt{+ providesDownloaderManager() : DownloaderManager}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{DownloaderManager}
+
+				\item \texttt{+ providesLrsRequestUrl() : LrsRequestUrl}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{LrsRequestUrl}
+
+				\item \texttt{+ providesLoginManager() : LoginManager}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{LoginManager}
+
+				\item \texttt{+ providesReportActivityPresenter() : ReportActivityPresenter}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{ReportActivityPresenter}
+
+				\item \texttt{+ providesContentSelectedPresenter() : ContentSelectedPresenter}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{ContentSelectedPresenter}
+
+				\item \texttt{+ providesImageAdapterPresenter() : ImageAdapterPresenter}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{ImageAdapterPresenter}
+
+				\item \texttt{+ providesHomeActivityPresenter() : HomeActivityPresenter}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{HomeActivityPresenter}
+
+				\item \texttt{+ providesUserDataAccess() : UserDataAccess}\\
+				Metodo che permette di risolvere le dipendenze verso campi dati annotati con \textit{@Inject} e di tipo \minterface{UserDataAccess}
+			\end{itemize}
+		\end{description}
 
 		\subsection{model::dao::Content}
 		La classe \mclass{Content} è utilizzata per la gestione dei contenuti xAPI, di cui l'applicazione deve permettere la fruizione. Gli oggetti di tale classe rappresentano una entry nella relazione \textit{Content} nel database locale. Per questo motivo gli attributi della relazione \textit{Content} e i campi dati della relazione omonima corrispondono. La classe \mclass{Content} estende la classe \mclass{RealmObject}, fornita dalla libreria Realm. Grazie a ciò è possibile modificare i campi dati di un oggetto di tipo \mclass{Content}, ripercuotendo tali modifiche sulla entry corrispondente del database locale. In modo analogo anche le classi \mclass{ContentVersion}, \mclass{LrsData}, \mclass{History} e \mclass{UserData} estendono \mclass{RealmObject}, permettendo quindi le modifiche ai valori della relazione con nome corrispondente.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- id : int}\\
+				Identificativo univoco dell'oggetto, utilizzato come chiave primaria nel database in cui è salvato
 
-		\subsection{model::data\_access::DatabaseAccess}
-		La classe \mclass{DataAccess} è utilizzata per la gestione dei dati del database riguardanti i contenuti e i dati di fruizione ad essi associati. Tale classe implementa le interfacce \minterface{ContentDataAccess} e \minterface{ContentHistoryForLoggedUserAccess} le quali espongono, rispettivamente, i metodi per l'inserimento, recupero e modifica dei contenuti xAPI trattati dall'applicazione e dei dati di fruizione di un determinato contenuto da parte dell'utente loggato. Tale classe in particolare si occupa anche di inserire nel database del dispositivo i dati dei contenuti da visualizzare nell'applicazione.
+				\item \texttt{- localPath : String}\\
+				Stringa che rappresenta il percorso locala della cartella a cui è possibile recuperare il contenuto, se disponibile offline
+
+				\item \texttt{- remotePath : String}\\
+				Stringa che rappresenta l'URL a cui è possibile accedere al contenuto
+
+				\item \texttt{- title : String}\\
+				Titolo del contenuto
+
+				\item \texttt{- offline : boolean}\\
+				Booleano che rappresenta se il contenuto è disponibile offline oppure no
+
+				\item \texttt{- lrsDataId : int}\\
+				Intero che rappresenta la chiave esterna verso i dati dell'LRS a cui devono essere mandate le informazioni associate a tale contenuto
+
+				\item \texttt{- courseId : String}\\
+				Stringa che identifica univocamente un contenuto lato LRS
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ Content()}\\
+				Costruttore di default della classe \mclass{Content}
+
+				\item \texttt{+ Content(id : int, singleContentRawData : \\SingleContentRawData)}\\
+				Costruttore classe \mclass{Content}. I campi dati vengono inizializzati con i utilizzando gli attributi dell'oggetto di tipo \mclass{SingleContentRawData} passato come parametro
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{id : int}\\
+						Identificativo univoco dell'oggetto, utilizzato come chiave primaria nel database in cui è salvato
+
+						\item \texttt{singleContentRawData : SingleContentRawData}\\
+						Oggetto che contiene i dati con cui devono essere inizializzati campi dati della nuova istanza di \mclass{Content}
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ getLrsDataId() : int}\\
+				Metodo che ritorna il valore della chiave esterna a cui recuperare i dati dell'LRS a cui devono essere mandate le informazioni riguardanti tale contenuto
+
+				\item \texttt{+ setLrsDataId(int lrsDataId) : void}\\
+				Metodo che permette di impostare il valore della chiave esterna a cui recuperare i dati dell'LRS al quale devono essere mandate le informazioni relative a tale contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{lrsDataId : int}\\
+						Identificativo a cui sono associati i dati dell'LRS
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ isOffline() : boolean}\\
+				Metodo che indica se il contenuto è disponibile offline
+
+				\item \texttt{+ setOffline(boolean offline) : void}\\
+				Metodo con il quale è possibile indicare se un contenuto è disponibile offline oppure no
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{offline : boolean}\\
+						Booleano che indica se il contenuto è disponibile offline
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ getId() : int}\\
+				Metodo che permette di accedere all'identificativo utilizzato dal database locale dell'oggetto
+
+				\item \texttt{+ setId(int id) : void}\\
+				Metodo che permette di impostare l'identificativo dell'oggetto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{id : int}\\
+						Nuovo identificativo dell'oggetto
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ getLocalPath() : String}\\
+				Metodo che permette di recuperare il percorso della cartella locale a cui è possibile accedere al contenuto, se quest'ultimo è disponibile offline
+
+				\item \texttt{+ setLocalPath(String localPath) : void}\\
+				Metodo che permette di imporstare il percorso della cartella locale a cui è possibile accedere al contenuto in modalità offline
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{localPath : String}\\
+						Stringa che rappresenta il percorso della cartella in cui è disponibile il contenuto in modalità offline
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ getRemotePath() : String}\\
+				Metodo che permette di recuperare l'URL a cui è possibile accedere al contenuto
+
+				\item \texttt{+ setRemotePath(String remotePath) : void}\\
+				Metodo che permette di impostare l'URL a cui è possibile accedere al contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{remotePath : String}\\
+						Stringa che rappresenta l'URL a cui è disponibile il contenuto
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ getTitle() : String}\\
+				Metodo che permette di recuperare il titolo del contenuto
+
+				\item \texttt{+ setTitle(String title) : void}\\
+				Metodo che permette di impostare il titolo del contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{title : String}\\
+						Stringa che rappresenta il titolo del contenuto
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ getCourseId() : String}\\
+				Metodo che permette di recuperare l'identificativo che rappresenta il corso lato LRS
+
+				\item \texttt{+ setCourseId(String courseId) : void}\\
+				Metodo che permette di settare l'identificativo che rappresenta il corso lato LRS
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{courseId : String}\\
+						Stringa che rappresenta l'id del corso
+					\end{itemize}
+				\end{description}
+			\end{itemize}
+		\end{description}
+
+		%\subsection{model::data\_access::DatabaseAccess}
+		%La classe \mclass{DataAccess} è utilizzata per la gestione dei dati del database riguardanti i contenuti e i dati di fruizione ad essi associati. Tale classe implementa le interfacce \minterface{ContentDataAccess} e \minterface{ContentHistoryForLoggedUserAccess} le quali espongono, rispettivamente, i metodi per l'inserimento, recupero e modifica dei contenuti xAPI trattati dall'applicazione e dei dati di fruizione di un determinato contenuto da parte dell'utente loggato. Tale classe in particolare si occupa anche di inserire nel database del dispositivo i dati dei contenuti da visualizzare nell'applicazione.
 
 		\subsection{model::data\_access::StatementSenderImp}
-		La classe \mclass{StatementSenderImp} si occupa della gestione e dell'invio degli statement ottenuti dall'interazione di un utente con i contenuti xAPI al LRS. Tale classe implementa l'interfaccia \minterface{StatementSender}, che a sua volta estende le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkCHangeListener}. L'interfaccia \minterface{StatementSender} espone i metodi che devono essere implementati al fine di permettere l'invio degli statement ad un LRS. Le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkCHangeListener} permettono, invece, agli oggetti di tale classe di registrarsi come ``listener'' dei cambiamenti nel database degli statement, gestito dalla libreria TinCanAndroid-Offline, e nella connettività ad internet del dispositivo. Nel caso in cui sia presente una connessione internet e vi siano statement non inviati al LRS tale classe provvederà ad inviarli, eliminandoli dal database della libreria TinCanAndroid-Offline. Per fare questo gli oggetti a tale classe hanno un riferimento ad un oggetto di tipo \mclass{RSTinCanOfflineConnector}. Tale oggetto, della libreria TinCanAndroid-Offline, permette sia l'accesso al database degli statement, sia l'invio di quest'ultimi al LRS.
+		La classe \mclass{StatementSenderImp} si occupa della gestione e dell'invio degli statement ottenuti dall'interazione di un utente con i contenuti xAPI al LRS. Tale classe implementa l'interfaccia \minterface{StatementSender}, che a sua volta estende le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkCHangeListener}. L'interfaccia \minterface{StatementSender} espone i metodi che devono essere implementati al fine di permettere l'invio degli statement ad un LRS. Le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkCHangeListener} permettono, invece, agli oggetti di tale classe di registrarsi come ``listener'' dei cambiamenti nel database degli statement, gestito dalla libreria TinCanAndroid-Offline, e nella connettività ad internet del dispositivo. Nel caso in cui sia presente una connessione internet e vi siano statement non inviati al LRS tale classe provvederà ad inviarli, eliminandoli dal database della libreria TinCanAndroid-Offline. Per fare questo gli oggetti a tale classe hanno un riferimento ad un oggetto di tipo \mclass{RSTinCanOfflineConnector}. Tale oggetto, della libreria TinCanAndroid-Offline, permette sia l'accesso al database degli statement, sia l'invio di quest'ultimi all'LRS.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- boolean statementToSend}\\
+				Booleano che indica se sono presenti statements da inviare all'LRS
+
+				\item \texttt{- boolean internetConnection}\\
+				Booleano che indica se il dispositivo dispone di una connessione internet attiva
+
+				\item \texttt{- RSTinCanOfflineConnector tincan}\\
+				Oggetto della libreria TinCanAndroid-Offline che si occupa del recupero degli statement da inviare all'LRS
+
+				\item \texttt{$\sim$ ContentDataAccess manager}\\
+				Oggetto che si occupa di accedere alle informazioni relative ai contenuti
+
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ StatementSenderImp(remoteURL : String)}\\
+				Costruttore di default della classe \mclass{StatementSenderImp}
+				
+				\item \texttt{+ sendStatementsToServer() : void}\\
+				Metodo si occupa dell'invio all'LRS di tutti gli statement memorizzati localmente
+
+				\item \texttt{+ setUpConnection(endpoint : String, auth : String, \\version : String) : void}\\
+				Metodo che permette di settare i dati dell'LRS a cui devono essere inviati gli statement
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile raggiungere l'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione al LRS
+
+						\item \texttt{version : String}\\
+						Stringa che rappresenta la versione degli statement accettata dall'LRS
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ onDatabaseInsert() : void}\\
+				Metodo che viene invocato all'inserimento di un nuovo statement nel database locale degli statement, che si occupa di settare a \textit{true} il booleano che indica se ci sono statement da inviare
+
+				\item \texttt{+ onNetworkChangeState() : void}\\
+				Metodo che viene invocato ad ogni cambio di stato della connessione internet, che si occupa di settare il booleano che indica se il dispositivo presenta una connessione internet attiva
+
+			\end{itemize}
+		\end{description}
 
 		\subsection{model::lrs\_access::LrsSynchronizeImp}
 		La classe \mclass{LrsSynchronizeImp} si occupa di effettuare delle richieste al LRS per 
 		il recupero di dati di fruizione di un utente che non sono presenti localmente. Gli oggetti di questa classe recuperano gli URL per la comunicazione con LRS sfruttando un oggetto sottotipo dell'interfaccia \minterface{LrsRequestUrl}. Nel caso sia disponibile una connessione ad internet, le istanze di questa classe si occupano di effettuare le richieste per recuperare le informazioni desiderate dal LRS. Le informazioni ricavate dalla risposta del LRS sono usate per aggiornare i dati di fruizione di un determinato utente, presenti nel database locale, utilizzando un oggetto di tipo \minterface{ContentHistoryForLoggedUserAccess}. Dal momento che è stato deciso di far uso di Learning Locker come LRS, le risposte ottenute sono in formato JSON e vengono gestite utilizzando la libreria Gson.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{$\sim$ userHistoryManager : ContentHistoryForLoggedUserAccess}\\
+				Oggetto che permette l'accesso ai dati locali di fruizione di un certo contenuto da parte di un utente
+
+				\item \texttt{$\sim$ lrsRequestUrl : LrsRequestUrl}\\
+				Oggetto che si occupa della creazione degli URL per effettuare delle richieste all'LRS
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ LrsSynchronizeImp()}\\
+				Costruttore di default della classe \mclass{LrsSynchronizeImp}
+				
+				\item \texttt{+ boolean syncUserData(user : UserData)}\\
+				Metodo che si occupa di effettuare il download dei dati di fruizione di un utente presenti nell'LRS ma non localmente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{user : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncNumberOfTerminatedAttempts(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione del numero di tentativi terminati da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncNumberOfPassedAttempts(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione del numero di tentativi superati da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncNumberOfFailedAttempts(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione del numero di tentativi non superati da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncLatestStartAttempts(endpoint : String, \\auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione degli ultimi tentativi iniziati da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncLatestEndAttempts(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione degli ultimi tentativi terminati da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncNumberOfAttempts(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione del numero di tentativi iniziati da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- boolean syncBestScore(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione del miglior risultato ottenuto per ogni corso da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{- JsonObject queryToJsonObject(query : URL, endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa di connettersi al LRS e trasformare la risposta in JsonObject
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{query : URL}\\
+						URL che rappresenta la query da effettuare all'LRS
+
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
+			\end{itemize}
+		\end{description}
 
 		\subsection{model::result::StartResult}
 		La classe \mclass{StartResult} è impiegata per ricavare le informazioni che vengono inviate dallo script JavaScript, che si occupa di ricavare i dati di fruizione di un utente, riguardo all'inizio di un certo contenuto, da parte di un utente. Il codice di tale classe è generato sfruttando la libreria Google AutoValue. Praticamente questa libreria si occupa di implementare i metodi delle classi che hanno l'annotazione \textit{@AutoValue}, fornendo anche la possibilità di creare una classe interna ``Builder'', per l'implementazione del design pattern Builder appunto. Il programmatore non deve far altro che dichiarare la classe che si vuole creare e la una classe interna \mclass{Builder} come astratte, dichiarare tutti i metodi getter per i campi dati, anch'essi astratti, e dichiarare i metodi della classe \mclass{Builder} per settare i campi dati, sempre astratti. Le istanze di questa classe vengono create sfruttando un oggetto \mclass{JsonObject}, il quale contiene le informazioni ricavate dallo script JavaScript. Anche le classi \mclass{PartialResult} e \mclass{TotalResult} sono state create utilizzando la libreria Google AutoValue e hanno scopi simili alla classe \mclass{StartResult}.
+		\begin{description}
+			\item[Tipo:] Classe astratta;
+			
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ \textit{getCourseId() : String}}\\
+				Metodo che permette di accedere all'identificativo del corso iniziato. È un metodo astratto
+
+				\item \texttt{+ \textit{getStartTime() : long}}\\
+				Metodo che permette di accedere all'identificativo del corso iniziato. È un metodo astratto
+
+				\item \texttt{+ \textit{getCourseDescription() : String}}\\
+				Metodo che permette di accedere all'identificativo del corso iniziato. È un metodo astratto
+
+				\item \texttt{+ \underline{builder() : Builder}}\\
+				Metodo che permette di ricavare una istanza di un oggetto \mclass{Builder} per la costruzione di un oggetto \mclass{StartResult}. È un metodo statico
+
+				\item \texttt{+ \underline{builder(JsonObject json) : Builder}}\\
+				Metodo che permette di ricavare una istanza di un oggetto \mclass{Builder} per la costruzione di un oggetto \mclass{StartResult}, inizializzando i campi dati con l'oggetto JsonObject passato. È un metodo statico
+
+			\end{itemize}
+		\end{description}
 
 		\subsection{model::statement\_object::StartStatementImp}
 		La classe \mclass{StartStatementImp} rappresenta uno statement di inizio di un contenuto da parte di un utente, che deve essere inviato ad un LRS. Tale classe implementa l'interfaccia \minterface{StartStatement} e estende \mclass{Statement} della libreria TinCanAndroid-Offline. I campi dello statement relativi a chi ha effettuato l'azione vengono riempiti usando un oggetto di tipo \minterface{UserDataAccess}, il quale permette di accedere ai dati dell'utente loggato. Il campo \textit{verb} viene inizializzato utilizzando la definizione del verbo \textit{inizialized}, disponibile all'URL \url{http://adlnet.gov/expapi/verbs/inizialized}. Infine i campi che definiscono il contesto dello statement e il campo \textit{object} vengono riempiti sfruttando i campi dati dell'oggetto \mclass{StartResult}, richiesto dal costruttore della classe. Le classi \mclass{PartialResulStatementImp} e \mclass{TotalResulStatementImp} hanno compiti analoghi e sono costruite in modo simile.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- startResult : StartResult}\\
+				Dati di inizio fruizione di un contenuto da parte di un utente
+
+				\item \texttt{$\sim$ loggedUserAccess : UserDataAccess}\\
+				Oggetto che permette l'accesso ai dati dell'utente loggato per impostare il soggetto dello statement
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ StartStatementImp(startResult : StartResult)}\\
+				Costruttore della classe \mclass{StartStatementImp}
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{startResult : StartResult}\\
+						Dati di inizio fruizione di un contenuto da parte di un utente
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ setUserRetrieved() : void}\\
+				Metodo con cui viene impostato il soggetto dello statement
+
+				\item \texttt{+ setVerbRetrieved() : void}\\
+				Metodo con cui viene impostata l'azione compiuta dal soggetto dello statement
+
+				\item \texttt{+ setContextRetrieved() : void}\\
+				Metodo con cui viene impostato il contesto dello statement
+			\end{itemize}
+		\end{description}
 
 		\subsection{presenter::javascript\_communication::\\MyJavascriptInterfaceImp}
 		La classe \mclass{MyJavascriptInterfaceImp} si occupa di ricevere i dati di fruizione di un utente da parte dello script Javascript. Tale classe, inoltre, si occupa di trasformare in statement questi dati e di inserirli nel database degli statement, utilizzando un oggetto \mclass{RSTinCanOfflineConnector}, classe della libreria TinCanAndroid-Offline. Ad ogni inserimento, inoltre, viene inviato un messaggio in broadcast impiegando un \mclass{LocalBroadcastManager}, classe del framework Android, in modo tale che le classi che sono in ascolto per i cambiamenti del database degli statement siano avvertite. Per fare ciò implementa l'interfaccia \minterface{MyJavascriptInterface}, i cui metodi che possono essere richiamati da JavaScript sono annotati con \textit{@JavascriptInterface}. Tale annotazione permette l'invocazione di metodi delle classi di Android da JavaScript, anche per le versioni uguali o inferiori ad Android 4.2(API level 18). Tale classe, infine, ha il compito di aggiornare le informazioni di fruizione dei contenuti xAPI dell'utente loggato, in base ai dati ricevuti. 
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- mContext : Context}\\
+				Contesto di esecuzione dell'applicazione
+
+				\item \texttt{- tincan : RSTinCanOfflineConnector}
+				Oggetto della libreria TinCanAndroid-Offline che si occupa della memorizzazione degli statement da inviare all'LRS
+
+				\item \texttt{- actualContentId : int}\\
+				Identificativo del contenuto in a cui fanno riferimento gli statement da memorizzare
+
+				\item \texttt{$\sim$ historyUserManager : ContentHistoryForLoggedUserAccess}\\
+				Oggetto che permette l'accesso ai dati di fruizione relativi dei contenuti dell'utente loggato
+
+				\item \texttt{$\sim$ dataManager : ContentDataAccess}\\
+				Oggetto che permette l'accesso ai contenuti gestiti dall'applicazione
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ MyJavascriptInterfaceImp(context : Context)}\\
+				Costruttore della classe \mclass{MyJavascriptInterfaceImp}
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{context : Context}\\
+						Contesto di esecuzione dell'apllicazione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ setUpConnection(endpoint : String, auth : String, \\version : String) : void}\\
+				Metodo che permette di settare i dati dell'LRS a cui devono essere inviati gli statement
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL a cui è possibile raggiungere l'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione al LRS
+
+						\item \texttt{version : String}\\
+						Stringa che rappresenta la versione degli statement accettata dall'LRS
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ recordStartStatement(fromJavascript : String) : void}\\
+				Metodo che viene invocato da uno script JavaScript per la registrazione di uno statement di inizio di un contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{fromJavascript : String}\\
+						Stringa in formato JSON che contiene i dati relativi ad uno statement di inizio di un contenuto
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ recordPartialStatement(fromJavascript : String) : void}\\
+				Metodo che viene invocato da uno script JavaScript per la registrazione di uno statement di visualizzazione di una slide di un corso o di risposta ad una domanda
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{fromJavascript : String}\\
+						Stringa in formato JSON che contiene i dati relativi ad uno statement di visualizzazione di una slide di un corso o di risposta ad una domanda
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ recordTotalStatement(fromJavascript : String) : void}\\
+				Metodo che viene invocato da uno script JavaScript per la registrazione di uno statement di fine fruizione di un contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{fromJavascript : String}\\
+						Stringa in formato JSON che contiene i dati relativi ad uno statement di inizio di fine fruizione di un contenuto
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ setSelectedContentId(contentId : int) : void}\\
+				Metodo che permette di impostare l'identificativo del contenuto a cui si riferiscono gli statement
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{contentId : int}\\
+						Identificativo del contenuto
+					\end{itemize}
+				\end{description}
+			\end{itemize}
+		\end{description}
 
 		\subsection{presenter::manager::DownloaderManagerImp}
 		La classe \mclass{DownloaderManagerImp} si occupa del download delle informazioni relative ai contenuti da mostrare nell'applicazione e di renderli disponibili anche in assenza di connessione internet. Per permettere la fruizione di un determinato contenuto in modalità offline, le istanza di tale classe si connettono al server in cui il contenuto risiede per effettuare il download di alcuni file compressi. Tali file specificano le risorse necessarie per la riproduzione di un corso. Una volta scaricati, vengono decompressi e viene estratto dal loro interno un file in formato XML. Quest'ultimi contengono dei riferimenti a tutte le risorse di cui fare il download per permettere la riproduzione di un contenuto. Le informazioni presenti nei file XML vengono estratte utilizzando delle espressioni XPath.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- context : Context}\\
+				Contensto di esecuzione dell'applicazione
+
+				\item \texttt{- handler : Handler}\\
+				Oggetto che si occupa dell'interazione con l'interfaccia grafica, aggiornando la percentuale di completamento del download
+
+				\item \texttt{$\sim$ dataManager : ContentDataAccess}\\
+				Oggetto che permette l'accesso ai dati relativi ai contenuti che possono essere riprodotti
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ DownloaderManagerImp()}\\
+				Costruttore di default dalla classe \mclass{DownloaderManagerImp}
+
+				\item \texttt{+ void download(Handler handler, Content toDownload)}\\
+				Metodo che permette il download di un singolo contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{handler : Handler}\\
+						Oggetto che si occupa dell'interazione con l'interfaccia grafica, aggiornando la percentuale di completamento del download
+
+						\item \texttt{toDownload : Content}\\
+						Dati relativi al contenuto di cui effettuare il download						
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ void download(Handler handler, Content[] toDownload)}\\
+				Metodo che permette il download di un singolo contenuto
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{handler : Handler}\\
+						Oggetto che si occupa dell'interazione con l'interfaccia grafica, aggiornando la percentuale di completamento del download
+
+						\item \texttt{toDownload : Content[]}\\
+						Array dei dati relativi ai contenuti di cui effettuare il download						
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ void checkContentUpdate()}\\
+				Metodo che permette di verificare se vi siano nuovi contenuti che possono essere fruiti tramite l'applicazione. In tal caso ne scarica i dati
+				
+				\item \texttt{+ void syncContentWithServer()}\\
+				Metodo che permette di recuperare i dati dei contenuti cancellati da un utente
+			\end{itemize}
+		\end{description}
 
 		\subsection{presenter::manager::ProgressUpdateHandler}
 		La classe \mclass{ProgressUpdateHandler} si occupa dell'aggiornamento di un'istanza della classe \mclass{DownloadProgressDialog} per mostrare a video lo stato di avanzamento del download di un contenuto. Tale classe estende la classe \mclass{Handler} del framework Android. Utilizzando tale classe è possibile, oltre che impostare la percentuale di completamento del download, definire il titolo che deve essere mostrato durante il download, nascondere l'alert, mostrare al completamento del download un messaggio di errore o di download avvenuto con successo.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- toUpdate : DownloadProgressDialog}\\
+				Oggetto che rappresenta una progress bar che deve essere aggiornata con la percentuale di completamento del download
+
+				\item \texttt{- downloadFinishInterface : OnDownloadFinishInterface}\\
+				Oggetto che implementa l'interfaccia \mclass{OnDownloadFinishInterface}, la quale espone i metodi per effettuare delle azioni al completamento di un download in caso di successo o fallimento
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ ProgressUpdateHandler(toUpdate : DownloadProgressDialog,\\
+                                 downloadFinishInterface : OnDownloadFinishInterface)}\\
+				Costruttore della classe \mclass{ProgressUpdateHandler}
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{toUpdate : DownloadProgressDialog}\\
+						Oggetto che rappresenta una progress bar che deve essere aggiornata con la percentuale di completamento del download
+
+						\item \texttt{downloadFinishInterface : OnDownloadFinishInterface}\\
+						Oggetto che implementa l'interfaccia \\\minterface{OnDownloadFinishInterface}, la quale espone i metodi per effettuare delle azioni al completamento di un download in caso di successo o fallimento
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ handleMessage(msg : Message) : void}\\
+				Metodo che permette l'aggiornamento dell'interfaccia grafice
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{msg : Message}\\
+						Messaggio che rappresenta il tipo di aggiornamento che deve essere effettuato all'interfaccia grafica
+					\end{itemize}
+				\end{description}
+			\end{itemize}
+		\end{description}
 
 		\subsection{presenter::receiver::InternetStateReceiverImp}
 		La classe \mclass{InternetStateReceiver} si occupa di avvisare ad ogni variazione nella connettività ad internet del dispositivo tutti gli oggetti che implementano l'interfaccia \minterface{NetworkChangeListener}, che si sono registrati come ``listener''. Tale classe implementa l'interfaccia \mclass{InternetStateReceiver}, che espone i metodi per registrarsi e deregistrarsi come ``listener'', ed estende la classe astratta \mclass{BroadcastReceiver}, del framework Android, della quale implementa il metodo \textit{onReceive}, invocato ad ogni variazione nello stato della connessione ad Internet. Il funzionamento e lo scopo della classe \mclass{DatabaseStateReceiverImp} sono analoghi. 
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- listeners : Collection<NetworkChangeListener>}\\
+				Insieme dei listener che devono essere aggiornati ad ogni cambiamento nello stato della connettività del dispositivo
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ InternetStateReceiverImp(context : Context)}\\
+				Costruttore della classe \mclass{InternetStateReceiverImp}
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{context : Context}\\
+						Contesto di esecuzione dell'applicazione
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ onReceive(context : Context, intent : Intent) : void}\\
+				Metodo che viene invocato ad ogni cambiamento nella connettività del dispositivo e che viene utilizzato per aggiornare i listener registrati
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{context : Context}\\
+						Contesto di esecuzione dell'applicazione
+
+						\item \texttt{intent : Intent}\\
+						Intent che indica lo stato della connessione ad internet
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ registerListener(listener : NetworkChangeListener) : void}\\
+				Metodo con il quale è possibile registrare un oggetto che implementa l'interfaccia \minterface{NetworkChangeListener} come listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{listener : NetworkChangeListener}\\
+						Oggetto che deve essere registrato come listener dei combiamenti nello stato della connessione ad internet del dispositivo
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ unregisterListener(listener : NetworkChangeListener) : void}\\
+				Metodo con il quale è possibile rimuovere un oggetto che implemeta l'interfaccia \minterface{NetworkChangeListener} dall'insieme dei listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{listener : NetworkChangeListener}\\
+						Oggetto che deve essere rimosso dall'insieme dei listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+					\end{itemize}
+				\end{description}
+			\end{itemize}
+		\end{description}
 
 		\subsection{presenter::MyApplication}
 		La classe \mclass{MyApplication} estende la classe \mclass{Application} del framework Android e si occupa di fornire alcuni metodi statici di utilità. Questi metodi permettono di accedere al contesto di esecuzione, allo stato della connessione internet e alla componente necessaria per effettuare la dependency injection.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- context : Context}\\
+				Contesto di esecuzione dell'applicazione
+
+				\item \texttt{- component : AppComponent}\\
+				Componente utilizzato per effettuare la dependency injection
+
+				\item \texttt{$\sim$ downloaderManager : DownloaderManager}\\
+				Oggetto utilizzato per verificare se vi sono cambiamenti nell'insieme dei contenuti che l'applicazione deve mostrare
+
+				\item \texttt{$\sim$ dataManager : ContentDataAccess}\\
+				Oggetto che permette l'accesso ai dati relativi ai contenuti che devono essere gestiti dall'applicazione
+
+				\item \texttt{$\sim$ senderManager : StatementSender}\\
+				Oggetto che permette l'invio degli statement memorizzati localmente all'LRS
+
+				\item \texttt{$\sim$ javascriptInterface : MyJavascriptInterface}\\
+				Oggetto che si occupa della memorizzazione locale degli statement
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ onCreate() : void}\\
+				Metodo che viene invocato alla creazione di un oggetto \mclass{MyApplication}
+				
+				\item \texttt{- setUpListeners() : void}\\
+				Metodo che si occupa di istanziare gli oggetti che controllano quando vi sono cambiamenti nello stato della connessione internet del dispositivo e nel databaso degli statement all'avvio dell'applicazione. Inoltre ha il compito di viene registrato un oggetto di tipo \minterface{StatementSender} come listener per entrambi gli oggetti istanziati
+
+				\item \texttt{+ setUpConnection() : void}\\
+				Metodo che viene invocato all'avvio dell'applicazione per impostare i dati relativi all'LRS a cui inviare i dati
+
+				\item \texttt{+ \underline{getAppContext() : Context}}\\
+				Metodo che permette di accedere al contesto di esecuzione dell'applicazione. È un metodo statico
+
+				\item \texttt{+ \underline{getAppComponent() : AppComponent}}\\
+				Metodo che permette di accedere alla componente per effettuare la dependency injection. È un metodo statico
+
+				\item \texttt{+ \underline{internetConnectionCheck() : boolean}}\\
+				Metodo che permette di accedere allo stato della connessione internet del dispositivo. Viene ritornato \textit{true} nel caso in cui vi sia una connessione internet attiva, \textit{false} altrimenti. È un metodo statico
+			\end{itemize}
+		\end{description}
 
 		\subsection{presenter::HomeActivityPresenterImp}
 		La classe \mclass{HomeActivityPresenterImp} si occupa, interagendo con le componenti dei package \mpackage{model} e \mpackage{presenter}, del recupero delle informazioni che devono essere visualizzate dalla classe \mclass{HomaActivity} e della gestione delle richieste di tale classe, provenienti dall'interazione dell'utente con l'interfaccia grafica. In particolare si occupa di fornire i dati relativi a tutti i contenuti xAPI che devono essere riprodotti dall'applicazione, di gestire le richieste di download e rimozione di tali contenuti e della gestione del logout di un utente. \mclass{HomeActivityPresenterImp} implementa l'interfaccia \minterface{HomeActivityPresenter}. In modo analogo le classi \mclass{ContentSelectedPresenterImp}, \mclass{ImageAdapterPresenterImp} e \\ \mclass{ReportActivityPresenterImp} si occupano, rispettivamente, della gestione e del recupero delle informazioni che devono essere visualizzate per le classi \mclass{ContentAlertDialog}, \mclass{ImageAdpater} e \mclass{ReportActivity}.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{$\sim$ dataManager : ContentDataAccess}\\
+				Oggetto che permette di accedere ai dati relativi ai contenuti che devono essere getiti dall'applicazione
+
+				\item \texttt{$\sim$ downloaderManager : DownloaderManager}\\
+				Oggetto che permette il download di contenuti per la fruizione offline
+
+				\item \texttt{$\sim$ loginManager : LoginManager}\\
+				Oggetto che permette di effettuare il logout e di accedere ai dati relativi all'utente autenticato
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ HomeActivityPresenterImp()}\\
+				Costruttore della classe \mclass{HomeActivityPresenterImp}
+				
+				\item \texttt{+ downloadContentsByIds(activity : Activity, ids : \\List<Integer>) : void}\\
+				Metodo che permette di effettuare il download dei contenuti selezionati da un utente nella home page dell'applicazione
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{activity : Activity}\\
+						Activity visualizzata dall'applicazione
+
+						\item \texttt{ids : List<Integer>}\\
+						Lista degli identificativi dei contenuti di cui effettuare il download
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ removeContentsByIds(ids : List<Integer>) : void}\\
+				Metodo che permette di rimuovere i contenuti selezionati da un utente
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{ids : List<Integer>}\\
+						Lista degli identificativi dei contenuti da rimuovere
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ logout() : void}\\
+				Metodo che permette di effettuare il logout all'utente autenticato
+
+				\item \texttt{+ syncContents() : void}\\
+				Metodo che permette di ripristinare i contenuti che sono stati rimossi
+			\end{itemize}
+		\end{description}
 
 		\subsection{view::DownloadProgressDialog}
 		La classe \mclass{DownloadProgressDialog} si occupa di mostrare una barra che indica il completamento del download di un contenuto. Tale classe offre i metodi per mostrare e nascodere l'alert che contiene la barra del completamento, impostare il livello di completamento del download e per settare il titolo del contenuto di cui si sta effettuando il download. Tale classe è utilizzata, nell'applicazione, insieme alla classe \mclass{ProgressUpdateHandler}.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- activity : Activity}\\
+				Activity da cui è stato creato l'oggetto
+
+				\item \texttt{- progressDialog : ProgressDialog}\\
+				Progress dialog che deve essere visualizzato 
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ DownloadProgressDialog(activity : Activity)}\\
+				Costruttore della classe \mclass{DownloadProgressDialog}
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{activity : Activity}\\
+						Activity da cui è stato creato l'oggetto
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ show() : void}\\
+				Metodo che permette la visualizzazione di un progress dialog con una barra che indica la percentuale di completamento di un download
+
+				\item \texttt{+ dismiss() : void}\\
+				Metodo che permette di nascondere il progress dialog che mostra la percentuale di completamento del download
+				
+				\item \texttt{+ setProgress(value : int) : void}\\
+				Metodo che permette di impostare la percentuiale di completamento del download
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{value : int}\\
+						Percentuale di completamento del downlaod
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ setTitle(title : String) : void}\\
+				Metodo che permette di impostare il titolo del progress dialog visualizzato
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{title : String}\\
+						Titolo del progress dialog
+					\end{itemize}
+				\end{description}
+			\end{itemize}
+		\end{description}
 
 		\subsection{view::HomeActivity}
 		La classe \mclass{HomeActivity} si occupa della gestione dell'interfaccia grafica dell'home page dell'applicazione. Tale classe ha il compito di mostrare i corretti oggetti grafici e di reagire alle interazioni dell'utente con l'interfaccia, richiamando i metodi di un'istanza della classe \mclass{HomeActivityPresenterImp} per la gestione della richiesta. In particolare tale classe mostra, con una disposizione a griglia, i corsi in formato xAPI che possono essere riprodotti utilizzando l'applicazione. Sui contenuti è possibile effettuare un tap, per accedere alla schermata che permette di avviare la riproduzione del contenuto e il download, oppure tenendo premuto su di essi è possibile selezionarli, per effettuare il download o la cancellazione di uno o più contenuti. Inoltre si occupa di visualizzare un menu per accedere all'area di report, ripristinare i contenuti cancellati e effettuare il logout.
+		\begin{description}
+			\item[Attributi:] \
+			\begin{itemize}
+				\item \texttt{- gridview : GridView}\\
+				Oggetto che rappresenta la visualizzazione a griglia nella quale vengono presentati i contenuti fruibili dall'applicazione
 
+				\item \texttt{- multiChoiceModeListener : MultiChoiceModeListener}\\
+				Oggetto che si occupa della selezione multipla degli oggetti della disposizione a griglia
+
+				\item \texttt{$\sim$ presenter : HomeActivityPresenter}\\
+				Oggetto che si occupa della gestione dell'interfaccia grafica, recuperando le informazioni da mostrare e gestendo l'interazione dell'utente
+
+			\end{itemize}
+
+			\item[Metodi:] \
+			\begin{itemize}
+				\item \texttt{+ onCreate() : void}\\
+				Metodo che viene invocato alla creazione di un oggetto della classe \mclass{HomeActivity} che si occupa di mostrare i contenuti disponibili all'ìinterno della disposizione a griglia
+				
+				\item \texttt{+ onCreateOptionsMenu(menu : Menu) : boolean}\\
+				Metodo che si occupa della creazione del menù
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{menu : Menu}\\
+						Oggetto nel quale devono essere specificate le voci del menù che deve essere visualizzato
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ onCreateOptionsMenu(menu : Menu) : boolean}\\
+				Metodo che si occupa della creazione del menù
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{menu : Menu}\\
+						Oggetto nel quale devono essere specificate le voci del menù che deve essere visualizzato
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ remove(item : MenuItem) : void}\\
+				Metodo che permette la rimozione dei contenuti selezionati
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{item : MenuItem}\\
+						Oggetto che rappresenta la voce del menù utilizzata per invocare tale metodo
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ download(item : MenuItem) : void}\\
+				Metodo che permette il download dei contenuti selezionati
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{item : MenuItem}\\
+						Oggetto che rappresenta la voce del menù utilizzata per invocare tale metodo
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ onOptionsItemSelected(item : MenuItem) : boolean}\\
+				Metodo che si occupa di invocare il metodo corretto a seconda della voce del menuù selezionata
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{item : MenuItem}\\
+						Oggetto che rappresenta la voce del menù selezionata
+					\end{itemize}
+				\end{description}
+
+				\item \texttt{+ onBackPressed() : void}\\
+				Metodo che viene invocato quando un utente preme il tasto back sul proprio dispositivo. Si occupa di mandare l'applicazione in background
+			\end{itemize}
+		\end{description}
 \end{document}
