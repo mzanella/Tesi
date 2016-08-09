@@ -5,17 +5,24 @@
 \section{Verifica e validazione}
 	Per eseguire la verifica e la validazione del prodotto sono stati utilizzati il framework JUnit e Espresso. Il primo strumento è un framework per lo sviluppo di unit test in Java, il secondo invece è una libreria per 
 	simulare l'interazione di un utente con l'interfaccia grafica di applicazioni Android. \\
+	I test sviluppati sono di tre tipologie:
+	\begin{itemize}
+		\item test di unità;
+		\item test di integrazione;
+		\item test di sistema.
+	\end{itemize}
 	L'implementazione dei test ha sia accompagnato che seguito lo sviluppo dell'applicazione. La maggior parte dei test di unità sono stati creati seguendo la metodologia test-driven development. Tale strategia prevede che la stesura dei test automatici avvenga prima di quella del software che deve essere sottoposto a test, e che lo sviluppo del software applicativo sia orientato all'obiettivo di passare i test automatici precedentemente predisposti. Più in dettaglio, la metodologia test-driven development prevede la ripetizione di un breve ciclo di sviluppo in tre fasi:
 	\begin{enumerate}
 		\item il programmatore scrive un test automatico per la nuova funzione da sviluppare, che deve fallire in quanto la funzione non è stata ancora realizzata;
 		\item il programmatore sviluppa la quantità minima di codice necessaria per passare il test;
 		\item il programmatore esegue il refactoring del codice per adeguarlo a determinati standard di qualità.
 	\end{enumerate}
-	I test di unità sviluppati coprono quasi la totalità dei metodi riguardanti le funzionalità principali dell'applicazione, mentre i test di integrazione e di sistema sono stati sviluppati in un numero inferiore, per mancanza di tempo. Per verificare il corretto funzionamento dell'applicazione è stato fatto un collaudo del prodotto insieme al tutor aziendale. Durante tale incontro sono stati inoltre discussi aspetti positivi, negativi e possibili sviluppi futuri dell'applicazione.\\
+	I test di unità sviluppati hanno permesso da subito di evidenziare la maggior parte degli errori presenti nel codice. Tale tipologia di test è stata sviluppata per ogni classe in modo da coprire la quasi totalità dei metodi. I test di integrazione e di sistema sviluppati, invece, sono in numero ridotto e sono stati sviluppati solamente per alcune funzionalità centrali del prodotto. Il motivo di un numero limitato di test risiede nel poco tempo disponibile per terminare l'applicazione. I test di integrazione che sono stati sviluppati riguardano principalmente le classi che si occupano dell'autenticazione e registrazione di un utente, della persistenza dei dati relativi ai corsi che devono essere gestiti e della memorizzazione degli statement. I test di sistema, invece, sono stati sviluppati al fine di simulare l'interazione di un utente con le funzionalità principali dell'applicazione.\\
+	Al fine di verificare il corretto funzionamento di quanto è stato sviluppato è stato organizzato, negli ultimi giorni di stage, un collaudo del prodotto, insieme al tutor aziendale. Tale incontro è stato utile per evidenziare gli aspetti positivi e i punti deboli dell'applicazione dell'applicazione, oltre che per sistemare alcuni aspetti grafici.\\
 	Tutti i test effettuati sono stati svolti su di un dispositivo Motorola Moto G 2014 con sistema operativo Android 5.2.
 
-	\subsection{Requisiti soddisfatti}
-	In base agli obiettivi prefissati dello stage, definiti nella sezione \textit{Obiettivi}, si possono trarre le seguenti conclusioni:
+	\subsection{Risultati raggiunti}
+	In seguito ai test sviluppati e al collaudo realizzato insieme al tutor aziendale, facendo riferimento agli obiettivi prefissati dello stage (riportati nella sezione \textit{Obiettivi}), è possibile trarre le seguenti conclusioni:
 	\begin{itemize}
 		\item gli obiettivi obbligatori, previsti dal piano di lavoro, sono stati tutti soddisfatti;
 		\item gli obiettivi opzionali sono stati parzialmente soddisfatti.
