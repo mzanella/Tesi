@@ -56,7 +56,7 @@
 				Identificativo univoco dell'oggetto, utilizzato come chiave primaria nel database in cui è salvato
 
 				\item \texttt{- localPath : String}\\
-				Stringa che rappresenta il percorso locala della cartella a cui è possibile recuperare il contenuto, se disponibile offline
+				Stringa che rappresenta il percorso locale della cartella a cui è possibile recuperare il contenuto, se disponibile offline
 
 				\item \texttt{- remotePath : String}\\
 				Stringa che rappresenta l'URL a cui è possibile accedere al contenuto
@@ -80,7 +80,7 @@
 				Costruttore di default della classe \mclass{Content}
 
 				\item \texttt{+ Content(id : int, singleContentRawData : \\SingleContentRawData)}\\
-				Costruttore classe \mclass{Content}. I campi dati vengono inizializzati con i utilizzando gli attributi dell'oggetto di tipo \mclass{SingleContentRawData} passato come parametro
+				Costruttore della classe \mclass{Content}. I campi dati di un nuovo oggetto vengono inizializzati utilizzando gli attributi dell'oggetto di tipo \mclass{SingleContentRawData} passato come parametro
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
@@ -491,7 +491,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{context : Context}\\
-						Contesto di esecuzione dell'apllicazione
+						Contesto di esecuzione dell'applicazione
 					\end{itemize}
 				\end{description}
 
@@ -636,7 +636,7 @@
 				\end{description}
 
 				\item \texttt{+ handleMessage(msg : Message) : void}\\
-				Metodo che permette l'aggiornamento dell'interfaccia grafice
+				Metodo che permette l'aggiornamento dell'interfaccia grafica
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
@@ -687,12 +687,12 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{listener : NetworkChangeListener}\\
-						Oggetto che deve essere registrato come listener dei combiamenti nello stato della connessione ad internet del dispositivo
+						Oggetto che deve essere registrato come listener dei cambiamenti nello stato della connessione ad internet del dispositivo
 					\end{itemize}
 				\end{description}
 
 				\item \texttt{+ unregisterListener(listener : NetworkChangeListener) : void}\\
-				Metodo con il quale è possibile rimuovere un oggetto che implemeta l'interfaccia \minterface{NetworkChangeListener} dall'insieme dei listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+				Metodo con il quale è possibile rimuovere un oggetto che implementa l'interfaccia \minterface{NetworkChangeListener} dall'insieme dei listener dei cambiamenti dello stato della connessione ad internet del dispositivo
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
@@ -755,7 +755,7 @@
 			\item[Attributi:] \
 			\begin{itemize}
 				\item \texttt{$\sim$ dataManager : ContentDataAccess}\\
-				Oggetto che permette di accedere ai dati relativi ai contenuti che devono essere getiti dall'applicazione
+				Oggetto che permette di accedere ai dati relativi ai contenuti che devono essere gestiti dall'applicazione
 
 				\item \texttt{$\sim$ downloaderManager : DownloaderManager}\\
 				Oggetto che permette il download di contenuti per la fruizione offline
@@ -801,7 +801,7 @@
 		\end{description}
 
 		\subsection{view::DownloadProgressDialog}
-		La classe \mclass{DownloadProgressDialog} si occupa di mostrare una barra che indica il completamento del download di un contenuto. Tale classe offre i metodi per mostrare e nascodere l'alert che contiene la barra del completamento, impostare il livello di completamento del download e per settare il titolo del contenuto di cui si sta effettuando il download. Tale classe è utilizzata, nell'applicazione, insieme alla classe \mclass{ProgressUpdateHandler}.
+		La classe \mclass{DownloadProgressDialog} si occupa di mostrare una barra che indica il completamento del download di un contenuto. Tale classe offre i metodi per mostrare e nascondere l'alert che contiene la barra del completamento, impostare il livello di completamento del download e per settare il titolo del contenuto di cui si sta effettuando il download. Tale classe è utilizzata, nell'applicazione, insieme alla classe \mclass{ProgressUpdateHandler}.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -831,12 +831,12 @@
 				Metodo che permette di nascondere il progress dialog che mostra la percentuale di completamento del download
 				
 				\item \texttt{+ setProgress(value : int) : void}\\
-				Metodo che permette di impostare la percentuiale di completamento del download
+				Metodo che permette di impostare la percentuale di completamento del download
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{value : int}\\
-						Percentuale di completamento del downlaod
+						Percentuale di completamento del download
 					\end{itemize}
 				\end{description}
 
@@ -914,7 +914,7 @@
 				\end{description}
 
 				\item \texttt{+ onOptionsItemSelected(item : MenuItem) : boolean}\\
-				Metodo che si occupa di invocare il metodo corretto a seconda della voce del menuù selezionata
+				Metodo che si occupa di invocare il metodo corretto a seconda della voce del menù selezionata
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
