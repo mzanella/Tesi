@@ -27,7 +27,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.5]{images/package_diagrams/dao}
 				\caption{Package dao}
 		\end{figure}
-		Il package \mpackage{dao} contiene al suo interno tutte le componenti che si occupano della rappresentazione dei dati che vengono salvati nel database interno al dispositivo. Tutte le classi al suo interno corrispondono alle tabelle del database, ad eccezione delle classi \mclass{SingleContentRawData} e \mclass{ContentsData} che sono classi utili al recupero delle informazioni necessarie per la creazione di oggetti di tipo \mclass{Content} e della classe \mclass{RealmAppModule}. Tali classi estendono tutte \mclass{RealmObject} poiché, in questo modo, possono essere salvate direttamente all'interno del database locale utilizzando la libreria Realm. \\
+		Il package \mpackage{dao} contiene al suo interno tutte le componenti che si occupano della rappresentazione dei dati che vengono salvati nel database locale al dispositivo. Tutte le classi al suo interno corrispondono alle tabelle del database, ad eccezione delle classi \mclass{SingleContentRawData} e \mclass{ContentsData}, che sono utili al recupero delle informazioni necessarie per la creazione di oggetti di tipo \mclass{Content}, e della classe \mclass{RealmAppModule}. Tali classi estendono tutte \mclass{RealmObject} poiché, in questo modo, possono essere salvate direttamente all'interno del database locale utilizzando la libreria Realm. \\
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{Content};
@@ -51,7 +51,8 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		\begin{itemize}
 			\item \mclass{StatementSender};
 			\item \mclass{ContentDataAccess};
-			\item \mclass{ContentHystoryForLoggedUserAccess}.
+			\item \mclass{ContentHystoryForLoggedUserAccess};
+			\item \mclass{UserDataAccess}.
 		\end{itemize}
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
@@ -82,7 +83,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.6]{images/package_diagrams/result}
 				\caption{Package result}
 		\end{figure}
-		Il package \mpackage{result} contiene al suo interno tutte le classi che si occupano della trasformazione di oggetti in formato JSON, i quali rappresentano i dati delle interazioni di un utente con un certo contenuto xAPI che devono essere registrati, in un oggetto Java. \\
+		Il package \mpackage{result} contiene al suo interno tutte le classi che si occupano della trasformazione di oggetti in formato JSON, i quali rappresentano i dati delle interazioni di un utente con un certo contenuto xAPI che devono essere registrati, in oggetti Java. \\
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{PartialResult};
@@ -184,7 +185,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.4]{images/package_diagrams/manager}
 				\caption{Package manager}
 		\end{figure}
-		Il package \mpackage{manager} si occupa di effettuare delle connessioni a server per il download o per l'autenticazione e la registrazione in background e di aggiornare view e model al termine. \\
+		Il package \mpackage{manager} si occupa di effettuare delle connessioni a server in background per permettere il download dei contenuti oppure l'autenticazione e la registrazione di un utente. Al termine di una connessione ha il compito di aggiornare view e model. \\
 		Le interfacce che appartengono a tale package sono:
 		\begin{itemize}
 			\item \minterface{DownloaderManager};
@@ -226,7 +227,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.4]{images/package_diagrams/view}
 				\caption{Package view}
 		\end{figure}
-		Il package \mpackage{view} dell'interfaccia grafica dell'applicazione. \\
+		Il package \mpackage{view} si occupa dell'interfaccia grafica dell'applicazione. \\
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{CheckableLayout};
