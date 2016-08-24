@@ -43,21 +43,21 @@
 			\end{itemize}
 
 	\subsection{Espresso}
-		Espresso è un framework per la creazione di test dell'interfaccia grafica di applicazione Android, simulando l'interazione di un utente. Tale tecnologia è stata appunto utilizzata per lo sviluppo di test che simulassero un utente che utilizza l'applicazione.
+		Espresso è un framework per la creazione di test dell'interfaccia grafica di applicazioni Android, simulando l'interazione di un utente. Tale tecnologia è stata appunto utilizzata per lo sviluppo di test che simulassero un utente che utilizza l'applicazione.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item fornisce la sincronizzazione automatica delle azioni di test con l'interfaccia utente dell'app che si sta testando.
 			\end{itemize}
 		\subsubsection{Svantaggi}
 			\begin{itemize}
-				\item non è sempre intuitivo il modo di specificare l'oggetto grafico se deve essere effettuata un'azione.
+				\item non è sempre intuitivo il modo di specificare l'oggetto grafico su cui deve essere effettuata un'azione.
 			\end{itemize}
 	\subsection{Google AutoValue}
-		Google AutoValue è una libreria che permette la generazione automatica del codice delle classi annotate tramite delle annotazioni proprie della libreria. Tale libreria permette di creare gli oggetti di tale classi utilizzando il design pattern Builder. È utilizzata per le classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
+		Google AutoValue è una libreria che permette la generazione automatica del codice delle classi provviste di annotazioni proprie della libreria. Google AutoValue permette inoltre di creare oggetti delle classi annotate utilizzando il design pattern Builder. La libreria è utilizzata per le classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}	
 				\item evita al programmatore la creazione di classi semplici ma ripetitive, diminuendo la possibilità di errori;
-				\item mette a disposizione il pattern Builder per la creazione di oggetti;
+				\item permette l'utilizzo del pattern Builder per la creazione di oggetti;
 				\item le classi vengono generate in fase di compilazione.
 			\end{itemize}
 		\subsubsection{Svantaggi}
@@ -143,7 +143,7 @@
 
 	\subsection{MongoDB}
 	MongoDB è un DBMS non relazionale, orientato ai documenti. Viene classificato come un database
-	di tipo NoSQL, in quanto si allontana dalla struttura dei database relazionali basata su tabelle, in favore di documenti in stile JSON con schema dinamico. Ciò rende l’integrazione di dati di alcuni tipi di applicazioni più facile e veloce. Tale tecnologia è stata affrontata poichè l'applicazione comunica con un LRS che sfrutta come DBMS MongoDB, ovvero Learning Locker. Per questo è stato necessario lo studio di tale tecnologia per effettuare delle query utilizzando l'\textit{Aggregation framework}. 
+	di tipo NoSQL, in quanto si allontana dalla struttura dei database relazionali basata su tabelle, in favore di documenti in stile JSON con schema dinamico. Ciò rende l’integrazione di dati di alcuni tipi di applicazioni più facile e veloce. Tale tecnologia è stata affrontata poichè l'applicazione comunica con un LRS (Learning Locker) che sfrutta come DBMS MongoDB e richiede l'utilizzo dell'\textit{Aggregation framework} per effettuare le query. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item tipi di dato flessibili;
