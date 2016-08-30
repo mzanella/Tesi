@@ -8,7 +8,7 @@
 		Android è un sistema operativo mobile sviluppato da Google e basato su kernel Linux. È stato progettato per essere eseguito principalmente su smartphone e tablet, con interfacce utente specializzate per orologi e televisori. Le versioni supportate dall'applicazione sono la 4.2 e superiori.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
-				\item possiede una vasta fetta di mercato mobile;
+				\item possiede un'importante fetta di mercato mobile;
 				\item disponibile su un vasto numero di dispositivi;
 				\item quasi totalmente gratuito ed open-source.
 			\end{itemize}
@@ -18,7 +18,7 @@
 			\end{itemize}
 	
 	\subsection{Android Studio}
-	Android Studio è un ambiente di sviluppo integrato per lo sviluppo per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O tenuta dal Product Manager Google, Katherine Chou. Android Studio è disponibile gratuitamente sotto licenza Apache 2.0.
+	Android Studio è un ambiente di sviluppo integrato per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O tenuta dal Product Manager Google, Katherine Chou. Android Studio è disponibile gratuitamente sotto licenza Apache 2.0.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item creato per rispondere alle esigenze di uno sviluppatore Android;
@@ -26,11 +26,11 @@
 			\end{itemize}
 		\subsubsection{Svantaggi}
 			\begin{itemize}
-				\item non è intuitivo il modo di importare le librerie quando non sono disponibili in repository come Maven Central o JCenter.
+				\item non è intuitivo il modo di includere ad un progetto le librerie quando non sono disponibili in repository come Maven Central o JCenter.
 			\end{itemize}
 
 	\subsection{Dagger 2}
-		Dagger 2 è una libreria che permette la dependency injection in Android. Nel progetto è largamente utilizzato tale design pattern per diminuire il più possibile le dipendenze e ciò permette all'applicazione di essere facilmente sviluppata dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre di librerie come RoboGuice o Butterknife.
+		Dagger 2 è una libreria che permette la dependency injection in Android. Nel progetto tale design pattern è largamente utilizzato al fine di diminuire il più possibile le dipendenze tra le componenti dell'applicazione e per facilitare lo sviluppo dell'applicazione dopo lo stage. La scelta di tale libreria è stata fatta poichè permette di effettuare l'injection di una qualsiasi classe, a differenza di altre librerie come RoboGuice o Butterknife.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item non rallenta l'applicazione a runtime;
@@ -50,10 +50,10 @@
 			\end{itemize}
 		\subsubsection{Svantaggi}
 			\begin{itemize}
-				\item non è sempre intuitivo il modo di specificare l'oggetto grafico su cui deve essere effettuata un'azione.
+				\item non è sempre intuitivo il modo di specificare l'oggetto grafico su cui deve essere simulata un'azione.
 			\end{itemize}
 	\subsection{Google AutoValue}
-		Google AutoValue è una libreria che permette la generazione automatica del codice delle classi provviste di annotazioni proprie della libreria. Google AutoValue permette inoltre di creare oggetti delle classi annotate utilizzando il design pattern Builder. La libreria è utilizzata per le classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
+		Google AutoValue è una libreria che si occupa della generazione autometica del codice delle classi che possiedono delle particolari annotazioni. Google AutoValue dà, inoltre, la possibilità di sfuttare il pattern Builder per l'istanziazione degli oggetti di tali classi. È utilizzata per la generazione del codice delle classi che potrebbero richiedere molti parametri nel costruttore, evitando così il fenomeno del telescoping. 
 		\subsubsection{Vantaggi}
 			\begin{itemize}	
 				\item evita al programmatore la creazione di classi semplici ma ripetitive, diminuendo la possibilità di errori;
@@ -93,7 +93,7 @@
 			\end{itemize}
 
 	\subsection{Gson}
-		Gson è una libreria per la gestione di oggetti in formato JSON in Android. Tale libreria è utilizzata sia per la lettura dei contenuti disponibili pubblicati sul server, sia per la trasformazione degli oggetti scambiati tra Java e JavaScript. È stata scelta tale libreria per la semplicità si utilizzo.
+		Gson è una libreria per la gestione di oggetti in formato JSON in Android. Tale libreria è utilizzata sia per la lettura dei contenuti disponibili, pubblicati sul server, sia per la trasformazione degli oggetti scambiati tra Java e JavaScript. È stata scelta tale libreria per la semplicità si utilizzo.
 		\subsubsection{Vantaggi}
 			\begin{itemize}
 				\item molto intuitiva;

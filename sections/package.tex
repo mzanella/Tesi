@@ -27,7 +27,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.5]{images/package_diagrams/dao}
 				\caption{Package dao}
 		\end{figure}
-		Il package \mpackage{dao} contiene tutte le componenti che si occupano della rappresentazione dei dati che vengono salvati nel database locale al dispositivo. Tutte le classi al suo interno corrispondono alle tabelle del database, ad eccezione delle classi \mclass{SingleContentRawData} e \mclass{ContentsData}, che sono utili al recupero delle informazioni necessarie per la creazione di oggetti di tipo \mclass{Content}, e della classe \mclass{RealmAppModule}. Tali classi estendono tutte \mclass{RealmObject} poiché, in questo modo, possono essere salvate direttamente all'interno del database locale utilizzando la libreria Realm. \\
+		Il package \mpackage{dao} contiene tutte le componenti che si occupano della rappresentazione dei dati che vengono salvati nel database del dispositivo. Tutte le classi al suo interno corrispondono alle tabelle del database, ad eccezione delle classi \mclass{SingleContentRawData} e \mclass{ContentsData}, che sono utili al recupero delle informazioni necessarie per la creazione di oggetti di tipo \mclass{Content}, e della classe \mclass{RealmAppModule}. Tali classi estendono tutte \mclass{RealmObject} poiché, in questo modo, possono essere salvate direttamente all'interno del database locale, utilizzando la libreria Realm. \\
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{Content};
@@ -83,7 +83,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.6]{images/package_diagrams/result}
 				\caption{Package result}
 		\end{figure}
-		Il package \mpackage{result} contiene tutte le classi che si occupano della trasformazione di oggetti in formato JSON, i quali rappresentano i dati delle interazioni di un utente con un certo contenuto xAPI che devono essere registrati, in oggetti Java. \\
+		Il package \mpackage{result} contiene tutte le classi che si occupano della trasformazione di oggetti in formato JSON, i quali rappresentano i dati, che devono essere registrati, delle interazioni di un utente con un certo contenuto xAPI, in oggetti Java. \\
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{PartialResult};
@@ -101,7 +101,7 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.6]{images/package_diagrams/lrs_access}
 				\caption{Package lrs\_access}
 		\end{figure}
-		Il package \mpackage{lrs\_access} contiene tutte le componenti che si occupano di effettuare delle richieste ad un LRS al fine di recuperare informazioni riguardanti un determinato utente. \\
+		Il package \mpackage{lrs\_access} contiene tutte le componenti che si occupano di effettuare delle richieste ad un LRS, al fine di recuperare informazioni riguardanti un determinato utente. \\
 		Le interfacce che appartengono a tale package sono:
 		\begin{itemize}
 			\item \minterface{LrsRequestUrl};

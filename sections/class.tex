@@ -48,7 +48,7 @@
 		\end{description}
 
 		\subsection{model::dao::Content}
-		La classe \mclass{Content} è utilizzata per la gestione dei contenuti xAPI, di cui l'applicazione deve permettere la fruizione. Gli oggetti di tale classe rappresentano una entry nella relazione \textit{Content} nel database locale. Per questo motivo gli attributi della relazione \textit{Content} e i campi dati della relazione omonima corrispondono. La classe \mclass{Content} estende la classe \mclass{RealmObject}, fornita dalla libreria Realm. Grazie a ciò è possibile modificare i campi dati di un oggetto di tipo \mclass{Content}, ripercuotendo tali modifiche sulla entry corrispondente nel database locale. In modo analogo anche le classi \mclass{ContentVersion}, \mclass{LrsData}, \mclass{History} e \mclass{UserData} estendono \mclass{RealmObject}, permettendo quindi le modifiche ai valori della relazione con nome corrispondente.
+		La classe \mclass{Content} è utilizzata per la gestione dei contenuti xAPI, di cui l'applicazione deve permettere la fruizione. Gli oggetti di tale classe rappresentano una entry nella relazione \textit{Content} nel database locale. Per questo motivo i campi dati di tale classe e gli attributi della relazione omonima corrispondono. La classe \mclass{Content} estende la classe \mclass{RealmObject}, fornita dalla libreria Realm. Grazie a ciò è possibile modificare i campi dati di un oggetto di tipo \mclass{Content}, ripercuotendo tali modifiche sulla entry corrispondente nel database locale. In modo analogo anche le classi \mclass{ContentVersion}, \mclass{LrsData}, \mclass{History} e \mclass{UserData} estendono \mclass{RealmObject}, permettendo quindi le modifiche ai valori della relazione con nome corrispondente.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -59,7 +59,7 @@
 				Stringa che rappresenta il percorso locale della cartella a cui è possibile recuperare il contenuto, se disponibile offline
 
 				\item \texttt{- remotePath : String}\\
-				Stringa che rappresenta l'URL a cui è possibile accedere al contenuto
+				Stringa che rappresenta l'URL da cui è possibile accedere al contenuto
 
 				\item \texttt{- title : String}\\
 				Titolo del contenuto
@@ -93,10 +93,10 @@
 				\end{description}
 
 				\item \texttt{+ getLrsDataId() : int}\\
-				Metodo che ritorna il valore della chiave esterna a cui recuperare i dati dell'LRS a cui devono essere trasmesse le informazioni riguardanti tale contenuto
+				Metodo che ritorna il valore della chiave esterna con cui è possibile recuperare i dati dell'LRS a cui devono essere trasmesse le informazioni riguardanti tale contenuto
 
 				\item \texttt{+ setLrsDataId(int lrsDataId) : void}\\
-				Metodo che permette di impostare il valore della chiave esterna a cui recuperare i dati dell'LRS al quale devono essere trasmesse le informazioni relative a tale contenuto
+				Metodo che permette di impostare il valore della chiave esterna con cui è possibile recuperare i dati dell'LRS al quale devono essere trasmesse le informazioni relative a tale contenuto
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
@@ -119,7 +119,7 @@
 				\end{description}
 
 				\item \texttt{+ getId() : int}\\
-				Metodo che permette di accedere all'identificativo utilizzato dal database locale dell'oggetto
+				Metodo che permette di accedere all'identificativo dell'oggetto, utilizzato dal database locale 
 
 				\item \texttt{+ setId(int id) : void}\\
 				Metodo che permette di impostare l'identificativo dell'oggetto
@@ -132,7 +132,7 @@
 				\end{description}
 
 				\item \texttt{+ getLocalPath() : String}\\
-				Metodo che permette di recuperare il percorso della cartella locale a cui è possibile accedere al contenuto, se quest'ultimo è disponibile offline
+				Metodo che permette di recuperare il percorso della cartella locale dalla quale è possibile accedere al contenuto, se quest'ultimo è disponibile offline
 
 				\item \texttt{+ setLocalPath(String localPath) : void}\\
 				Metodo che permette di imporstare il percorso della cartella locale a cui è possibile accedere al contenuto in modalità offline
@@ -145,15 +145,15 @@
 				\end{description}
 
 				\item \texttt{+ getRemotePath() : String}\\
-				Metodo che permette di recuperare l'URL a cui è possibile accedere al contenuto
+				Metodo che permette di recuperare l'URL da cui è possibile accedere al contenuto
 
 				\item \texttt{+ setRemotePath(String remotePath) : void}\\
-				Metodo che permette di impostare l'URL a cui è possibile accedere al contenuto
+				Metodo che permette di impostare l'URL da cui è possibile accedere al contenuto
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{remotePath : String}\\
-						Stringa che rappresenta l'URL a cui è disponibile il contenuto
+						Stringa che rappresenta l'URL da cui è disponibile il contenuto
 					\end{itemize}
 				\end{description}
 
@@ -196,8 +196,8 @@
 				\item \texttt{- boolean statementToSend}\\
 				Booleano che indica se sono presenti statements da inviare all'LRS
 
-				\item \texttt{- boolean internetConnection}\\
-				Booleano che indica se il dispositivo dispone di una connessione internet attiva
+				\item \texttt{- boolean InternetConnection}\\
+				Booleano che indica se il dispositivo dispone di una connessione Internet attiva
 
 				\item \texttt{- RSTinCanOfflineConnector tincan}\\
 				Oggetto della libreria TinCanAndroid-Offline che si occupa del recupero degli statement da inviare all'LRS
@@ -221,7 +221,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile raggiungere l'LRS
+						Stringa che rappresenta l'URL da cui è possibile raggiungere l'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -235,14 +235,14 @@
 				Metodo che viene invocato all'inserimento di un nuovo statement nel database locale degli statement, che si occupa di settare a \textit{true} il booleano che indica se ci sono statement da inviare
 
 				\item \texttt{+ onNetworkChangeState() : void}\\
-				Metodo che viene invocato ad ogni cambio di stato della connessione internet, che si occupa di settare il booleano che indica se il dispositivo presenta una connessione internet attiva
+				Metodo che viene invocato ad ogni cambio di stato della connessione Internet, che si occupa di settare il booleano che indica se il dispositivo presenta una connessione Internet attiva
 
 			\end{itemize}
 		\end{description}
 
 		\subsection{model::lrs\_access::LrsSynchronizeImp}
 		La classe \mclass{LrsSynchronizeImp} si occupa di effettuare delle richieste all'LRS per 
-		il recupero di dati di fruizione di un utente che non sono presenti localmente. Gli oggetti di questa classe recuperano gli URL per la comunicazione con l'LRS sfruttando un oggetto sottotipo dell'interfaccia \minterface{LrsRequestUrl}. Nel caso sia disponibile una connessione ad internet, le istanze di questa classe si occupano di effettuare le richieste per recuperare le informazioni desiderate dall'LRS. Le informazioni ricavate dalla risposta dell'LRS sono usate per aggiornare i dati di fruizione di un determinato utente, presenti nel database locale, utilizzando un oggetto di tipo \minterface{ContentHistoryForLoggedUserAccess}. Dal momento che è stato deciso di far uso di Learning Locker come LRS, le risposte ottenute sono in formato JSON e vengono gestite utilizzando la libreria Gson.
+		il recupero di dati di fruizione di un utente che non sono presenti localmente. Gli oggetti di questa classe recuperano gli URL per la comunicazione con l'LRS sfruttando un oggetto sottotipo dell'interfaccia \minterface{LrsRequestUrl}. Nel caso sia disponibile una connessione ad Internet, le istanze di questa classe si occupano di effettuare le richieste per recuperare le informazioni desiderate dall'LRS. Le informazioni ricavate dalla risposta dell'LRS sono usate per aggiornare i dati di fruizione di un determinato utente, presenti nel database locale, utilizzando un oggetto di tipo \minterface{ContentHistoryForLoggedUserAccess}. Dal momento che è stato deciso di far uso di Learning Locker come LRS, le risposte ottenute sono in formato JSON e vengono gestite utilizzando la libreria Gson.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -274,7 +274,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -290,7 +290,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -306,7 +306,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -322,7 +322,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -338,7 +338,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -354,7 +354,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -370,7 +370,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -389,7 +389,7 @@
 						URL che rappresenta la query da effettuare all'LRS
 
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile fare le richieste all'LRS
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -403,7 +403,7 @@
 		\end{description}
 
 		\subsection{model::result::StartResult}
-		La classe \mclass{StartResult} è impiegata per ricavare le informazioni che vengono inviate dallo script JavaScript, che si occupa di ricavare i dati di fruizione di un utente, riguardo all'inizio di un certo contenuto, da parte di un utente. Il codice di tale classe è generato sfruttando la libreria Google AutoValue. Praticamente questa libreria si occupa di implementare i metodi delle classi che hanno l'annotazione \textit{@AutoValue}, fornendo anche la possibilità di creare una classe interna ``Builder'', per l'implementazione del design pattern Builder. Il programmatore non deve far altro che dichiarare la classe che si vuole creare e la una classe interna \mclass{Builder} come astratte, dichiarare tutti i metodi getter per i campi dati, anch'essi astratti, e dichiarare i metodi della classe \mclass{Builder} per settare i campi dati, sempre astratti. Le istanze di questa classe vengono create sfruttando un oggetto \mclass{JsonObject}, il quale contiene le informazioni ricavate dallo script JavaScript. Anche le classi \mclass{PartialResult} e \mclass{TotalResult} sono state create utilizzando la libreria Google AutoValue e hanno scopi simili alla classe \mclass{StartResult}.
+		La classe \mclass{StartResult} è usata per ricavare le informazioni che vengono inviate dallo script JavaScript, che si occupa di ricavare i dati di fruizione di un utente, riguardo all'inizio di un certo contenuto, da parte di un utente. Il codice di tale classe è generato sfruttando la libreria Google AutoValue. Praticamente questa libreria si occupa di implementare i metodi delle classi che hanno l'annotazione \textit{@AutoValue}, fornendo anche la possibilità di creare una classe interna ``Builder'', per l'implementazione del design pattern Builder. Il programmatore non deve far altro che dichiarare la classe che si vuole creare e la una classe interna \mclass{Builder} come astratte, dichiarare tutti i metodi getter per i campi dati, anch'essi astratti, e dichiarare i metodi della classe \mclass{Builder} per settare i campi dati, sempre astratti. Le istanze di questa classe vengono create sfruttando un oggetto \mclass{JsonObject}, il quale contiene le informazioni ricavate dallo script JavaScript. Anche le classi \mclass{PartialResult} e \mclass{TotalResult} sono state create utilizzando la libreria Google AutoValue e hanno scopi simili alla classe \mclass{StartResult}.
 		\begin{description}
 			\item[Tipo:] Classe astratta;
 			
@@ -463,7 +463,7 @@
 		\end{description}
 
 		\subsection{presenter::javascript\_communication::\\MyJavascriptInterfaceImp}
-		La classe \mclass{MyJavascriptInterfaceImp} si occupa di ricevere i dati di fruizione di un utente provenienti dallo script Javascript. Tale classe, inoltre, si occupa di trasformare in statement questi dati e di inserirli nel database degli statement, utilizzando un oggetto \mclass{RSTinCanOfflineConnector}, classe della libreria TinCanAndroid-Offline. Ad ogni inserimento, inoltre, viene inviato un messaggio in broadcast impiegando un \mclass{LocalBroadcastManager}, classe del framework Android, in modo tale che le classi che sono in ascolto per i cambiamenti del database degli statement siano avvertite. Per fare ciò implementa l'interfaccia \minterface{MyJavascriptInterface}, i cui metodi che possono essere richiamati da JavaScript sono annotati con \textit{@JavascriptInterface}. Tale annotazione permette l'invocazione di metodi delle classi di Android da JavaScript, anche per le versioni uguali o inferiori ad Android 4.2(API level 18). Tale classe, infine, ha il compito di aggiornare le informazioni di fruizione dei contenuti xAPI dell'utente loggato, in base ai dati ricevuti. 
+		La classe \mclass{MyJavascriptInterfaceImp} si occupa di ricevere i dati di fruizione di un utente provenienti dallo script Javascript. Tale classe, inoltre, si occupa di trasformare in statement questi dati e di inserirli nel database degli statement, utilizzando un oggetto \mclass{RSTinCanOfflineConnector}, classe della libreria TinCanAndroid-Offline. Ad ogni inserimento, inoltre, viene inviato un messaggio in broadcast impiegando un \mclass{LocalBroadcastManager}, classe del framework Android, in modo tale che le classi che sono in ascolto dei cambiamenti del database degli statement siano avvertite. Per fare ciò implementa l'interfaccia \minterface{MyJavascriptInterface}, i cui metodi che possono essere richiamati da JavaScript sono annotati con \textit{@JavascriptInterface}. Tale annotazione permette l'invocazione di metodi delle classi di Android da JavaScript, anche per le versioni uguali o inferiori ad Android 4.2(API level 18). Tale classe, infine, ha il compito di aggiornare le informazioni di fruizione dei contenuti xAPI dell'utente loggato, in base ai dati ricevuti. 
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -501,7 +501,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{endpoint : String}\\
-						Stringa che rappresenta l'URL a cui è possibile raggiungere l'LRS
+						Stringa che rappresenta l'URL da cui è possibile raggiungere l'LRS
 
 						\item \texttt{auth : String}\\
 						Stringa che rappresenta i dati di autenticazione all'LRS
@@ -537,7 +537,7 @@
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{fromJavascript : String}\\
-						Stringa in formato JSON che contiene i dati relativi ad uno statement di inizio di fine fruizione di un contenuto
+						Stringa in formato JSON che contiene i dati relativi ad uno statement di fine fruizione di un contenuto
 					\end{itemize}
 				\end{description}
 
@@ -554,7 +554,7 @@
 		\end{description}
 
 		\subsection{presenter::manager::DownloaderManagerImp}
-		La classe \mclass{DownloaderManagerImp} si occupa del download delle informazioni relative ai contenuti da mostrare nell'applicazione e di renderli disponibili anche in assenza di connessione internet. Per permettere la fruizione di un determinato contenuto in modalità offline, le istanze di tale classe si connettono al server in cui il contenuto risiede per effettuare il download di alcuni file compressi. Tali file specificano le risorse necessarie per la riproduzione di un corso. Una volta scaricati, vengono decompressi e viene estratto dal loro interno un file in formato XML. Quest'ultimo contiene dei riferimenti a tutte le risorse di cui fare il download per permettere la riproduzione di un contenuto. Le informazioni presenti nei file XML vengono estratte utilizzando delle espressioni XPath.
+		La classe \mclass{DownloaderManagerImp} si occupa del download delle informazioni relative ai contenuti da mostrare nell'applicazione e di renderli disponibili anche in assenza di connessione Internet. Per permettere la fruizione di un determinato contenuto in modalità offline, le istanze di tale classe si connettono al server in cui il contenuto risiede per effettuare il download di alcuni file compressi. Tali file specificano le risorse necessarie per la riproduzione di un corso. Una volta scaricati, vengono decompressi e viene estratto dal loro interno un file in formato XML. Quest'ultimo contiene dei riferimenti a tutte le risorse di cui fare il download per permettere la riproduzione di un contenuto. Le informazioni presenti nei file XML vengono estratte utilizzando delle espressioni XPath.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -677,34 +677,34 @@
 						Contesto di esecuzione dell'applicazione
 
 						\item \texttt{intent : Intent}\\
-						Intent che indica lo stato della connessione ad internet
+						Intent che indica lo stato della connessione ad Internet
 					\end{itemize}
 				\end{description}
 
 				\item \texttt{+ registerListener(listener : NetworkChangeListener) : void}\\
-				Metodo con il quale è possibile registrare un oggetto che implementa l'interfaccia \minterface{NetworkChangeListener} come listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+				Metodo con il quale è possibile registrare un oggetto che implementa l'interfaccia \minterface{NetworkChangeListener} come listener dei cambiamenti dello stato della connessione ad Internet del dispositivo
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{listener : NetworkChangeListener}\\
-						Oggetto che deve essere registrato come listener dei cambiamenti nello stato della connessione ad internet del dispositivo
+						Oggetto che deve essere registrato come listener dei cambiamenti nello stato della connessione ad Internet del dispositivo
 					\end{itemize}
 				\end{description}
 
 				\item \texttt{+ unregisterListener(listener : NetworkChangeListener) : void}\\
-				Metodo con il quale è possibile rimuovere un oggetto che implementa l'interfaccia \minterface{NetworkChangeListener} dall'insieme dei listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+				Metodo con il quale è possibile rimuovere un oggetto che implementa l'interfaccia \minterface{NetworkChangeListener} dall'insieme dei listener dei cambiamenti dello stato della connessione ad Internet del dispositivo
 				\begin{description}
 					\item[Argomenti:] \
 					\begin{itemize}
 						\item \texttt{listener : NetworkChangeListener}\\
-						Oggetto che deve essere rimosso dall'insieme dei listener dei cambiamenti dello stato della connessione ad internet del dispositivo
+						Oggetto che deve essere rimosso dall'insieme dei listener dei cambiamenti dello stato della connessione ad Internet del dispositivo
 					\end{itemize}
 				\end{description}
 			\end{itemize}
 		\end{description}
 
 		\subsection{presenter::MyApplication}
-		La classe \mclass{MyApplication} estende la classe \mclass{Application} del framework Android e si occupa di fornire alcuni metodi statici di utilità. Questi metodi permettono di accedere al contesto di esecuzione, allo stato della connessione internet e alla componente necessaria per effettuare la dependency injection.
+		La classe \mclass{MyApplication} estende la classe \mclass{Application} del framework Android e si occupa di fornire alcuni metodi statici di utilità. Questi metodi permettono di accedere al contesto di esecuzione, allo stato della connessione Internet e alla componente necessaria per effettuare la dependency injection.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -733,7 +733,7 @@
 				Metodo che viene invocato alla creazione di un oggetto \mclass{MyApplication}
 				
 				\item \texttt{- setUpListeners() : void}\\
-				Metodo che si occupa di istanziare gli oggetti che controllano quando vi sono cambiamenti nello stato della connessione internet del dispositivo e nel databaso degli statement all'avvio dell'applicazione. Inoltre ha il compito di registrare un oggetto di tipo \minterface{StatementSender} come listener per entrambi gli oggetti istanziati
+				Metodo che si occupa di istanziare gli oggetti che controllano quando vi sono cambiamenti nello stato della connessione Internet del dispositivo e nel database degli statement all'avvio dell'applicazione. Inoltre ha il compito di registrare un oggetto di tipo \minterface{StatementSender} come listener per entrambi gli oggetti istanziati
 
 				\item \texttt{- setUpConnection() : void}\\
 				Metodo che viene invocato all'avvio dell'applicazione per impostare i dati relativi all'LRS a cui inviare i dati
@@ -744,8 +744,8 @@
 				\item \texttt{+ \underline{getAppComponent() : AppComponent}}\\
 				Metodo che permette di accedere alla componente per effettuare la dependency injection. È un metodo statico
 
-				\item \texttt{+ \underline{internetConnectionCheck() : boolean}}\\
-				Metodo che permette di accedere allo stato della connessione internet del dispositivo. Viene ritornato \textit{true} nel caso in cui vi sia una connessione internet attiva, \textit{false} altrimenti. È un metodo statico
+				\item \texttt{+ \underline{InternetConnectionCheck() : boolean}}\\
+				Metodo che permette di accedere allo stato della connessione Internet del dispositivo. Viene ritornato \textit{true} nel caso in cui vi sia una connessione Internet attiva, \textit{false} altrimenti. È un metodo statico
 			\end{itemize}
 		\end{description}
 
@@ -758,7 +758,7 @@
 				Oggetto che permette di accedere ai dati relativi ai contenuti che devono essere gestiti dall'applicazione
 
 				\item \texttt{$\sim$ downloaderManager : DownloaderManager}\\
-				Oggetto che permette il download di contenuti per la fruizione offline
+				Oggetto che permette il download dei contenuti per la fruizione offline
 
 				\item \texttt{$\sim$ loginManager : LoginManager}\\
 				Oggetto che permette di effettuare il logout e di accedere ai dati relativi all'utente autenticato
@@ -853,7 +853,7 @@
 		\end{description}
 
 		\subsection{view::HomeActivity}
-		La classe \mclass{HomeActivity} si occupa della gestione dell'interfaccia grafica dell'home page dell'applicazione. Tale classe ha il compito di mostrare i corretti oggetti grafici e di reagire alle interazioni dell'utente con l'interfaccia, richiamando i metodi di un'istanza della classe \mclass{HomeActivityPresenterImp} per la gestione della richiesta. In particolare tale classe mostra, con una disposizione a griglia, i corsi in formato xAPI che possono essere riprodotti utilizzando l'applicazione. Sui contenuti è possibile effettuare un tap, per accedere alla schermata che permette di avviare la riproduzione del contenuto e il download, oppure tenendo premuto su di essi è possibile selezionarli, per effettuare il download o la cancellazione di uno o più contenuti. Inoltre si occupa di visualizzare un menu per accedere all'area di report, ripristinare i contenuti cancellati e effettuare il logout.
+		La classe \mclass{HomeActivity} si occupa della gestione dell'interfaccia grafica dell'home page dell'applicazione. Tale classe ha il compito di mostrare i corretti oggetti grafici e di reagire alle interazioni dell'utente con l'interfaccia, richiamando i metodi di un'istanza della classe \mclass{HomeActivityPresenterImp} per la gestione della richiesta. In particolare tale classe mostra, con una disposizione a griglia, i corsi in formato xAPI che possono essere riprodotti utilizzando l'applicazione. Sui contenuti è possibile effettuare un tap, per accedere alla schermata che permette di avviare la riproduzione del contenuto e il download, oppure, tenendo premuto su di essi, è possibile selezionarli, per effettuare il download o la cancellazione di uno o più contenuti. Inoltre si occupa di visualizzare un menù per accedere all'area di report, ripristinare i contenuti cancellati e effettuare il logout.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
