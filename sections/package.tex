@@ -2,7 +2,7 @@
 
 
 \begin{document}
-\section{Descrizione dei package}\label{sec:descrizionaDeiPackage}
+\section{Descrizione dei package}\label{sec:descrizioneDeiPackage}
 Di seguito vengono presentati i package che compongono l'applicazione. Le componenti riportate in colori differenti dal giallo sono evidenziate poiché appartenenti a librerie esterne.
 
 	\subsection{Package model}
@@ -16,9 +16,9 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		\begin{itemize}
 			\item \mpackage{dao};
 			\item \mpackage{data\_access};
-			\item \mpackage{statement\_object};
 			\item \mpackage{listener};
-			\item \mpackage{result}.
+			\item \mpackage{result};
+			\item \mpackage{statement\_object}.
 		\end{itemize}
 
 	\subsection{Package model::dao}
@@ -31,13 +31,13 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{Content};
+			\item \mclass{ContentsData};
 			\item \mclass{ContentVersion};
 			\item \mclass{History};
-			\item \mclass{UserData};
 			\item \mclass{LrsAccessData};
+			\item \mclass{RealmAppModule};
 			\item \mclass{SingleContentRawData};
-			\item \mclass{ContentsData};
-			\item \mclass{RealmAppModule}.
+			\item \mclass{UserData}.
 		\end{itemize}
 
 	\subsection{Package model::data\_access}
@@ -49,9 +49,9 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		Il package \mpackage{data\_access} contiene tutte le componenti che si occupano dell'accesso e della modifica dei dati salvati nel database interno al dispositivo. \\
 		Le interfacce che appartengono a tale package sono:
 		\begin{itemize}
-			\item \mclass{StatementSender};
 			\item \mclass{ContentDataAccess};
 			\item \mclass{ContentHystoryForLoggedUserAccess};
+			\item \mclass{StatementSender};
 			\item \mclass{UserDataAccess}.
 		\end{itemize}
 		Le classi che appartengono a tale package sono:
@@ -72,8 +72,8 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		Il package \mpackage{listener} contiene tutte le interfacce che devono essere implementate dalle classi che vogliono essere registrate come listener. \\
 		Le interfacce che appartengono a tale package sono:
 		\begin{itemize}
-			\item \mclass{Listener};
 			\item \mclass{DatabaseChangeListener};
+			\item \mclass{Listener};
 			\item \mclass{NetworkChangeListener}.
 		\end{itemize}
 
@@ -83,16 +83,16 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 			\includegraphics[scale=0.6]{images/package_diagrams/result}
 				\caption{Package result}
 		\end{figure}
-		Il package \mpackage{result} contiene tutte le classi che si occupano della trasformazione di oggetti in formato JSON, i quali rappresentano i dati, che devono essere registrati, delle interazioni di un utente con un certo contenuto xAPI, in oggetti Java. \\
+		Il package \mpackage{result} contiene tutte le classi che si occupano della trasformazione di oggetti in formato JSON, che rappresentano i dati di interazioni di un utente con un certo contenuto xAPI che devono essere registrati, in oggetti Java. \\
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{PartialResult};
 			\item \mclass{PartialResult.Builder};
+			\item \mclass{ResultDeserializationUtilities};
 			\item \mclass{StartResult};
 			\item \mclass{StartResult.Builder};
 			\item \mclass{TotalResult};
-			\item \mclass{TotalResult.Builder};
-			\item \mclass{ResultDeserializationUtilities}.
+			\item \mclass{TotalResult.Builder}.
 		\end{itemize}
 
 	\subsection{Package model::lrs\_access}
@@ -122,13 +122,13 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		Il package \mpackage{statement\_object} contiene tutte le componenti che servono per la rappresentazione di statement xAPI che devono essere inviati ad un LRS.\\
 		Le interfacce che appartengono a tale package sono:
 		\begin{itemize}
-			\item \minterface{StartStatement};
-			\item \minterface{ResultStatement}.
+			\item \minterface{ResultStatement};
+			\item \minterface{StartStatement}.
 		\end{itemize}
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
-			\item \mclass{StartStatementImp};
 			\item \mclass{PartialResultStatement};
+			\item \mclass{StartStatementImp};
 			\item \mclass{TotalResultStatement}.
 		\end{itemize}
 
@@ -212,13 +212,13 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 		Il package \mpackage{receiver} si occupa di monitorare lo stato del database offerto dalla libreria TinCanAndroid-Offline e lo stato della connessione internet del dispositivo. \\
 		Le interfacce che appartengono a tale package sono:
 		\begin{itemize}
-			\item \minterface{InternetStateReceiver};
-			\item \minterface{DatabaseInsertReceiver}.
+			\item \minterface{DatabaseInsertReceiver};
+			\item \minterface{InternetStateReceiver}.
 		\end{itemize}
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
-			\item \mclass{InternetStateReceiverImp};
-			\item \mclass{DatabaseInsertReceiverImp}.
+			\item \mclass{DatabaseInsertReceiverImp};
+			\item \mclass{InternetStateReceiverImp}.
 		\end{itemize}
 
 	\subsection{Package view}
@@ -228,6 +228,10 @@ Di seguito vengono presentati i package che compongono l'applicazione. Le compon
 				\caption{Package view}
 		\end{figure}
 		Il package \mpackage{view} si occupa dell'interfaccia grafica dell'applicazione. \\
+		Le interfacce che appartengono a tale package sono:
+		\begin{itemize}
+			\item \minterface{OnDownloadFinishInterface}.
+		\end{itemize}
 		Le classi che appartengono a tale package sono:
 		\begin{itemize}
 			\item \mclass{CheckableLayout};

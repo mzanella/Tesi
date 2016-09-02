@@ -88,7 +88,7 @@
 						Identificativo univoco dell'oggetto, utilizzato come chiave primaria nel database in cui è salvato
 
 						\item \texttt{singleContentRawData : SingleContentRawData}\\
-						Oggetto che contiene i dati con cui devono essere inizializzati campi dati della nuova istanza di \mclass{Content}
+						Oggetto che contiene i dati con cui devono essere inizializzati i campi dati della nuova istanza di \mclass{Content}
 					\end{itemize}
 				\end{description}
 
@@ -119,7 +119,7 @@
 				\end{description}
 
 				\item \texttt{+ getId() : int}\\
-				Metodo che permette di accedere all'identificativo dell'oggetto, utilizzato dal database locale 
+				Metodo che permette di accedere all'identificativo dell'oggetto utilizzato dal database locale 
 
 				\item \texttt{+ setId(int id) : void}\\
 				Metodo che permette di impostare l'identificativo dell'oggetto
@@ -194,10 +194,10 @@
 			\item[Attributi:] \
 			\begin{itemize}
 				\item \texttt{- boolean statementToSend}\\
-				Booleano che indica se sono presenti statements da inviare all'LRS
+				Booleano che indica se sono presenti statement da inviare all'LRS
 
 				\item \texttt{- boolean InternetConnection}\\
-				Booleano che indica se il dispositivo dispone di una connessione Internet attiva
+				Booleano che indica se il dispositivo è provvisto di una connessione Internet attiva
 
 				\item \texttt{- RSTinCanOfflineConnector tincan}\\
 				Oggetto della libreria TinCanAndroid-Offline che si occupa del recupero degli statement da inviare all'LRS
@@ -242,7 +242,7 @@
 
 		\subsection{model::lrs\_access::LrsSynchronizeImp}
 		La classe \mclass{LrsSynchronizeImp} si occupa di effettuare delle richieste all'LRS per 
-		il recupero di dati di fruizione di un utente che non sono presenti localmente. Gli oggetti di questa classe recuperano gli URL per la comunicazione con l'LRS sfruttando un oggetto sottotipo dell'interfaccia \minterface{LrsRequestUrl}. Nel caso sia disponibile una connessione ad Internet, le istanze di questa classe si occupano di effettuare le richieste per recuperare le informazioni desiderate dall'LRS. Le informazioni ricavate dalla risposta dell'LRS sono usate per aggiornare i dati di fruizione di un determinato utente, presenti nel database locale, utilizzando un oggetto di tipo \minterface{ContentHistoryForLoggedUserAccess}. Dal momento che è stato deciso di far uso di Learning Locker come LRS, le risposte ottenute sono in formato JSON e vengono gestite utilizzando la libreria Gson.
+		il recupero dei dati di fruizione di un utente che non sono presenti localmente. Gli oggetti di questa classe recuperano gli URL per la comunicazione con l'LRS sfruttando un oggetto sottotipo dell'interfaccia \minterface{LrsRequestUrl}. Nel caso sia disponibile una connessione ad Internet, le istanze di questa classe si occupano di effettuare le richieste per recuperare le informazioni desiderate dall'LRS. Le informazioni ricavate dalla risposta dell'LRS sono usate per aggiornare i dati di fruizione di un determinato utente, presenti nel database locale, utilizzando un oggetto di tipo \minterface{ContentHistoryForLoggedUserAccess}. Dal momento che è stato deciso di far uso di Learning Locker come LRS, le risposte ottenute sono in formato JSON e vengono gestite utilizzando la libreria Gson.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -403,7 +403,7 @@
 		\end{description}
 
 		\subsection{model::result::StartResult}
-		La classe \mclass{StartResult} è usata per ricavare le informazioni che vengono inviate dallo script JavaScript, che si occupa di ricavare i dati di fruizione di un utente, riguardo all'inizio di un certo contenuto, da parte di un utente. Il codice di tale classe è generato sfruttando la libreria Google AutoValue. Praticamente questa libreria si occupa di implementare i metodi delle classi che hanno l'annotazione \textit{@AutoValue}, fornendo anche la possibilità di creare una classe interna ``Builder'', per l'implementazione del design pattern Builder. Il programmatore non deve far altro che dichiarare la classe che si vuole creare e la una classe interna \mclass{Builder} come astratte, dichiarare tutti i metodi getter per i campi dati, anch'essi astratti, e dichiarare i metodi della classe \mclass{Builder} per settare i campi dati, sempre astratti. Le istanze di questa classe vengono create sfruttando un oggetto \mclass{JsonObject}, il quale contiene le informazioni ricavate dallo script JavaScript. Anche le classi \mclass{PartialResult} e \mclass{TotalResult} sono state create utilizzando la libreria Google AutoValue e hanno scopi simili alla classe \mclass{StartResult}.
+		La classe \mclass{StartResult} è usata per ricavare le informazioni che vengono inviate dallo script JavaScript, che si occupa di ricavare i dati di fruizione di un utente, riguardo all'inizio di un certo contenuto, da parte di un utente. Il codice di tale classe è generato sfruttando la libreria Google AutoValue. Praticamente questa libreria si occupa di implementare i metodi delle classi che hanno l'annotazione \textit{@AutoValue}, fornendo anche la possibilità di creare una classe interna ``Builder'', per l'implementazione del design pattern Builder. Il programmatore non deve far altro che dichiarare la classe che si vuole creare e la una classe interna \mclass{Builder} come astratte, dichiarare i metodi getter per tutti i campi dati, anch'essi astratti, e dichiarare i metodi della classe \mclass{Builder} per settare i campi dati, sempre astratti. Le istanze di questa classe vengono create sfruttando un oggetto \mclass{JsonObject}, il quale contiene le informazioni ricavate dallo script JavaScript. Anche le classi \mclass{PartialResult} e \mclass{TotalResult} sono state create utilizzando la libreria Google AutoValue e hanno scopi simili alla classe \mclass{StartResult}.
 		\begin{description}
 			\item[Tipo:] Classe astratta;
 			
@@ -721,7 +721,7 @@
 				Oggetto che permette l'accesso ai dati relativi ai contenuti che devono essere gestiti dall'applicazione
 
 				\item \texttt{$\sim$ senderManager : StatementSender}\\
-				Oggetto che permette l'invio degli statement memorizzati localmente all'LRS
+				Oggetto che permette l'invio all'LRS degli statement memorizzati localmente
 
 				\item \texttt{$\sim$ javascriptInterface : MyJavascriptInterface}\\
 				Oggetto che si occupa della memorizzazione locale degli statement
@@ -733,7 +733,7 @@
 				Metodo che viene invocato alla creazione di un oggetto \mclass{MyApplication}
 				
 				\item \texttt{- setUpListeners() : void}\\
-				Metodo che si occupa di istanziare gli oggetti che controllano quando vi sono cambiamenti nello stato della connessione Internet del dispositivo e nel database degli statement all'avvio dell'applicazione. Inoltre ha il compito di registrare un oggetto di tipo \minterface{StatementSender} come listener per entrambi gli oggetti istanziati
+				Metodo che, all'avvio dell'applicazione, si occupa di istanziare gli oggetti che controllano quando vi sono cambiamenti nello stato della connessione Internet del dispositivo e nel database degli statement. Inoltre ha il compito di registrare un oggetto di tipo \minterface{StatementSender} come listener per entrambi gli oggetti istanziati
 
 				\item \texttt{- setUpConnection() : void}\\
 				Metodo che viene invocato all'avvio dell'applicazione per impostare i dati relativi all'LRS a cui inviare i dati

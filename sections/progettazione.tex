@@ -138,7 +138,7 @@
 						\item \textbf{mbox}: stringa che rappresenta una email nella forma ``mailto:email address'' che serve per l'identificazione di un singolo utente; 
 						\item \textbf{objectType}: attributo che serve per specificare che gli statement sono riferiti a singole persone o sistemi. Per questo, in tutti gli statement inviati dall'applicazione, tale campo sarà fissato uguale a ``Agent''.
 					\end{itemize}
-					Per l'identificazione degli utenti si è scelto di utilizzare il campo \textit{mbox} per semplicità di gestione. Infatti la specifica xAPI permette, per identificare un utente, di associargli un generico URI oppure di specificare un oggetto \textit{account}.
+					Per l'identificazione degli utenti si è scelto di utilizzare il campo \textit{mbox} per semplicità di gestione. Infatti la specifica xAPI permette, per identificare l'attore di uno statement, di associargli un generico URI oppure di specificare un oggetto \textit{account}.
 
 					\subparagraph{verb}
 					Il campo \textit{verb} identifica l'azione compiuta dal soggetto specificato nel campo \textit{actor}. Tale oggetto composto a sua volta dai campi:
@@ -160,7 +160,7 @@
 					Il campo \textit{context} è un campo non obbligatorio che serve per specificare delle informazioni contestuali allo statement a cui appartiene. Questo campo, negli statement generati dall'applicazione, è sempre presente e specifica sempre il contenuto a cui si riferisce uno statement.
 
 					\subparagraph{stored}
-					Il campo \textit{stored} è un campo che indica il timestamp di quando è stato salvato lo statement da parte del LRS.
+					Il campo \textit{stored} è un campo che indica il timestamp di quando è stato salvato lo statement da parte dell'LRS.
 
 					\subparagraph{timestamp}
 					Il campo \textit{timestamp} è un campo che indica il timestamp di quando è stata effettuata l'azione specificata dal campo \textit{verb} da parte di un utente.
