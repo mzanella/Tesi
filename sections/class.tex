@@ -189,7 +189,7 @@
 		%La classe \mclass{DataAccess} è utilizzata per la gestione dei dati del database riguardanti i contenuti e i dati di fruizione ad essi associati. Tale classe implementa le interfacce \minterface{ContentDataAccess} e \minterface{ContentHistoryForLoggedUserAccess} le quali espongono, rispettivamente, i metodi per l'inserimento, recupero e modifica dei contenuti xAPI trattati dall'applicazione e dei dati di fruizione di un determinato contenuto da parte dell'utente loggato. Tale classe in particolare si occupa anche di inserire nel database del dispositivo i dati dei contenuti da visualizzare nell'applicazione.
 
 		\subsection{model::data\_access::StatementSenderImp}
-		La classe \mclass{StatementSenderImp} si occupa della gestione e dell'invio all'LRS degli statement ottenuti dall'interazione di un utente con i contenuti xAPI. Tale classe implementa l'interfaccia \minterface{StatementSender}, che a sua volta estende le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkChangeListener}. L'interfaccia \minterface{StatementSender} espone i metodi che devono essere implementati al fine di permettere l'invio degli statement ad un LRS. Le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkChangeListener} permettono, invece, agli oggetti di tale classe di registrarsi come ``listener'' dei cambiamenti nel database degli statement, gestito dalla libreria TinCanAndroid-Offline, e nella connessione ad Internet del dispositivo. Nel caso in cui sia presente una connessione attiva e vi siano statement non inviati all'LRS tale classe provvederà ad inviarli, eliminandoli dal database della libreria TinCanAndroid-Offline. Per fare questo gli oggetti di tale classe hanno un riferimento ad un oggetto di tipo \mclass{RSTinCanOfflineConnector}. Tale oggetto, della libreria TinCanAndroid-Offline, permette sia l'accesso al database degli statement, sia l'invio di quest'ultimi all'LRS.
+		La classe \mclass{StatementSenderImp} si occupa della gestione e dell'invio all'LRS degli statement ottenuti dall'interazione di un utente con i contenuti xAPI. Tale classe implementa l'interfaccia \minterface{StatementSender}, che a sua volta estende le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkChangeListener}. L'interfaccia \minterface{StatementSender} espone i metodi che devono essere implementati al fine di permettere l'invio degli statement ad un LRS. Le interfacce \minterface{DatabaseChangeListener} e \minterface{NetworkChangeListener} permettono, invece, agli oggetti di tale classe di registrarsi rispettivamente come ``listener'' dei cambiamenti nel database degli statement, gestito dalla libreria TinCanAndroid-Offline, e nella connessione ad Internet del dispositivo. Nel caso in cui sia presente una connessione attiva e vi siano statement non inviati all'LRS tale classe provvederà ad inviarli, eliminandoli dal database della libreria TinCanAndroid-Offline. Per fare questo gli oggetti di tale classe hanno un riferimento ad un oggetto di tipo \mclass{RSTinCanOfflineConnector}. Tale oggetto, della libreria TinCanAndroid-Offline, permette sia l'accesso al database degli statement, sia l'invio di quest'ultimi all'LRS.
 		\begin{description}
 			\item[Attributi:] \
 			\begin{itemize}
@@ -380,6 +380,22 @@
 					\end{itemize}
 				\end{description}
 
+				\item \texttt{- boolean syncWorstScore(endpoint : String, auth : String, data : UserData)}\\
+				Metodo che si occupa della sincronizzazione del peggior risultato ottenuto per ogni corso da parte di un utente. Ritorna \textit{true} nel caso la sincronizzazione sia avvenuta con successo, \textit{false} altrimenti
+				\begin{description}
+					\item[Argomenti:] \
+					\begin{itemize}
+						\item \texttt{endpoint : String}\\
+						Stringa che rappresenta l'URL da cui è possibile fare le richieste all'LRS
+
+						\item \texttt{auth : String}\\
+						Stringa che rappresenta i dati di autenticazione all'LRS
+
+						\item \texttt{data : UserData}\\
+						Utente di cui si vogliono sincronizzare i dati di fruizione
+					\end{itemize}
+				\end{description}
+
 				\item \texttt{- JsonObject queryToJsonObject(query : URL, endpoint : String, auth : String, data : UserData)}\\
 				Metodo che si occupa della connessione all'LRS e di trasformare la risposta in JsonObject
 				\begin{description}
@@ -422,7 +438,7 @@
 				Metodo che permette di ricavare una istanza di un oggetto \mclass{Builder} per la costruzione di un oggetto \mclass{StartResult}. È un metodo statico
 
 				\item \texttt{+ \underline{builder(JsonObject json) : Builder}}\\
-				Metodo che permette di ricavare una istanza di un oggetto \mclass{Builder} per la costruzione di un oggetto \mclass{StartResult}, inizializzando i campi dati con l'oggetto JsonObject passato. È un metodo statico
+				Metodo che permette di ricavare una istanza di un oggetto \mclass{Builder} per la costruzione di un oggetto \mclass{StartResult}, inizializzando i campi dati sfruttando l'oggetto JsonObject passato. È un metodo statico
 
 			\end{itemize}
 		\end{description}
