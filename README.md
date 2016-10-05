@@ -1,32 +1,36 @@
-# Tesi
-Repo per la tesi triennio informatico
+# Tesi - Progettazione e sviluppo di un'applicazione mobile per l'e-learning
+Repository con la tesi per la laurea triennale in informatica. La tesi consiste nella descrizione del lavoro svolto presso l'azienda Modo Network durante lo stage. Quest'ultimo consisteva nella progettazione e lo sviluppo di un'applicazione Android che permettesse la fruizione di corsi di e-learning in formato xAPI.
 
-Struttura di base:
+Contenuti:
 
 1. Introduzione
-	* informazioni base sullo stage (dove, quando, cosa riguarda il progetto)
-	* struttura del documento con spiegazione dei capitoli
+	* scopo dello stage
+	* presentazione dell’azienda ospitante
+	* introduzione ai contenuti presenti nel documento;
 
 2. Progetto dello stage
-	* motivazione e obbiettivi dello stage
+	* obiettivi dello stage e delle caratteristiche;
 	* requisiti obbligatori
 	* requisiti opzionali
-	* descrizione del prodotto finale
+	* vincoli sulle tecnologie
 
 3. Tecnologie utilizzate 
-	* Elenco delle tecnologie (anche eventuali librerie)
+	* elenco delle tecnologie e librerie utilizzate nello sviluppo dell'applicazione
 
 4. Progettazione
-	* Scelte effettuate e motivazione
-	* Descrizione dell'architettura ad alto livello
-	* UML dell'architettura
-	* Descrizione package
-	* Descrizione classi
+	* scelte effettuate in fase di progettazione e motivazioni
+	* persistenza dei dati
+	* comunicazione tra Javascript e Android
 
-5. Sviluppo
+5. Descrizione dei package
+	* descrizione dei package utilizzati che compongono l'applicazione
+	
+6. Descrizione delle classi principali
+	* descrizione delle classi principali
 
-6. Verifica e validazione
-	* Strumenti di test
-	* Test effettuati
-	* Requisiti soddisfatti
+7. Verifica e validazione
+	* fase di testing
+	* obiettivi raggiunti
+	
+8. Conclusioni
 
