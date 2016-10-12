@@ -1,5 +1,5 @@
 # Tesi - Progettazione e sviluppo di un'applicazione mobile per l'e-learning
-Repository con la tesi per la laurea triennale in informatica. La tesi consiste nella descrizione del lavoro svolto presso l'azienda Modo Network durante lo stage. Quest'ultimo consisteva nella progettazione e lo sviluppo di un'applicazione Android che permettesse la fruizione di corsi di e-learning in formato xAPI.
+Repository con la tesi per la laurea triennale in informatica. La tesi consiste nella descrizione del lavoro svolto presso l'azienda [Modo Network](http://modonetwork.com/) durante lo stage. Quest'ultimo consisteva nella progettazione e lo sviluppo di un'applicazione Android che permettesse la fruizione di corsi di e-learning in formato xAPI.
 
 Contenuti:
 
